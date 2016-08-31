@@ -17,6 +17,11 @@ This repository is meant as a place for Beta Testers to share data, code, and ou
 ``/aggregation`` contains a README that outlines CalTRACK aggregation proceedures. It is also the repository for sharing data aggregation code and outputs among from Beta Testers for comparison.
 
 
+Contributors:
+
+-[Impact Labs](www.impactlabs.com)
+-[EnergySavvy](www.energysavvy.com)
+-[DNV GL](www.dnvgl.com)
 
 
 
