@@ -19,9 +19,9 @@ This repository is meant as a place for Beta Testers to share data, code, and ou
 
 Contributors:
 
--[Impact Labs](www.impactlabs.com)
--[EnergySavvy](www.energysavvy.com)
--[DNV GL](www.dnvgl.com)
+1. [Impact Labs](www.impactlabs.com)
+2. [EnergySavvy](www.energysavvy.com)
+3. [DNV GL](www.dnvgl.com)
 
 
 
