@@ -10,7 +10,6 @@ Data Cleaning and Quality Checks for the CalTrack Beta Test will consist of thre
 =======
 
 
-
 Data Cleaning and Munging
 ---
 
@@ -18,30 +17,56 @@ A number of cleaning steps are necessary to use the raw data.
 
 * Deduplication
 
-	- If a home appears multiple times within a project database, and the project dates are the same the most complete record for that home will be the record used in CalTRACK
-	- If a home appears multiple times within a project database and the project dates differ because there are multiple measures installed associated with the same incentive program, the start date of the intervention will be the earliest of the project start dates across projects and the end date for the intervention will be the latest of the project end dates
-	- There are a small number of duplicate traces – consumption traces with unique SAs (though identical SPIDs) and identical consumption data over the time interval.
+- If a home appears multiple times within a project database, and the project dates are the same the most complete record for that home will be the record used in CalTRACK
+
+- If a home appears multiple times within a project database and the project dates differ because there are multiple measures installed associated with the same incentive program, the start date of the intervention will be the earliest of the project start dates across projects and the end date for the intervention will be the latest of the project end dates
+
+- There are a small number of duplicate traces – consumption traces with unique SAs (though identical SPIDs) and identical consumption data over the time interval.
+
+- If two duplicate records have identical consumption traces and date ranges, drop one at random
+
+- If two duplicate records have identical consumption traces but different date ranges select the more complete record having more dates. If the dates are contiguous, or there are overlapping dates with the same usage values, combine the two traces into a single trace.
+
+- If they have the same date ranges, but different usage values, the project is flagged and the record is exluded from the sample.
 
 * Creating Work Start and Work End dates from raw project data
 
-The dates for CalTrack Beta Test come from the following Final CalTrack (AUH) files provided by Build it Green:
+The dates for CalTrack Beta Test come from the following Final CalTrack files provided by Build it Green:
 
 `CalTrack (AHU) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
+
 `CalTrack (AHU) from 7_1_15__6_30_16_v2_FINAL_090816.csv`
+
 `CalTrack (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
 
-The following rules are used for determining `work start dates` and `work end date` for every record.
 
-`initial submission data` will be used as `work start date`
-`initial submission date` will be used as `work end date`
+The following rules are used for determining `work start dates`:
 
-For records where `initial application date` is missing, `work start date` will be imputed by calculating `initial sumbission date - 60 days`
+- From the updated ‘AHUP’ file “CalTrack (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816”
+	- Column G – “Notice to Proceed Issued” (Best Proxy for ‘Work Start’)
 
-For records where `initial submission date is missing, `work end date` will be imputed by calculating `initial application date + 60 days`
+- From the updated ‘AHU with correlated XML files’ file “CalTrack (AHU) from 1_1_14__6_30_15_v2_FINAL_090816”
+ 	- Column F – “Initial Approval Date” (Best Proxy for ‘Work Start’)
 
-Missing Values & Imputation
+- From the updated ‘AHU Control Group (no XML files)’ file “CalTrack (AHU) from 7_1_15__6_30_16_v2_FINAL_090816”
+ 	- Column F – “Initial Approval Date” (Best Proxy for ‘Work Start’)
 
-Weather
+ The following rules are used for determining `work end dates`:
+
+- From the updated ‘AHUP’ file “CalTrack (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816”
+	- Column H – “Full Application Started” (Best Proxy for ‘Work Finished’)
+	- Please Note – Column J – “Full Application Submitted” can represent a better proxy for ‘Work Finished’, if the project was not returned for correction(s) during the QA review process (i.e., if there is a date in Column I – “Full Application Returned”, it got returned for correction). If a project gets returned for correction, then Column J’s “Full Application Submitted” date becomes, effectively, a “Full Application ‘Re-submitted’”, and no longer represents a good proxy for ‘Work Finished’ as it is +1-10 Days (or more) removed at that point.
+
+- From the updated ‘AHU with correlated XML files’ file “CalTrack (AHU) from 1_1_14__6_30_15_v2_FINAL_090816”
+	- Column G – “Initial Submission Date” (Best Proxy for ‘Work Finished’)
+
+- From the updated ‘AHU Control Group (no XML files)’ file “CalTrack (AHU) from 7_1_15__6_30_16_v2_FINAL_090816”
+	- Column G – “Initial Submission Date” (Best Proxy for ‘Work Finished’)
+
+
+* Missing Values & Imputation
+
+** Weather **
 
 - Hourly
 
@@ -55,7 +80,7 @@ Weather
 
     - Months with more than than 3 missing days will be thrown out
 
-Usage
+** Usage **
 
 - Missing values where the cumulative value is in the following period, the cumulative number of days between the two periods will be used to generate the UPD for that period
 
@@ -63,15 +88,13 @@ Usage
 
 - Homes with Net Metering will be dropped from the analysis
 
-Estimated values & deletion
+* Estimated values & deletion
 
-Estimated usage data will be used for estimation, but estimation flags will be added to the post-estimation
+- Estimated usage data will be used for estimation, but estimation flags will be added to the post-estimation
 
-Estimated data will enter the same way missing cumulative values do (see above)
+* Extreme values
 
-Extreme values
-
-Usage
+** Usage **
 
 - Negative values or values with reverse direction of flow will be treated as missing and count against sufficiency criterion. The account will also be flag within CalTRACK for possible net metering if it does not currently contain a net metering flag
 
@@ -79,29 +102,29 @@ Usage
 
 - AMI data will have the DASMMD pass/fail criterion rerun, with failing values coded as missing. ((highest peak - third highest peak)/third highest peak) <= 1.8
 
-Project Data
+** Project Data **
 
 - Extreme project lengths (gap between project start date and project end date longer than 3 months) will be treated as true and impact estimation only through data sufficiency requirements.
 
 - Files without project start dates are thrown out
 
-Sum Check
+* Sum Check
 
 If both monthly and AMI data are available for a home, CalTRACK will run a sumcheck and use the DASMMD criterion for pass/fail. If it fails, the home is flagged and treated as having missing usage data so no estimation is run on it.
 
-Miscoded values
+* Miscoded values
 
-Miscoded strings in project data will be deduplicated and matched (fuzzily) to closest value
+- Miscoded strings in project data will be deduplicated and matched (fuzzily) to closest value
 
-Miscoded dates
+* Miscoded dates
 
 - Implausible day values (>31) will be coded as the beginning of month if project start date and end of month if project end date so that the entire month included in the intervention window
 
 - Implausible month and year values will be flagged and that home not included in estimation.
 
-Data sufficiency
+* Data sufficiency
 
-Usage (Monthly)
+** Usage (Monthly) **
 
 - 12 complete months pre-retrofit for monthly billing data to qualify for estimation or 24 months with up to 2 missing values from different, non-contiguous months
 
@@ -109,9 +132,7 @@ Usage (Monthly)
 
 - Total annual savings estimates will require 12 months post-retrofit
 
-- Do we include homes that have changed tenants
-
-Usage (AMI)
+** Usage (AMI) **
 
 - 12 months pre-retrofit
 
@@ -119,27 +140,27 @@ Usage (AMI)
 
 - Total annual savings estimates will require 12 months post-retrofit
 
-Weather
+** Weather **
 
 - There should not be problems with data sufficiency for weather
 
-Project or Home Characteristics
+* Project or Home Characteristics
 
-Exclude homes with PV for whom production data is not available
+- Exclude homes with PV for whom solar production data is not available
 
-Value Adjustments (if values change during performance period)
+* Value Adjustments (if values change during performance period)
 
-Usage
+** Usage **
 
 - Use most up-to-date meter read for
 
 - Log prior values and prior estimates
 
-Project data
+** Project data **
 
 - Use most up to date values for estimation
 
-Weather data
+** Weather data **
 
 - Use most recent daily weather value for estimation
 
@@ -165,8 +186,7 @@ Weather data
 
 ## Prepared Data Summary Statistics for Comparison
 
-
-To ensure that beta testers are working with the same datasets and that we are characterizing the datasets in a way that is helpful for other members of the technical working group as well as the general public, each beta tester will generate a set of summary statistics and perform a set of data quality checks that can be shared with the larger group through csvs saved to this repository. There will be three cleaned data reports generated by each beta tester: a project data summary file, a monthly electic summary file, monthly gas summary file, hourly electric summary file, daily gas summary file, and data integration summary file. Each file will be a .csv and will have the following general format:
+To ensure that beta testers are working with the same datasets and that we are characterizing the datasets in a way that is helpful for other members of the technical working group as well as the general public, each beta tester will generate a set of summary statistics and perform a set of data quality checks that can be shared with the larger group through csvs saved to this repository. There will be four cleaned data reports generated by each beta tester: a project data summary file, an hourly electric summary file, a daily gas summary file, and data integration summary file. Each file will be a .csv and will have the following general format:
 
 | Summary Stat | Value |
 | --- | --- |
@@ -177,24 +197,117 @@ To ensure that beta testers are working with the same datasets and that we are c
 
 The specifics for each summary file are below:
 
-### Prepared Project Data Summary File
+### Combined Project Data Summary File
 
 **Output Filename: `project_data_summary_NAME_OF_TESTER.csv`**
  
 #### Included Summary statistics
 
--  
+- Number of total records
+- Number of unique project IDs
+- Top 10 zip codes by count
+- Bottom ten zip codes by count
+- Min Work Start Date
+- Max Work Start Date
+- Average Work Start Date
+- Work Start Date 10th percentile value
+- Work Start Date 20th percentile value
+- Work Start Date 30th percentile value
+- Work Start Date 40th percentile value
+- Work Start Date 50th percentile value
+- Work Start Date 60th percentile value
+- Work Start Date 70th percentile value
+- Work Start Date 80th percentile value
+- Work Start Date 90th percentile value
+- Min Work End Date
+- Max Work End Date
+- Average Work End Date
+- Work End Date 10th percentile value
+- Work End Date 20th percentile value
+- Work End Date 30th percentile value
+- Work End Date 40th percentile value
+- Work End Date 50th percentile value
+- Work End Date 60th percentile value
+- Work End Date 70th percentile value
+- Work End Date 80th percentile value
+- Work End Date 90th percentile value
 
-### Prepared Project Data Summary File
 
-**Output Filename: `project_data_summary_NAME_OF_TESTER.csv`**
+### Prepared Hourly Electricity Data Summary File
+
+**Output Filename: `hourly_electiry_data_summary_NAME_OF_TESTER.csv`**
  
 #### Included Summary statistics
 
--  
+- Number of total records
+- Number of unique IDs
+- Total number of missing hours across all users
+- Total number of estimated hours across all users
+- Number of net metering accounts dropped from sample
+- Top 10 users by total use
+- Bottom 10 users by total use
+- Min Datetime stamp across all users
+- Max Datetime stamp across all users
+- Average Datetime stamp across all users
+- Min use across all accounts
+- Max use across all accounts
+- Average use across all accounts
+- Use across all accounts 10th percentile value
+- Use across all accounts 20th percentile value
+- Use across all accounts 30th percentile value
+- Use across all accounts 40th percentile value
+- Use across all accounts 50th percentile value
+- Use across all accounts 60th percentile value
+- Use across all accounts 70th percentile value
+- Use across all accounts 80th percentile value
+- Use across all accounts 90th percentile value
 
+### Prepared Hourly Electricity Data Summary File
 
+**Output Filename: `daily_gas_data_summary_NAME_OF_TESTER.csv`**
+ 
+#### Included Summary statistics
 
+- Number of total records
+- Number of unique IDs
+- Total number of missing days across all users
+- Total number of estimated hours across all users
+- Top 10 users by total use
+- Bottom 10 users by total use
+- Min Datetime stamp across all users
+- Max Datetime stamp across all users
+- Average Datetime stamp across all users
+- Min use across all accounts
+- Max use across all accounts
+- Average use across all accounts
+- Use across all accounts 10th percentile value
+- Use across all accounts 20th percentile value
+- Use across all accounts 30th percentile value
+- Use across all accounts 40th percentile value
+- Use across all accounts 50th percentile value
+- Use across all accounts 60th percentile value
+- Use across all accounts 70th percentile value
+- Use across all accounts 80th percentile value
+- Use across all accounts 90th percentile value
+
+### Data Integration Summary File
+
+**Output Filename: `data_integration_summary_NAME_OF_TESTER.csv`**
+ 
+#### Included Summary statistics
+
+- Number of unique IDs in combined project data
+- Number of unique IDs in hourly electiry data
+- Number of unique IDs in daily gas data
+- Number of unique IDs in monthly electiry data
+- Number of unique IDs in monthly gas data
+- Number of unique IDs in the electricity cross reference dataset
+- Number of unique IDS in the Gas cross reference dataset
+- % Records successfuly matched between hourly electiry data to project data
+- % Records successfuly matched between daily gas data to project data
+- % Records successfuly matched between hourly electiry data to project data
+- % Records successfuly matched between monthly electiry data to project data
+- % Records successfuly matched between monthly gas data to project data
 
 
 

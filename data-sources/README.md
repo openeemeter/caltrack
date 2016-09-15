@@ -121,23 +121,11 @@ Both types of cross-reference files contain the same columns of interest.
 | sa_id | Corresponds to `Electric Service ID` or `Gas Service ID` in projects file |
 | sp_id | Corresponds to `SPID` in electricity consumption file and `Service Point` in natural gas file |
 
-Data Cleaning and Munging
----
-
-A number of cleaning steps are necessary to use the raw data.
-
-* Remove duplicate traces
-
-    There are a small number of duplicate traces – consumption traces with unique SAs (though identical SPIDs) and identical consumption data over the time interval.
-
-* Estimate `Work Start Date` and `Work End Date` when missing
-
-    There are many missing values for these necessary fields. The average time between `Initial Submission Date` and existing `Work Start Date` and `Work End Date` is used to fill in these missing values.
 
 Output data format
 ---
 
-The data output to the eemeter is as follows:
+The cleaned data should be is as follows:
 
 **Projects**
 
