@@ -15,7 +15,7 @@ Data Cleaning and Munging
 
 A number of cleaning steps are necessary to use the raw data.
 
-* Deduplication
+*Deduplication*
 
 - If a home appears multiple times within a project database, and the project dates are the same the most complete record for that home will be the record used in CalTRACK
 
@@ -64,9 +64,9 @@ The following rules are used for determining `work start dates`:
 	- Column G – “Initial Submission Date” (Best Proxy for ‘Work Finished’)
 
 
-* Missing Values & Imputation
+*Missing Values & Imputation*
 
-** Weather **
+**Weather**
 
 - Hourly
 
@@ -80,7 +80,7 @@ The following rules are used for determining `work start dates`:
 
     - Months with more than than 3 missing days will be thrown out
 
-** Usage **
+**Usage**
 
 - Missing values where the cumulative value is in the following period, the cumulative number of days between the two periods will be used to generate the UPD for that period
 
@@ -88,11 +88,11 @@ The following rules are used for determining `work start dates`:
 
 - Homes with Net Metering will be dropped from the analysis
 
-* Estimated values & deletion
+*Estimated values & deletion*
 
 - Estimated usage data will be used for estimation, but estimation flags will be added to the post-estimation
 
-* Extreme values
+*Extreme values*
 
 ** Usage **
 
@@ -102,29 +102,29 @@ The following rules are used for determining `work start dates`:
 
 - AMI data will have the DASMMD pass/fail criterion rerun, with failing values coded as missing. ((highest peak - third highest peak)/third highest peak) <= 1.8
 
-** Project Data **
+**Project Data**
 
 - Extreme project lengths (gap between project start date and project end date longer than 3 months) will be treated as true and impact estimation only through data sufficiency requirements.
 
 - Files without project start dates are thrown out
 
-* Sum Check
+*Sum Check*
 
 If both monthly and AMI data are available for a home, CalTRACK will run a sumcheck and use the DASMMD criterion for pass/fail. If it fails, the home is flagged and treated as having missing usage data so no estimation is run on it.
 
-* Miscoded values
+*Miscoded values*
 
 - Miscoded strings in project data will be deduplicated and matched (fuzzily) to closest value
 
-* Miscoded dates
+*Miscoded dates*
 
 - Implausible day values (>31) will be coded as the beginning of month if project start date and end of month if project end date so that the entire month included in the intervention window
 
 - Implausible month and year values will be flagged and that home not included in estimation.
 
-* Data sufficiency
+*Data sufficiency*
 
-** Usage (Monthly) **
+**Usage (Monthly)**
 
 - 12 complete months pre-retrofit for monthly billing data to qualify for estimation or 24 months with up to 2 missing values from different, non-contiguous months
 
@@ -132,7 +132,7 @@ If both monthly and AMI data are available for a home, CalTRACK will run a sumch
 
 - Total annual savings estimates will require 12 months post-retrofit
 
-** Usage (AMI) **
+**Usage (AMI)**
 
 - 12 months pre-retrofit
 
@@ -140,27 +140,27 @@ If both monthly and AMI data are available for a home, CalTRACK will run a sumch
 
 - Total annual savings estimates will require 12 months post-retrofit
 
-** Weather **
+**Weather**
 
 - There should not be problems with data sufficiency for weather
 
-* Project or Home Characteristics
+*Project or Home Characteristics*
 
 - Exclude homes with PV for whom solar production data is not available
 
-* Value Adjustments (if values change during performance period)
+*Value Adjustments (if values change during performance period)*
 
-** Usage **
+**Usage**
 
 - Use most up-to-date meter read for
 
 - Log prior values and prior estimates
 
-** Project data **
+**Project data**
 
 - Use most up to date values for estimation
 
-** Weather data **
+**Weather data**
 
 - Use most recent daily weather value for estimation
 
