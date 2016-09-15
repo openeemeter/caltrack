@@ -15,7 +15,10 @@ This repository is meant as a place for Beta Testers to share data, code, and ou
 ``/analysis`` contains a README that outlines CalTRACK data analysis proceedures. It is also the repository for sharing data analysis code and testing outputs among Beta Testers for comparison.
 
 ``/aggregation`` contains a README that outlines CalTRACK aggregation proceedures. It is also the repository for sharing data aggregation code and outputs among from Beta Testers for comparison.
+ 
+=========
 
+Communication for the project will happen primarily on Slack. Any relevant changes to the technical specification outlined in the CalTrack Beta READMEs will be discussed and resolved as Github issues on this repository
 
 
 
