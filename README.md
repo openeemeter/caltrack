@@ -20,6 +20,11 @@ This repository is meant as a place for Beta Testers to share data, code, and ou
 
 Communication for the project will happen primarily on Slack. Any relevant changes to the technical specification outlined in the CalTrack Beta READMEs will be discussed and resolved as Github issues on this repository
 
+Contributors:
+
+1. [Impact Labs](www.impactlabs.com)
+2. [EnergySavvy](www.energysavvy.com)
+3. [DNV GL](www.dnvgl.com)
 
 
 
