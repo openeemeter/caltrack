@@ -27,7 +27,7 @@ A number of cleaning steps are necessary to use the raw data.
 
 - If two duplicate records have identical consumption traces but different date ranges select the more complete record having more dates. If the dates are contiguous, or there are overlapping dates with the same usage values, combine the two traces into a single trace.
 
-- If they have the same date ranges, but different usage values, the project is flagged and the record is exluded from the sample.
+- If they have the same date ranges, but different usage values, the project is flagged and the record is excluded from the sample.
 
 ### Creating Work Start and Work End dates from raw project data
 
@@ -167,7 +167,7 @@ If both monthly and AMI data are available for a home, CalTRACK will run a sumch
 # Data Integration
 
 - Matching project data
-	- Matching will be done using the cross-reference files contain the sa_id and sp_id mapping between the project data id fields and the consumpution data id fields.
+	- Matching will be done using the cross-reference files contain the sa_id and sp_id mapping between the project data id fields and the consumption data id fields.
 
 | Column Name | Description |
 | --- | --- |
@@ -235,7 +235,7 @@ The specifics for each summary file are below:
 
 ### Prepared Hourly Electricity Data Summary File
 
-**Output Filename: `hourly_electiry_data_summary_NAME_OF_TESTER.csv`**
+**Output Filename: `hourly_electricity_data_summary_NAME_OF_TESTER.csv`**
  
 #### Included Summary statistics
 
@@ -262,7 +262,7 @@ The specifics for each summary file are below:
 - Use across all accounts 80th percentile value
 - Use across all accounts 90th percentile value
 
-### Prepared Hourly Electricity Data Summary File
+### Prepared Daily Gas Data Summary File
 
 **Output Filename: `daily_gas_data_summary_NAME_OF_TESTER.csv`**
  
@@ -297,17 +297,17 @@ The specifics for each summary file are below:
 #### Included Summary statistics
 
 - Number of unique IDs in combined project data
-- Number of unique IDs in hourly electiry data
+- Number of unique IDs in hourly electricity data
 - Number of unique IDs in daily gas data
-- Number of unique IDs in monthly electiry data
+- Number of unique IDs in monthly electricity data
 - Number of unique IDs in monthly gas data
 - Number of unique IDs in the electricity cross reference dataset
 - Number of unique IDS in the Gas cross reference dataset
-- % Records successfuly matched between hourly electiry data to project data
-- % Records successfuly matched between daily gas data to project data
-- % Records successfuly matched between hourly electiry data to project data
-- % Records successfuly matched between monthly electiry data to project data
-- % Records successfuly matched between monthly gas data to project data
+- % Records successfully matched between hourly electricity data to project data
+- % Records successfully matched between daily gas data to project data
+- % Records successfully matched between hourly electricity data to project data
+- % Records successfully matched between monthly electricity data to project data
+- % Records successfully matched between monthly gas data to project data
 
 
 
