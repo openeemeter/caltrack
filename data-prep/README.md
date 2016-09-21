@@ -203,8 +203,8 @@ The specifics for each summary file are below:
  
 #### Included Summary statistics
 
-- Number of total records
-- Number of unique project SAIDs
+- Total number of records
+- Number of unique project electric SAIDs
 - Top 10 zip codes by count
 - Bottom ten zip codes by count
 - Min Work Start Date
@@ -239,7 +239,7 @@ The specifics for each summary file are below:
  
 #### Included Summary statistics
 
-- Number of total usage records
+- Total number of usage records
 - Number of unique SPIDs
 - Total number of missing hours across all usage records
 - Total number of estimated hours across all usage records
@@ -268,7 +268,7 @@ The specifics for each summary file are below:
  
 #### Included Summary statistics
 
-- Number of total records
+- Total number of records
 - Number of unique SPIDs
 - Total number of missing days across all usage records
 - Total number of estimated hours across all usage records
@@ -297,10 +297,12 @@ The specifics for each summary file are below:
 #### Included Summary statistics
 
 - Number of unique SAIDs in joined data
-- Number of unique IDs in hourly electricity data
-- Number of unique IDs in monthly electricity data
-- Number of unique IDs in the electricity cross reference dataset
-- Number of unique IDS in the Gas cross reference dataset
+- Number of unique SPIDs in hourly electricity data
+- Number of unique SPIDs in monthly electricity data
+- Number of unique SPIDs in the electricity cross reference dataset
+- Number of unique SPIDS in the gas cross reference dataset
+- Number of unique SAIDs in the electricity cross reference dataset
+- Number of unique SAIDs in the gas cross reference dataset
 - % Records successfully matched between hourly electricity data to project data
 	- Frequency counts of invalid rows from missing sa_id
 	- Frequency counts of invalid rows from missing sp_id
