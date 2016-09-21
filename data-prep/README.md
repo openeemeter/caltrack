@@ -204,7 +204,7 @@ The specifics for each summary file are below:
 #### Included Summary statistics
 
 - Number of total records
-- Number of unique project IDs
+- Number of unique project SAIDs
 - Top 10 zip codes by count
 - Bottom ten zip codes by count
 - Min Work Start Date
@@ -239,28 +239,28 @@ The specifics for each summary file are below:
  
 #### Included Summary statistics
 
-- Number of total records
-- Number of unique IDs
-- Total number of missing hours across all users
-- Total number of estimated hours across all users
+- Number of total usage records
+- Number of unique SPIDs
+- Total number of missing hours across all usage records
+- Total number of estimated hours across all usage records
 - Number of net metering accounts dropped from sample
 - Top 10 users by total use
 - Bottom 10 users by total use
-- Min Datetime stamp across all users
-- Max Datetime stamp across all users
-- Average Datetime stamp across all users
-- Min use across all accounts
-- Max use across all accounts
-- Average use across all accounts
-- Use across all accounts 10th percentile value
-- Use across all accounts 20th percentile value
-- Use across all accounts 30th percentile value
-- Use across all accounts 40th percentile value
-- Use across all accounts 50th percentile value
-- Use across all accounts 60th percentile value
-- Use across all accounts 70th percentile value
-- Use across all accounts 80th percentile value
-- Use across all accounts 90th percentile value
+- Min Datetime stamp across all usage records
+- Max Datetime stamp across all usage records
+- Average Datetime stamp across all usage records
+- Min use across all usage records
+- Max use across all usage records
+- Average use across all usage records
+- Use across all usage records 10th percentile value
+- Use across all usage records 20th percentile value
+- Use across all usage records 30th percentile value
+- Use across all usage records 40th percentile value
+- Use across all usage records 50th percentile value
+- Use across all usage records 60th percentile value
+- Use across all usage records 70th percentile value
+- Use across all usage records 80th percentile value
+- Use across all usage records 90th percentile value
 
 ### Prepared Daily Gas Data Summary File
 
@@ -269,45 +269,52 @@ The specifics for each summary file are below:
 #### Included Summary statistics
 
 - Number of total records
-- Number of unique IDs
-- Total number of missing days across all users
-- Total number of estimated hours across all users
+- Number of unique SPIDs
+- Total number of missing days across all usage records
+- Total number of estimated hours across all usage records
 - Top 10 users by total use
 - Bottom 10 users by total use
-- Min Datetime stamp across all users
-- Max Datetime stamp across all users
-- Average Datetime stamp across all users
-- Min use across all accounts
-- Max use across all accounts
-- Average use across all accounts
-- Use across all accounts 10th percentile value
-- Use across all accounts 20th percentile value
-- Use across all accounts 30th percentile value
-- Use across all accounts 40th percentile value
-- Use across all accounts 50th percentile value
-- Use across all accounts 60th percentile value
-- Use across all accounts 70th percentile value
-- Use across all accounts 80th percentile value
-- Use across all accounts 90th percentile value
+- Min Datetime stamp across all usage records
+- Max Datetime stamp across all usage records
+- Average Datetime stamp across all usage records
+- Min use across all usage records
+- Max use across all usage records
+- Average use across all usage records
+- Use across all usage records 10th percentile value
+- Use across all usage records 20th percentile value
+- Use across all usage records 30th percentile value
+- Use across all usage records 40th percentile value
+- Use across all usage records 50th percentile value
+- Use across all usage records 60th percentile value
+- Use across all usage records 70th percentile value
+- Use across all usage records 80th percentile value
+- Use across all usage records 90th percentile value
 
 ### Data Integration Summary File
 
-**Output Filename: `data_integration_summary_NAME_OF_TESTER.csv`**
+**Output Filename: `data_integration_electricity_summary_NAME_OF_TESTER.csv`**
  
 #### Included Summary statistics
 
-- Number of unique IDs in combined project data
+- Number of unique SAIDs in joined data
 - Number of unique IDs in hourly electricity data
-- Number of unique IDs in daily gas data
 - Number of unique IDs in monthly electricity data
-- Number of unique IDs in monthly gas data
 - Number of unique IDs in the electricity cross reference dataset
 - Number of unique IDS in the Gas cross reference dataset
 - % Records successfully matched between hourly electricity data to project data
+	- Frequency counts of invalid rows from missing sa_id
+	- Frequency counts of invalid rows from missing sp_id
 - % Records successfully matched between daily gas data to project data
+	- Frequency counts of invalid rows from missing sa_id
+	- Frequency counts of invalid rows from missing sp_id
 - % Records successfully matched between hourly electricity data to project data
+	- Frequency counts of invalid rows from missing sa_id
+	- Frequency counts of invalid rows from missing sp_id
 - % Records successfully matched between monthly electricity data to project data
-- % Records successfully matched between monthly gas data to project data
+	- Frequency counts of invalid rows from missing sa_id
+	- Frequency counts of invalid rows from missing sp_id
+
+
 
 
 
