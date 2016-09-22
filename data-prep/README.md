@@ -15,6 +15,10 @@ Data Cleaning and Munging
 
 A number of cleaning steps are necessary to use the raw data.
 
+### Project Filtering
+
+- Filter out any projects for which there is not an `sa_id` found in the cross reference files for either `Electric Service ID` or `Gas Service ID`
+
 ### *Deduplication*
 
 - If a home appears multiple times within a project database, and the project dates are the same the most complete record for that home will be the record used in CalTRACK
@@ -200,13 +204,19 @@ The specifics for each summary file are below:
 ### Combined Project Data Summary File
 
 **Output Filename: `project_data_summary_NAME_OF_TESTER.csv`**
- 
+
+Apply project filtering rules, then compute the following statistics on the filtered list of projects:
+
 #### Included Summary statistics
 
 - Total number of records
 - Number of unique project electric SAIDs
-- Top 10 zip codes by count
+- Top 10 zip codes by count 
+	- Sort by descending counts,
+	- For identical counts, sort by ascending zip code
 - Bottom ten zip codes by count
+	- Sort by ascending counts,
+	- For identical counts, sort by ascending zip code
 - Min Work Start Date
 - Max Work Start Date
 - Average Work Start Date
@@ -231,6 +241,11 @@ The specifics for each summary file are below:
 - Work End Date 70th percentile value
 - Work End Date 80th percentile value
 - Work End Date 90th percentile value
+
+_Formatting_
+
+- Truncate dates to the nearest day
+- Format dates as YYYY-MM-DD
 
 
 ### Prepared Hourly Electricity Data Summary File
