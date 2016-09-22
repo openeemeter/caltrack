@@ -12,7 +12,7 @@ This repository is meant as a place for Beta Testers to share data, code, and ou
 
 ``/data-prep`` contains a README that outlines CalTRACK data cleaning and integration proceedures. It is also the repository for sharing data preparation code and summary statistics on the prepared among Beta Testers for comparison.
 
-``/analysis`` contains a README that outlines CalTRACK data analysis proceedures. It is also the repository for sharing data analysis code and testing outputs among Beta Testers for comparison.
+``/analysis`` contains a README that outlines CalTRACK general data analysis proceedures. It also contains three subdirectories: `/monthly`, `/daily`, `/hourly`. These directories contain READMEs with detailed technical guidance for month, daily, and hourly savings analysis under CalTrack. Each of these directories will be used by Beta Testers to share data analysis code and testing outputs for the respective type of analysis performed.
 
 ``/aggregation`` contains a README that outlines CalTRACK aggregation proceedures. It is also the repository for sharing data aggregation code and outputs among from Beta Testers for comparison.
  
