@@ -22,9 +22,9 @@ Communication for the project will happen primarily on Slack. Any relevant chang
 
 Contributors:
 
-1. [Impact Labs](www.impactlabs.com)
-2. [EnergySavvy](www.energysavvy.com)
-3. [DNV GL](www.dnvgl.com)
+1. [Impact Labs](http://www.impactlabs.com)
+2. [EnergySavvy](http://www.energysavvy.com)
+3. [DNV GL](http://www.dnvgl.com)
 
 
 
