@@ -1,5 +1,5 @@
 
-Date Cleaning Steps
+Data Cleaning Steps
 ===
 
 Projects
