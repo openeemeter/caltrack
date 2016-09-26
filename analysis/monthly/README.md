@@ -4,7 +4,7 @@
 
 ### Methodological Overview
 
-Site-level Gross Savings using Monthly Billing Data (both electricity and gas) will use a two-stage estimation approach that closely follows the generaly UMP and the California Evaluation Project, while providing more specific guidance to ensure replicability.
+Site-level Gross Savings using Monthly Billing Data (both electricity and gas) will use a two-stage estimation approach that closely follows the technical ajpendix of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, while providing more specific guidance to ensure replicability.
 
 The two-stage approach fits two separate parametric models to daily energy use data in both the pre-intervention (baseline) period and the post-intervention (reporting) period using the following first stage equation:
 
@@ -21,32 +21,35 @@ In order to ensure replicability of results, the following steps to two-stage mo
 1. Normalizing monthly readings to Use Per Day (UPD)
 2. Selecting balance point temperature search for calculating Heating Degree Days (*HDD*) and Cooling Degree Days (*CDD*) for each month.
 3. Selecting parameters for inclusion in final site level savings estimation (model selection)
-4. 
+
 
 #### Normalizing Monthly Usage Data to Use Per Day
 
-`monthly_usage_quantity / (bill-end-date - bill_start_date)`
+`monthly_usage_quantity / (calendar_month_end_date - calendar_month_start_date)`
 
 #### Selecting balance point tempuratures for HDD and CDD
 
-Balance point tempuratures will be selected by doing a search over signel paramter HDD and CDD models separately (in sequence) using the following search criteria:
+Balance point tempuratures will be selected by doing a search over the two parameter HDD and CDD model separately using the following grid search criteria:
 
-Search range: `60 degrees F to 80 degrees F`
+Search range for HDD base: `55 degrees F to 70 degrees F`
+Search range for CDD base: `65 degrees F to 75 degrees F`
+
+Grid search step size: `5 degrees`
+
 Objective function: `min -R^2`
 
-If `R^2 < .05` after search, the HDD balance point tempurature should default to **65 F** and CDD balance point tempurature should default to **68 F**.
+If `R^2 < .05` after search, the base tempurature should default to **60 F** for heating and **70 F** for cooling.
 
 
 #### Model selection
 
 For each site, the choice must be made between using one of of the single parameter models (Just `HDD` or `CDD`) or combined `HDD` and `CDD` models. This choice is called *model selection*. For CalTrack, model selection will be done by sequential model fit in the following way:
 
-1. Retain parameter estimates and standard errors for both HDD and CDD models from optimal balance point tempurature search.
-2. Fit combined `HDD` + `CDD` model.
-3. If parameter estimates for combined model all meet minimum stignificance criteria (`p > 0.05`) then the combined model is used. 
-4. If one or more of the parameters do not meet the significance criteria, perform an F-test between the combined and the HDD model to ensure multicolinearity isn't causing individual insignificance by joint significance. 
-5. If it fails the F-test, then default to the single parameter model that meets the significance test. 
-6. If neither the HDD nor the CDD parameters meet the significance test, but the intercept does, use only the intercept (weather independent usage mean for the time period) as the site-level model. 
+1. Fit combined `HDD` + `CDD` model.
+2. If parameter estimates for combined model all meet minimum stignificance criteria (`p < 0.1` for both parameters) then the combined model is used. 
+3. If one or more of the parameters do not meet the significance criteria, perform an F-test between the combined and the HDD model to ensure multicolinearity isn't causing individual insignificance by joint significance. 
+4. If it fails the F-test, then default to the single parameter model where the parameter estimate meets the significance test. 
+5. If neither the HDD nor the CDD parameters meet the significance test, but the intercept does, use only the intercept (weather independent usage mean for the time period) as the site-level model. 
 
 ### Second Stage Estimated Quantities
 During the second stage, three savings quantities will be estimated for each site.
@@ -91,18 +94,18 @@ To ensure that the CalTrack analysis specification can produce consistent result
 - 70th percentile value cumulative gross savings
 - 80th percentile value cumulative gross savings
 - 90th percentile value cumulative gross savings
-- Min normal year annualized
-- Max normal year annualized
-- Average normal year annualized
-- 10th percentile value normal year annualized
-- 20th percentile value normal year annualized
-- 30th percentile value normal year annualized
-- 40th percentile value normal year annualized
-- 50th percentile value normal year annualized
-- 60th percentile value normal year annualized
-- 70th percentile value normal year annualized
-- 80th percentile value normal year annualized
-- 90th percentile value normal year annualized
+- Min normal year annualized savings
+- Max normal year annualized savings
+- Average normal year annualized savings
+- 10th percentile value normal year annualized savings 
+- 20th percentile value normal year annualized savings
+- 30th percentile value normal year annualized savings
+- 40th percentile value normal year annualized savings
+- 50th percentile value normal year annualized savings
+- 60th percentile value normal year annualized savings
+- 70th percentile value normal year annualized savings
+- 80th percentile value normal year annualized savings
+- 90th percentile value normal year annualized savings
 - Min current year annualized gross savings
 - Max current year annualized gross savings
 - Average current year annualized gross savings
