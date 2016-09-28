@@ -4,7 +4,7 @@
 
 ### Methodological Overview
 
-Site-level Gross Savings using Monthly Billing Data (both electricity and gas) will use a two-stage estimation approach that closely follows the technical ajpendix of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, while providing more specific guidance to ensure replicability.
+Site-level Gross Savings using Monthly Billing Data (both electricity and gas) will use a two-stage estimation approach that closely follows the technical appendix of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, while providing more specific guidance to ensure replicability.
 
 The two-stage approach fits two separate parametric models to daily energy use data in both the pre-intervention (baseline) period and the post-intervention (reporting) period using the following first stage equation:
 
@@ -12,11 +12,11 @@ The two-stage approach fits two separate parametric models to daily energy use d
 
 ![equation](http://latex.codecogs.com/gif.latex?E_%7Bim%7D%20%3D%20%5Cmu_i%20&plus;%5Cbeta_H*H_%7Bim%7D%28%5Ctau_H%29&plus;%5Cbeta_C*C_%7Bim%7D%28%5Ctau_C%29&plus;%5Cepsilon_%7Bim%7D)
 
-In the second stage, using parameter estimates from the first stage, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temurature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated use.  
+In the second stage, using parameter estimates from the first stage, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated use.  
 
 
 ### Technical guidelines for implementing two-stage estimation 
-In order to ensure replicability of results, the following steps to two-stage modeling need cleaer and consistent rules:
+In order to ensure replicability of results, the following steps to two-stage modeling need clear and consistent rules:
 
 1. Normalizing monthly readings to Use Per Day (UPD)
 2. Selecting balance point temperature search for calculating Heating Degree Days (*HDD*) and Cooling Degree Days (*CDD*) for each month.
@@ -29,7 +29,7 @@ In order to ensure replicability of results, the following steps to two-stage mo
 
 #### Selecting balance point tempuratures for HDD and CDD
 
-Balance point tempuratures will be selected by doing a search over the two parameter HDD and CDD model separately using the following grid search criteria:
+Balance point temperatures will be selected by doing a search over the two parameter HDD and CDD model separately using the following grid search criteria:
 
 Search range for HDD base: `55 degrees F to 70 degrees F`
 Search range for CDD base: `65 degrees F to 75 degrees F`
@@ -38,7 +38,7 @@ Grid search step size: `5 degrees`
 
 Objective function: `min -R^2`
 
-If `R^2 < .05` after search, the base tempurature should default to **60 F** for heating and **70 F** for cooling.
+If `R^2 < .05` after search, the base temperature should default to **60 F** for heating and **70 F** for cooling.
 
 
 #### Model selection
