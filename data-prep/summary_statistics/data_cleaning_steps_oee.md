@@ -18,3 +18,14 @@ Projects
 - Merge projects with identical SPIDs
     - Use the earliest start date and latest end date
 - Compute the rest of the project summary stats
+
+Hourly Electricity Consumption
+---
+
+- Build list of net metered SAIDs
+    - Any row with `DIR == 'R'`
+    - Crossref column `net_mtr_ind == 'Y'`
+
+- Filter any rows with SPID that isn't in the cleaned project table
+
+- Remove duplicate rows (identical SPID, DATE, and usage data)
