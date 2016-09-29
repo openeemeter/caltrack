@@ -5,7 +5,7 @@
 ### Methodological Overview
 
 
-Site-level Gross Savings using daily use data (both electricity and gas) will initially replicate exactly the two-stage HDD+CDD use per day model used with monthly billing data, but. 
+Site-level Gross Savings using daily use data (both electricity and gas) will initially replicate exactly the two-stage HDD+CDD use per day model used with monthly billing data, but using actual use per day. 
 
 #### Two-stage UPD Replication
 
