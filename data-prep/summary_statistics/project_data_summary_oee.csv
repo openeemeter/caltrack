@@ -1,29 +1,29 @@
 Summary Stat,Value
 Total number of records,4358
-Number of unique project electric SAIDs,3460
-Top 10 zip codes by count,"95687,95688,93711,94533,93635,95616,94530,94611,95209,94534"
-Bottom 10 zip codes by count,"93245,93292,93301,93420,93436,93444,93453,93610,93618,93625"
-Min Work Start Date,2012-08-20
+Number of unique project electric SAIDs,2935
+Top 10 zip codes by count,"95687,95688,93635,94533,93711,94530,95616,95691,94611,94534"
+Bottom 10 zip codes by count,"93245,93268,93292,93301,93314,93436,93444,93453,93458,93610"
+Min Work Start Date,2012-09-11
 Max Work Start Date,2016-06-08
-Average Work Start Date,2015-01-23
-Work Start Date 10th percentile value,2014-01-20
-Work Start Date 20th percentile value,2014-04-11
-Work Start Date 30th percentile value,2014-07-06
-Work Start Date 40th percentile value,2014-10-15
-Work Start Date 50th percentile value,2015-01-26
-Work Start Date 60th percentile value,2015-05-04
-Work Start Date 70th percentile value,2015-08-12
+Average Work Start Date,2015-01-21
+Work Start Date 10th percentile value,2014-01-17
+Work Start Date 20th percentile value,2014-04-09
+Work Start Date 30th percentile value,2014-06-30
+Work Start Date 40th percentile value,2014-10-07
+Work Start Date 50th percentile value,2015-01-22
+Work Start Date 60th percentile value,2015-04-30
+Work Start Date 70th percentile value,2015-08-06
 Work Start Date 80th percentile value,2015-11-16
 Work Start Date 90th percentile value,2016-01-29
 Min Work Finish Date,2012-12-03
 Max Work Finish Date,2016-06-13
-Average Work Finish Date,2015-03-07
-Work Finish Date 10th percentile value,2014-03-06
-Work Finish Date 20th percentile value,2014-06-04
-Work Finish Date 30th percentile value,2014-08-29
-Work Finish Date 40th percentile value,2014-11-19
-Work Finish Date 50th percentile value,2015-03-03
-Work Finish Date 60th percentile value,2015-06-16
-Work Finish Date 70th percentile value,2015-09-28
-Work Finish Date 80th percentile value,2015-12-16
-Work Finish Date 90th percentile value,2016-03-07
+Average Work Finish Date,2015-03-04
+Work Finish Date 10th percentile value,2014-03-05
+Work Finish Date 20th percentile value,2014-06-02
+Work Finish Date 30th percentile value,2014-08-22
+Work Finish Date 40th percentile value,2014-11-12
+Work Finish Date 50th percentile value,2015-02-25
+Work Finish Date 60th percentile value,2015-06-09
+Work Finish Date 70th percentile value,2015-09-23
+Work Finish Date 80th percentile value,2015-12-17
+Work Finish Date 90th percentile value,2016-03-08
