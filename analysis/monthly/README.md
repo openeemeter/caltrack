@@ -34,7 +34,7 @@ In order to ensure replicability of results, the following steps to two-stage mo
 
 Balance point temperatures will be selected by doing a search over the two parameter HDD and CDD model separately using the following grid search criteria:
 
-Search range for HDD base: `55 degrees F to 70 degrees F`
+Search range for HDD base: `55 degrees F to 65 degrees F`
 Search range for CDD base: `65 degrees F to 75 degrees F`
 
 Grid search step size: `5 degrees`
@@ -50,9 +50,9 @@ For each site, the choice must be made between using one of of the single parame
 
 1. Fit combined `HDD` + `CDD` model.
 2. If parameter estimates for combined model all meet minimum stignificance criteria (`p < 0.1` for both parameters) then the combined model is used. 
-3. If one or more of the parameters do not meet the significance criteria, perform an F-test between the combined and the HDD model to ensure multicolinearity isn't causing individual insignificance by joint significance. 
-4. If it fails the F-test, then default to the single parameter model where the parameter estimate meets the significance test. 
-5. If neither the HDD nor the CDD parameters meet the significance test, but the intercept does, use only the intercept (weather independent usage mean for the time period) as the site-level model. 
+3. If either the heating coefficient in the HO model or the cooling coefficient in the CO model has a p-value of less than 10%, retain the term (heating or cooling) with the lower p-value.
+4. If neither the heating nor the cooling coefficient has a p-value of less than 10% in the respective model, drop both terms and use mean consumption.
+5. If neither the HDD nor the CDD parameters meet the significance test, but the intercept does, use only the intercept (weather independent use per day mean for the time period) as the site-level model. 
 
 ### Second Stage Estimated Quantities
 During the second stage, three savings quantities will be estimated for each site.
@@ -121,3 +121,36 @@ To ensure that the CalTrack analysis specification can produce consistent result
 - 70th percentile value current year annualized gross savings
 - 80th percentile value current year annualized gross savings
 - 90th percentile value current year annualized gross savings
+- Min heating balance point temp
+- Max heating balance point temp
+- Average heating balance point temp
+- 10th percentile value heating balance point temp
+- 20th percentile value heating balance point temp
+- 30th percentile value heating balance point temp
+- 40th percentile value heating balance point temp
+- 50th percentile value heating balance point temp
+- 60th percentile value heating balance point temp
+- 70th percentile value heating balance point temp
+- 80th percentile value heating balance point temp
+- 90th percentile value heating balance point temp
+- Min cooling balance point temp
+- Max cooling balance point temp
+- Average cooling balance point temp
+- 10th percentile value cooling balance point temp
+- 20th percentile value cooling balance point temp
+- 30th percentile value cooling balance point temp
+- 40th percentile value cooling balance point temp
+- 50th percentile value cooling balance point temp
+- 60th percentile value cooling balance point temp
+- 70th percentile value cooling balance point temp
+- 80th percentile value cooling balance point temp
+- 90th percentile value cooling balance point temp
+- Count of Heating + Cooling models
+- Count of Heating only models
+- Count of Cooling only models
+- Mean Heating coefficient value across all models
+- Min Heating coefficient value across all models
+- Max Heating coefficient value across all models
+- Mean Cooling coefficient value across all models
+- Min Cooling coefficient value across all models
+- Max Cooling coefficient value across all models
