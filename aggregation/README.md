@@ -51,6 +51,8 @@ The 1−α prediction interval will be wider:
 
 Using `V̂`, CalTrack will calculate the inverse-variance weighted mean for each portfolio according to the following equation:
 
+![Equation for inverse variance weighting](https://www.dropbox.com/s/353ssd5u7725a7c/Screenshot%202016-10-20%2010.49.07.png?dl=0)
+
 #### Estimating uncertainty on daily savings estimates
 
 While sampling methods would actually be preferable for characterizing the posterior distribution of savings estimates using higher-frequency AMI data, due to lack of adoption of Bayesian methods in industry and increased computational complexity, we propose CalTrack use closed-form methods with a few caveats.
@@ -63,11 +65,11 @@ M & V standards for industrial savings estimation, which has been dealing with A
 
 CalTrack will compute the Fractional Savings Uncertainty at the site level based on the following equation:
 
-
+![Equation](https://www.dropbox.com/s/lca8colvkqgrtyd/Screenshot%202016-10-20%2010.28.22.png?dl=0)
 
 ##### Calculating 95% confidence intervals using frational savings uncertainty
   
 To calculate confidence intervals using the following equation:
 
-CI(95) = +/- (FSU * 1.96) * 100
+`CI(95) = +/- (FSU * 1.96) * 100`
 
