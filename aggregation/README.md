@@ -14,7 +14,7 @@ Take the stage one regression model with N observations and k regressors:
 
 `y=Xβ+u`
 
-Given a vector x0 of reporting period, the predicted value for that observation would be
+Given a vector `x_0` of reporting period, the predicted value for that observation would be
 
 `E[y|x_0] = ŷ_0 = x_0*β.`
 
@@ -26,11 +26,11 @@ where
 
 `s^2=Σû_i^2/(N−k).`
 
-The forecast error for a particular y0y0 is
+The forecast error for a particular `y_0` is
 
 `ê =y_0 − ŷ_0= x_0*β + u_0 − ŷ_0.`
 
-The zero covariance between u_0 and β̂ implies that
+The zero covariance between `u_0` and `β̂` implies that
 
 `Var[ê]=Var[ŷ_0]+Var[u_0],`
 

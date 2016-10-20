@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="880ae2e5-12bd-40be-8f01-963513a04a5d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aggregation/README.md" afterPath="$PROJECT_DIR$/aggregation/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analysis/monthly/README.md" afterPath="$PROJECT_DIR$/analysis/monthly/README.md" />
     </list>
     <ignored path="caltrack-betatest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,8 +78,8 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="105">
-                <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <first_editor relative-caret-position="-60">
+                <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -625,8 +623,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="105">
-            <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <first_editor relative-caret-position="-60">
+            <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
             <folding />
           </first_editor>
           <second_editor />
