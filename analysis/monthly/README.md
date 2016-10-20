@@ -10,7 +10,7 @@ The two-stage approach fits two separate parametric models to daily energy use d
 
 ### First Stage Equation
 
-![equation](http://latex.codecogs.com/gif.latex?E_%7Bim%7D%20%3D%20%5Cmu_i%20&plus;%5Cbeta_H*H_%7Bim%7D%28%5Ctau_H%29&plus;%5Cbeta_C*C_%7Bim%7D%28%5Ctau_C%29&plus;%5Cepsilon_%7Bim%7D)
+![First stage equation](https://www.dropbox.com/s/77czx843sraagko/Screenshot%202016-10-20%2011.10.02.png?dl=0)
 
 In the second stage, using parameter estimates from the first stage, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated use.  
 

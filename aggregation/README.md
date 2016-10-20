@@ -2,7 +2,7 @@
 
 The goal of CalTrack is to develop replicable, consistent, and methodologically defensible estimators of savings over portfolios of homes. 
 
-For CalTrack, porfolio-level savings will use inverse variance weighted means. This requires an estimate of variance. 
+For CalTrack, portfolio-level savings will use inverse variance weighted means. This requires an estimate of variance. 
      
 ## Monthly Savings Estimate Aggregation Procedure
 
@@ -16,35 +16,35 @@ Take the stage one regression model with N observations and k regressors:
 
 Given a vector x0 of reporting period, the predicted value for that observation would be
 
-`E[y|x0]=ŷ 0=x0β.`
+`E[y|x_0] = ŷ_0 = x_0*β.`
 
 A consistent estimator of the variance of this prediction is
 
-`V̂ p=s2⋅x0⋅(X′X)−1x′0,`
+`V̂_p=s^22⋅x_0⋅(X′X)^−1⋅x_0′,`
 
 where
 
-`s2=ΣNi=1û 2iN−k.`
+`s^2=Σû_i^2/(N−k).`
 
 The forecast error for a particular y0y0 is
 
-`ê =y0 − ŷ0= x0β + u0 − ŷ0.`
+`ê =y_0 − ŷ_0= x_0*β + u_0 − ŷ_0.`
 
-The zero covariance between u0u0 and β̂ β^ implies that
+The zero covariance between u_0 and β̂ implies that
 
-`Var[ê]=Var[ŷ 0]+Var[u0],`
+`Var[ê]=Var[ŷ_0]+Var[u_0],`
 
 and a consistent estimator of that is
 
-`V̂ f=s2⋅x0⋅(X′X)−1x′0+s2.`
+`V̂_f=s^2⋅x_0⋅(X′X)^−1⋅x_0′+s^2.`
 
 The `1−α` confidence interval will be:
 
-`y0±t1−α/2⋅V̂ p‾‾‾√.`
+`y_0 ± t_(1−α/2)⋅(V̂_p)^.5.`
 
 The 1−α prediction interval will be wider:
 
-`y0±t1−α/2⋅V̂ f‾‾‾√.`
+`y_0 ± t_(1−α/2)⋅(V̂_f)^.5.`
 
 
 ## Inverse-variance Weighted Portfolio Savings Means for Monthly Savings Analysis
