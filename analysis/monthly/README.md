@@ -65,14 +65,27 @@ These site-level second stage quantities are calculated as follows:
     
     1. Compute `predicted_baseline_use` for each complete calendar month after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point tempuratures from the baseline model when calculating reporting period HDD and CDD values.
     2. Compute `monthly_gross_savings` = `predicted_baseline_monthly_use - actual_monthly_use` for every complete calendar months after `work_end_date` for project
-    2. Sum  `monthly_gross_savings` over every complete calendar month since `work_end_date`. 
+    3. Sum  `monthly_gross_savings` over every complete calendar month since `work_end_date`. 
 
 ##### Normal year annualized gross savings (site-level)
     
     1. Compute `predicted_baseline_monthly_use` using the Stage One model from the baseline period and degree days from the CZ2010 normal weather year. Be sure to use balance point tempuratures from the baseline model when calculating baseline period HDD and CDD values.
-    1. Compute `predicted_reporting_monthly_use` using the Stage One model from the reporting period and degree days from the CZ2010 normal weather year file. Be sure to use balance point tempuratures from the reporting period model when calculating reporting period HDD and CDD values.
-    2. Compute `monthly_normal_year_gross_savings` = `predicted_baseline_monthly_use - predicted_reporting_monthly_use` for normal year months
-    2. Sum  `monthly_normal_year_gross_savings` over entire normal year. 
+    2. Compute `predicted_reporting_monthly_use` using the Stage One model from the reporting period and degree days from the CZ2010 normal weather year file. Be sure to use balance point tempuratures from the reporting period model when calculating reporting period HDD and CDD values.
+    3. Compute `monthly_normal_year_gross_savings` = `predicted_baseline_monthly_use - predicted_reporting_monthly_use` for normal year months
+    4. Sum  `monthly_normal_year_gross_savings` over entire normal year. 
+
+##### Year one gross savings from 1 to 12 months after site visit.  (site-level)
+    
+    1. Compute `predicted_baseline_use` for each complete calendar month after `work_end_date` until 12 calendar months after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point tempuratures from the baseline model when calculating reporting period HDD and CDD values.
+    2. Compute `monthly_gross_savings` = `predicted_baseline_monthly_use - actual_monthly_use` for 12 complete calendar months after `work_end_date` for project
+    3. Sum  `monthly_gross_savings` over the 12 calendar months since `work_end_date`. 
+
+##### Year one gross savings from 13 to 24 months after site visit.  (site-level)
+    
+    1. Compute `predicted_baseline_use` for each complete calendar month starting 13 months after `work_end_date` until 24 calendar months after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point tempuratures from the baseline model when calculating reporting period HDD and CDD values.
+    2. Compute `monthly_gross_savings` = `predicted_baseline_monthly_use - actual_monthly_use` for month 13 to month 24 after `work_end_date` for project
+    3. Sum  `monthly_gross_savings` over the 12 calendar months from 13 months after `work_end_date` to 24 months. 
+
 
 ## Prepared Summary Statistics for Analysis Comparison
 

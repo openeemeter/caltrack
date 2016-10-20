@@ -4,7 +4,7 @@
 
 ### Methodological Overview
 
-Site-level Gross Savings using Monthly Billing Data (both electricity and gas) will use a two-stage estimation approach that closely follows the technical appendix of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, while providing more specific guidance to ensure replicability.
+Site-level Gross Savings using daily billing data (both electricity and gas) will use a two-stage estimation approach that closely follows the technical appendix of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, while providing more specific guidance to ensure replicability and address specific methodological issues related to botht he data sources and the CalTrack-specific use cases that are not addressed in prior standards.
 
 The two-stage approach fits two separate parametric models to daily energy use data in both the pre-intervention (baseline) period and the post-intervention (reporting) period using the following first stage equation:
 
@@ -17,11 +17,11 @@ In the second stage, using parameter estimates from the first stage, weather nor
 
 ### Technical guidelines for implementing two-stage estimation 
 
-Monthly usage data used in the CalTrack Beta Test monthly analysis will be done on Use Per Day (UPD) values for monthly billing analysis by summing daily use to monthly by calendar month, then divide by the number of days in that month.
+daily usage data used in the CalTrack Beta Test daily analysis will be done on Use Per Day (UPD) values for daily billing analysis by summing daily use to daily by calendar month, then divide by the number of days in that month.
 
 In order to ensure replicability of results, the following steps to two-stage modeling need clear and consistent rules:
 
-`monthly_usage_quantity / (calendar_month_end_date - calendar_month_start_date)`
+`daily_usage_quantity / (calendar_month_end_date - calendar_month_start_date)`
 
 Stage one modeling will be done sequentially as a joint optimization problem using minimum model qualification criteria to constrain the space of candidate models, then using model selection criteria for choosing the "best" among candidate models for savings estimation.
 
@@ -65,14 +65,26 @@ These site-level second stage quantities are calculated as follows:
     
     1. Compute `predicted_baseline_use` for each complete calendar month after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point tempuratures from the baseline model when calculating reporting period HDD and CDD values.
     2. Compute `monthly_gross_savings` = `predicted_baseline_monthly_use - actual_monthly_use` for every complete calendar months after `work_end_date` for project
-    2. Sum  `monthly_gross_savings` over every complete calendar month since `work_end_date`. 
+    3. Sum  `monthly_gross_savings` over every complete calendar month since `work_end_date`. 
 
 ##### Normal year annualized gross savings (site-level)
     
     1. Compute `predicted_baseline_monthly_use` using the Stage One model from the baseline period and degree days from the CZ2010 normal weather year. Be sure to use balance point tempuratures from the baseline model when calculating baseline period HDD and CDD values.
-    1. Compute `predicted_reporting_monthly_use` using the Stage One model from the baseline period and degree days from the CZ2010 normal weather year file. Be sure to use balance point tempuratures from the reporting period model when calculating reporting period HDD and CDD values.
-    2. Compute `monthly_normalized_gross_savings` = `predicted_baseline_monthly_use - predicted_reporting_monthly_use` for every complete calendar months after `work_end_date` for project
-    2. Sum  `monthly_gross_savings` over every complete calendar month since `work_end_date`. 
+    2. Compute `predicted_reporting_monthly_use` using the Stage One model from the reporting period and degree days from the CZ2010 normal weather year file. Be sure to use balance point tempuratures from the reporting period model when calculating reporting period HDD and CDD values.
+    3. Compute `monthly_normal_year_gross_savings` = `predicted_baseline_monthly_use - predicted_reporting_monthly_use` for normal year months
+    4. Sum  `monthly_normal_year_gross_savings` over entire normal year. 
+
+##### Year one gross savings from 1 to 12 months after site visit.  (site-level)
+    
+    1. Compute `predicted_baseline_use` for each complete calendar month after `work_end_date` until 12 calendar months after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point tempuratures from the baseline model when calculating reporting period HDD and CDD values.
+    2. Compute `monthly_gross_savings` = `predicted_baseline_monthly_use - actual_monthly_use` for 12 complete calendar months after `work_end_date` for project
+    3. Sum  `monthly_gross_savings` over the 12 calendar months since `work_end_date`. 
+
+##### Year one gross savings from 13 to 24 months after site visit.  (site-level)
+    
+    1. Compute `predicted_baseline_use` for each complete calendar month starting 13 months after `work_end_date` until 24 calendar months after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point tempuratures from the baseline model when calculating reporting period HDD and CDD values.
+    2. Compute `monthly_gross_savings` = `predicted_baseline_monthly_use - actual_monthly_use` for month 13 to month 24 after `work_end_date` for project
+    3. Sum  `monthly_gross_savings` over the 12 calendar months from 13 months after `work_end_date` to 24 months. 
 
 ## Prepared Summary Statistics for Analysis Comparison
 
@@ -91,7 +103,7 @@ There will be one savings summary file generated by each Beta Tester. Each file 
 
 ### Combined Project Data Summary File
 
-**Output Filename: `monthly_billing_analysis_savings_summary_NAME_OF_TESTER.csv`**
+**Output Filename: `daily_billing_analysis_savings_summary_NAME_OF_TESTER.csv`**
 
 
 #### Included Summary statistics
