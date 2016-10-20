@@ -16,7 +16,7 @@ Take the stage one regression model with N observations and k regressors:
 
 Given a vector `x_0` of reporting period, the predicted value for that observation would be
 
-`E[y|x_0] = ŷ_0 = x_0*β.`
+`E[y|x_0] = ŷ_0 = x_0⋅β.`
 
 A consistent estimator of the variance of this prediction is
 
@@ -51,7 +51,7 @@ The 1−α prediction interval will be wider:
 
 Using `V̂`, CalTrack will calculate the inverse-variance weighted mean for each portfolio according to the following equation:
 
-![Equation for inverse variance weighting](https://www.dropbox.com/s/353ssd5u7725a7c/Screenshot%202016-10-20%2010.49.07.png?dl=0)
+![Equation for inverse variance weighting](https://www.dropbox.com/s/353ssd5u7725a7c/Screenshot%202016-10-20%2010.49.07.png??raw=true)
 
 #### Estimating uncertainty on daily savings estimates
 
@@ -65,7 +65,7 @@ M & V standards for industrial savings estimation, which has been dealing with A
 
 CalTrack will compute the Fractional Savings Uncertainty at the site level based on the following equation:
 
-![Equation](https://www.dropbox.com/s/lca8colvkqgrtyd/Screenshot%202016-10-20%2010.28.22.png?dl=0)
+![Equation](https://www.dropbox.com/s/lca8colvkqgrtyd/Screenshot%202016-10-20%2010.28.22.png??raw=true)
 
 ##### Calculating 95% confidence intervals using frational savings uncertainty
   
