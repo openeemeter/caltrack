@@ -1,71 +1,63 @@
-NOTE: THIS FILE DOES NOT CONTAIN STATISTICS TO COMPARE WITH OTHER BETA TEST PARTICIPANTS
-This summary file is generated to show statistics for a simple approach to estimating bias in our savings estimates.
-To determine the bias we changed work start and end dates from the projects list to be one year earlier than they 
-actually occured - then re-ran the same savings estimation pipeline that is outlined in the analysis README.  Therefore
-pretreatment and posttreatment models were trained on usage data that was always in the [actual] pretreatment time
-period.  Cumulative gross savings stats and year two annualized savings stats below should be disregarded (because
-usage data for those periods includes actual post-treatment usage).
-
 Summary Stat,Value
-Total number of sites included in first-stage estimation,2555
-Total number of sites with cumulative gross savings estimates,2555
-Total number of sites with normal year annualized gross savings,2555
-Total number of sites with year one annualized gross savings,2555
-Total number of sites with year two annualized gross savings,2527
-Min cumulative gross savings,-41880.7379238
-Max cumulative gross savings,112196.707056
-Average cumulative gross savings,1392.94434761
-10th percentile value cumulative gross savings,-5272.78014775
-20th percentile value cumulative gross savings,-2504.10265759
-30th percentile value cumulative gross savings,-1069.6735975
-40th percentile value cumulative gross savings,75.8101420237
-50th percentile value cumulative gross savings,944.43539606
-60th percentile value cumulative gross savings,1990.98956722
-70th percentile value cumulative gross savings,3189.66190952
-80th percentile value cumulative gross savings,5203.22555196
-90th percentile value cumulative gross savings,8569.0523147
-Min normal year annualized savings,-22614.7630767
-Max normal year annualized savings,30500.8844668
-Average normal year annualized savings,93.0389931605
-10th percentile value normal year annualized savings,-1497.70288596
-20th percentile value normal year annualized savings,-763.424574901
-30th percentile value normal year annualized savings,-412.769945386
-40th percentile value normal year annualized savings,-188.657065748
-50th percentile value normal year annualized savings,25.2728453902
-60th percentile value normal year annualized savings,249.093013066
-70th percentile value normal year annualized savings,493.679687659
-80th percentile value normal year annualized savings,876.7755078
-90th percentile value normal year annualized savings,1753.62524602
-Min year one annualized savings,-22599.284115
-Max year one annualized savings,29965.2955569
-Average year one annualized savings,133.631188213
-10th percentile value year one annualized savings,-1422.54252321
-20th percentile value year one annualized savings,-732.738357355
-30th percentile value year one annualized savings,-384.951109014
-40th percentile value year one annualized savings,-132.431590612
-50th percentile value year one annualized savings,61.48903504
-60th percentile value year one annualized savings,264.797148028
-70th percentile value year one annualized savings,489.209663245
-80th percentile value year one annualized savings,895.616163505
-90th percentile value year one annualized savings,1767.49580548
-Min year two annualized savings,-19692.4398
-Max year two annualized savings,32886.961748
-Average year two annualized savings,386.887980477
-10th percentile value year two annualized savings,-1900.01823911
-20th percentile value year two annualized savings,-880.602690792
-30th percentile value year two annualized savings,-413.518159749
-40th percentile value year two annualized savings,-74.7177070402
-50th percentile value year two annualized savings,222.638641574
-60th percentile value year two annualized savings,567.416901511
-70th percentile value year two annualized savings,999.257208926
-80th percentile value year two annualized savings,1625.45644271
-90th percentile value year two annualized savings,2723.57743915
+Total number of sites included in first-stage estimation,2407
+Total number of sites with cumulative gross savings estimates,2407
+Total number of sites with normal year annualized gross savings,2407
+Total number of sites with year one annualized gross savings,2407
+Total number of sites with year two annualized gross savings,1579
+Min cumulative gross savings,-36202.8554934
+Max cumulative gross savings,60283.1912284
+Average cumulative gross savings,901.549861395
+10th percentile value cumulative gross savings,-3846.68207827
+20th percentile value cumulative gross savings,-1667.06521474
+30th percentile value cumulative gross savings,-621.253560452
+40th percentile value cumulative gross savings,24.012866911
+50th percentile value cumulative gross savings,615.756452055
+60th percentile value cumulative gross savings,1264.99031473
+70th percentile value cumulative gross savings,2164.81541009
+80th percentile value cumulative gross savings,3211.71309649
+90th percentile value cumulative gross savings,5997.94022377
+Min normal year annualized savings,-22878.847221
+Max normal year annualized savings,20384.7746178
+Average normal year annualized savings,118.215136823
+10th percentile value normal year annualized savings,-1727.41224431
+20th percentile value normal year annualized savings,-823.853068434
+30th percentile value normal year annualized savings,-420.102132516
+40th percentile value normal year annualized savings,-148.48386194
+50th percentile value normal year annualized savings,79.4487362958
+60th percentile value normal year annualized savings,300.594598599
+70th percentile value normal year annualized savings,596.845188359
+80th percentile value normal year annualized savings,1076.11654466
+90th percentile value normal year annualized savings,1945.9030804
+Min year one annualized savings,-16360.1185837
+Max year one annualized savings,20370.822
+Average year one annualized savings,190.937710027
+10th percentile value year one annualized savings,-1524.02546925
+20th percentile value year one annualized savings,-707.703292719
+30th percentile value year one annualized savings,-356.162439758
+40th percentile value year one annualized savings,-101.973627718
+50th percentile value year one annualized savings,98.0850652022
+60th percentile value year one annualized savings,317.250093347
+70th percentile value year one annualized savings,613.102920896
+80th percentile value year one annualized savings,1092.10314407
+90th percentile value year one annualized savings,1926.16785447
+Min year two annualized savings,-11012.1126395
+Max year two annualized savings,24052.6191795
+Average year two annualized savings,555.065342458
+10th percentile value year two annualized savings,-1882.55623893
+20th percentile value year two annualized savings,-904.64717737
+30th percentile value year two annualized savings,-269.52381333
+40th percentile value year two annualized savings,94.3920406988
+50th percentile value year two annualized savings,459.147070317
+60th percentile value year two annualized savings,822.43622
+70th percentile value year two annualized savings,1249.3765896
+80th percentile value year two annualized savings,1935.33047458
+90th percentile value year two annualized savings,3024.52910294
 Min heating balance point temp baseline period,55.0
 Max heating balance point temp baseline period,65.0
-Average heating balance point temp baseline period,60.0262984878
+Average heating balance point temp baseline period,60.9682749504
 10th percentile value heating balance point temp baseline period,55.0
 20th percentile value heating balance point temp baseline period,55.0
-30th percentile value heating balance point temp baseline period,55.0
+30th percentile value heating balance point temp baseline period,60.0
 40th percentile value heating balance point temp baseline period,60.0
 50th percentile value heating balance point temp baseline period,60.0
 60th percentile value heating balance point temp baseline period,65.0
@@ -74,7 +66,7 @@ Average heating balance point temp baseline period,60.0262984878
 90th percentile value heating balance point temp baseline period,65.0
 Min cooling balance point temp baseline period,65.0
 Max cooling balance point temp baseline period,75.0
-Average cooling balance point temp baseline period,68.6616362192
+Average cooling balance point temp baseline period,68.9697908598
 10th percentile value cooling balance point temp baseline period,65.0
 20th percentile value cooling balance point temp baseline period,65.0
 30th percentile value cooling balance point temp baseline period,65.0
@@ -84,21 +76,21 @@ Average cooling balance point temp baseline period,68.6616362192
 70th percentile value cooling balance point temp baseline period,70.0
 80th percentile value cooling balance point temp baseline period,75.0
 90th percentile value cooling balance point temp baseline period,75.0
-Count of heating + cooling models baseline period,706
-Count of heating only models baseline period,815
-Count of cooling only models baseline period,553
-Count of intercept-only models baseline period,481
-Mean heating coefficient value across all baseline period models,0.785194003266
-Min heating coefficient value across all baseline period models,0.0397421999682
-Max heating coefficient value across all baseline period models,7.7252568892
-Mean cooling coefficient value across all baseline period models,3.98600848536
-Min cooling coefficient value across all baseline period models,0.0428711829685
-Max cooling coefficient value across all baseline period models,279.35255347
-Count of sites where number of model parameters changes between baseline and reporting,1181
-Count of sites where type of model changes between baseline and reporting,1223
+Count of heating + cooling models baseline period,800
+Count of heating only models baseline period,713
+Count of cooling only models baseline period,491
+Count of intercept-only models baseline period,403
+Mean heating coefficient value across all baseline period models,0.75258508305
+Min heating coefficient value across all baseline period models,0.0386666426444
+Max heating coefficient value across all baseline period models,10.5760673904
+Mean cooling coefficient value across all baseline period models,5.50044883362
+Min cooling coefficient value across all baseline period models,0.000277746142529
+Max cooling coefficient value across all baseline period models,692.277328835
+Count of sites where number of model parameters changes between baseline and reporting,1097
+Count of sites where type of model changes between baseline and reporting,1148
 Min cooling balance point temp reporting period,65.0
 Max cooling balance point temp reporting period,75.0
-Average cooling balance point temp reporting period,68.8881446752
+Average cooling balance point temp reporting period,68.9964028777
 Min heating balance point temp reporting period,55.0
 Max heating balance point temp reporting period,65.0
-Average heating balance point temp reporting period,60.4640718563
+Average heating balance point temp reporting period,60.7304163726
