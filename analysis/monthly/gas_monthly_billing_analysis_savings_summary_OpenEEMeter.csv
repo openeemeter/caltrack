@@ -1,0 +1,64 @@
+Total number of sites included in first-stage estimation,3823
+Total number of sites with cumulative gross savings estimates,3821
+Total number of sites with normal year annualized gross savings estimates,3821
+Total number of sites with current year annualized gross savings estimates,3821
+Min cumulative gross savings,-12577.047374200001
+Max cumulative gross savings,5702.8016221400003
+Average cumulative gross savings,72.649642229600857
+10th percentile value cumulative gross savings,-110.966248756
+20th percentile value cumulative gross savings,-31.446727982399999
+30th percentile value cumulative gross savings,0.0
+40th percentile value cumulative gross savings,21.063535056599999
+50th percentile value cumulative gross savings,49.930347760600007
+60th percentile value cumulative gross savings,89.804752475100003
+70th percentile value cumulative gross savings,137.81961237299998
+80th percentile value cumulative gross savings,207.45075524799998
+90th percentile value cumulative gross savings,320.59990195
+100th percentile value cumulative gross savings,5702.8016221400003
+Min normal year annualized gross savings,-13028.481069299998
+Max normal year annualized gross savings,3354.0441981499998
+Average normal year annualized gross savings,84.312401442736331
+10th percentile value normal year annualized gross savings,-111.291235925
+20th percentile value normal year annualized gross savings,-32.201734463899996
+30th percentile value normal year annualized gross savings,11.5523937446
+40th percentile value normal year annualized gross savings,44.990830686700001
+50th percentile value normal year annualized gross savings,80.911283861400008
+60th percentile value normal year annualized gross savings,115.10838606600001
+70th percentile value normal year annualized gross savings,158.27258471499999
+80th percentile value normal year annualized gross savings,220.03405538599998
+90th percentile value normal year annualized gross savings,323.739540062
+100th percentile value normal year annualized gross savings,3354.0441981499998
+Min current year annualized gross savings,-7963.62726939
+Max current year annualized gross savings,3454.06562033
+Average current year annualized gross savings,71.531339372455221
+10th percentile value current year annualized gross savings,-100.268859439
+20th percentile value current year annualized gross savings,-31.809439057199999
+30th percentile value current year annualized gross savings,7.8859144516099997
+40th percentile value current year annualized gross savings,36.921753233099999
+50th percentile value current year annualized gross savings,66.034828404099997
+60th percentile value current year annualized gross savings,97.549547237099986
+70th percentile value current year annualized gross savings,133.59315795800001
+80th percentile value current year annualized gross savings,187.12559220700001
+90th percentile value current year annualized gross savings,275.96965149599998
+100th percentile value current year annualized gross savings,3454.06562033
+Min heating balance point temp baseline period,55.0
+Max heating balance point temp baseline period,65.0
+Average heating balance point temp baseline period,61.079271558650241
+10th percentile value heating balance point temp baseline period,55.0
+20th percentile value heating balance point temp baseline period,60.0
+30th percentile value heating balance point temp baseline period,60.0
+40th percentile value heating balance point temp baseline period,60.0
+50th percentile value heating balance point temp baseline period,60.0
+60th percentile value heating balance point temp baseline period,60.0
+70th percentile value heating balance point temp baseline period,65.0
+80th percentile value heating balance point temp baseline period,65.0
+90th percentile value heating balance point temp baseline period,65.0
+100th percentile value heating balance point temp baseline period,65.0
+Count of Heating only models baseline period,3734
+Mean Heating coefficient value across all baseline period models,0.19871281849066055
+Min Heating coefficient value across all baseline period models,0.00050020350706362271
+Max Heating coefficient value across all baseline period models,1.4633921310166651
+Count of sites where model selection changes between baseline and reporting,3648
+Min heating balance point temp reporting period,55.0
+Max heating balance point temp reporting period,65.0
+Average heating balance point temp reporting period,61.835948252133221
