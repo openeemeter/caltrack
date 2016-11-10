@@ -15,7 +15,9 @@ The two-stage approach fits two separate parametric models to daily energy use d
 In the second stage, using parameter estimates from the first stage, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated use.  
 
 
-### Technical guidelines for implementing two-stage estimation 
+### General technical guidelines for implementing two-stage estimation on monthly electric and gas usage data 
+
+#### 1. Generate Use per Day values
 
 Monthly usage data used in the CalTrack Beta Test monthly analysis will be done on Use Per Day (UPD) values for monthly billing analysis by summing daily use to monthly by calendar month, then divide by the number of days in that month.
 
@@ -23,9 +25,9 @@ In order to ensure replicability of results, the following steps to two-stage mo
 
 `monthly_usage_quantity / (calendar_month_end_date - calendar_month_start_date)`
 
-Stage one modeling will be done sequentially as a joint optimization problem using minimum model qualification criteria to constrain the space of candidate models, then using model selection criteria for choosing the "best" among candidate models for savings estimation.
 
-#### Variable Degree Day Base Temperature Space
+
+#### 2. Set Variable Degree Day Base Temperature Space Size and Granlarity
 
 CalTrack will use variable degree day base temperatures. Balance point temperatures will be selected by doing a search over the two parameter HDD and CDD model separately using the following grid search criteria:
 
@@ -36,22 +38,29 @@ With the constraint `HDD Base Temp`<=`CDD Base Temp`
 Grid search step size: `5 degrees`
 
 
-#### Model Qualification
+#### 3. Fit All Allowable Models and Apply Qualification Criteria
 
-For each site, the choice must be made between using one of of the single parameter models (Just `HDD` or `CDD`) or combined `HDD` and `CDD` models. This choice is called *model selection*. For CalTrack, model selection will be done by sequential model fit in the following way:
+For each site, all allowable models the choice must be made between using one of of the single parameter models (Just `HDD` or `CDD`) or combined `HDD` and `CDD` models. This choice is called *model selection*. 
 
-1. Fit combined `HDD` + `CDD` model with the constraint `beta_HDD,beta_CDD >0`
-2. If the parameter estimates for the combined model each meet minimum significance criteria (`p < 0.1`) and are strictly positive then the combined model is used. 
-3. If only one of the degree day coefficients has `p < 0.1`, retain the significant term (heating or cooling) and refit the single-parameter model.
-4. If neither the heating nor the cooling coefficient has a p-value of less than 10% in the respective model, drop both terms and use mean daily consumption for the month (or year) as the relevant stage-one statistic.
+For CalTrack, qualifying candidate models for electricity will meet the following criteria:
+
+1. Fit intercept only, intercept + `HDD`, intercpet + `CDD`, and combined intercept +`HDD` + `CDD` models with the constraints `beta_HDD,beta_CDD >0`,intercept>0
+2. If the parameter estimates for the combined model each meet minimum significance criteria (`p < 0.1`) and are strictly positive then the model is qualifying
+
+For CalTrack, qualifying candidate models for gas will meet the following criteria:
+
+1. Fit intercept only and intercept + `HDD` models with the constraints `beta_HDD,intercept>0
+2. If the parameter estimates for the combined model each meet minimum significance criteria (`p < 0.1`) and are strictly positive then the model is qualifying
 
 
+#### 4. Select Best Model for Use in Savings Estimation for Both Pre-period and Post-period
 
-#### Model Selection
+All qualifying pre-retrofit models are compared to eachother and among qualifying models, the model with the maximum adjusted R-squared will be selected for second-stage savings estimation. 
 
-Among qualifying models, the model with the maximum adjusted R-squared will be selected for second-stage savings estimation.
+All qualifying post-retrofit models are compared to eachother and among qualifying models, the model with the maximum adjusted R-squared will be selected for second-stage savings estimation. 
 
-### Second Stage Estimated Quantities
+
+### 5. Estimate Second-stage quantities Based on First Stage Model Estimates
 During the second stage, three savings quantities will be estimated for each site that meets the minimum data sufficiency criteria for that savings statistic.
 
 1. Cumulative gross savings over entire performance period
@@ -86,10 +95,9 @@ These site-level second stage quantities are calculated as follows:
     2. Compute `monthly_gross_savings` = `predicted_baseline_monthly_use - actual_monthly_use` for month 13 to month 24 after `work_end_date` for project
     3. Sum  `monthly_gross_savings` over the 12 calendar months from 13 months after `work_end_date` to 24 months. 
 
+--------------------
 
 ## Prepared Summary Statistics for Analysis Comparison
-
-Site-level savings estimates will be run on 
 
 To ensure that the CalTrack analysis specification can produce consistent results, each beta tester will generate a set of summary statistics on each of the above site-level savings estimates that can be shared with the larger group through csvs saved to this repository. 
 There will be one savings summary file generated by each Beta Tester. Each file will be a .csv and will have the following general format:
