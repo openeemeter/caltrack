@@ -1,0 +1,96 @@
+Savvy results Electric Results,DNV GL Electric Results
+"+Total number of sites included in first-stage estimation,1574",1674
+"+Total number of sites with cumulative gross savings estimates,1574",1674
+"+Total number of sites with normal year annualized gross savings,1574",1674
+"+Total number of sites with year one annualized gross savings,1574",1674
+"+Total number of sites with year two annualized gross savings,602",727
+"+Min cumulative gross savings,-18503.3767023",-20199.10
+"+Max cumulative gross savings,49643.2757731",54591.34
+"+Average cumulative gross savings,695.393023303",627.14
+"+10th percentile value cumulative gross savings,-2594.65726558",-2788.04
+"+20th percentile value cumulative gross savings,-1182.60959741",-1300.70
+"+30th percentile value cumulative gross savings,-386.705091052",-468.22
+"+40th percentile value cumulative gross savings,131.996365221",83.18
+"+50th percentile value cumulative gross savings,561.471375224",492.95
+"+60th percentile value cumulative gross savings,1065.49315289",1027.92
+"+70th percentile value cumulative gross savings,1755.25344418",1742.97
+"+80th percentile value cumulative gross savings,2744.8841854",2711.09
+"+90th percentile value cumulative gross savings,4168.94747884",4257.47
+"+Min normal year annualized savings,-8837.07249453",-11537.86
+"+Max normal year annualized savings,27281.1060892",27751.09
+"+Average normal year annualized savings,390.446646463",358.90
+"+10th percentile value normal year annualized savings,-1437.43513932",-1494.49
+"+20th percentile value normal year annualized savings,-641.037352803",-677.86
+"+30th percentile value normal year annualized savings,-230.865873827",-244.53
+"+40th percentile value normal year annualized savings,79.0867187686",64.89
+"+50th percentile value normal year annualized savings,331.710164126",293.70
+"+60th percentile value normal year annualized savings,607.763867626",566.59
+"+70th percentile value normal year annualized savings,922.030602355",906.00
+"+80th percentile value normal year annualized savings,1506.48622992",1503.77
+"+90th percentile value normal year annualized savings,2367.53435309",2329.24
+"+Min year one annualized savings,-10025.3689456",-10575.54
+"+Max year one annualized savings,25196.638625",25473.18
+"+Average year one annualized savings,351.26745639",330.99
+"+10th percentile value year one annualized savings,-1434.26283986",-1469.57
+"+20th percentile value year one annualized savings,-643.013087122",-674.94
+"+30th percentile value year one annualized savings,-238.311627147",-271.56
+"+40th percentile value year one annualized savings,54.6764911796",33.22
+"+50th percentile value year one annualized savings,282.861170173",275.28
+"+60th percentile value year one annualized savings,563.641497394",540.36
+"+70th percentile value year one annualized savings,884.414691689",879.16
+"+80th percentile value year one annualized savings,1433.0971548",1439.39
+"+90th percentile value year one annualized savings,2223.34804171",2301.47
+"+Min year two annualized savings,-12336.3838806",-12462.77
+"+Max year two annualized savings,24446.6371481",24784.87
+"+Average year two annualized savings,506.224952091",417.36
+"+10th percentile value year two annualized savings,-1863.84400552",-2078.27
+"+20th percentile value year two annualized savings,-810.725170109",-850.45
+"+30th percentile value year two annualized savings,-315.47962281",-336.54
+"+40th percentile value year two annualized savings,65.4093174057",19.05
+"+50th percentile value year two annualized savings,375.076203065",338.63
+"+60th percentile value year two annualized savings,805.313735598",722.84
+"+70th percentile value year two annualized savings,1316.07168176",1226.62
+"+80th percentile value year two annualized savings,1953.22748851",1899.98
+"+90th percentile value year two annualized savings,2903.94634152",2855.22
+"+Min heating balance point temp baseline period,60.0",
+"+Max heating balance point temp baseline period,60.0",
+"+Average heating balance point temp baseline period,60.0",
+"+10th percentile value heating balance point temp baseline period,60.0",
+"+20th percentile value heating balance point temp baseline period,60.0",
+"+30th percentile value heating balance point temp baseline period,60.0",
+"+40th percentile value heating balance point temp baseline period,60.0",
+"+50th percentile value heating balance point temp baseline period,60.0",
+"+60th percentile value heating balance point temp baseline period,60.0",
+"+70th percentile value heating balance point temp baseline period,60.0",
+"+80th percentile value heating balance point temp baseline period,60.0",
+"+90th percentile value heating balance point temp baseline period,60.0",
+"+Min cooling balance point temp baseline period,70.0",
+"+Max cooling balance point temp baseline period,70.0",
+"+Average cooling balance point temp baseline period,70.0",
+"+10th percentile value cooling balance point temp baseline period,70.0",
+"+20th percentile value cooling balance point temp baseline period,70.0",
+"+30th percentile value cooling balance point temp baseline period,70.0",
+"+40th percentile value cooling balance point temp baseline period,70.0",
+"+50th percentile value cooling balance point temp baseline period,70.0",
+"+60th percentile value cooling balance point temp baseline period,70.0",
+"+70th percentile value cooling balance point temp baseline period,70.0",
+"+80th percentile value cooling balance point temp baseline period,70.0",
+"+90th percentile value cooling balance point temp baseline period,70.0",
+"+Count of heating + cooling models baseline period,333",323
+"+Count of heating only models baseline period,507",542
+"+Count of cooling only models baseline period,397",393
+"+Count of intercept-only models baseline period,337",416
+"+Mean heating coefficient value across all baseline period models,0.796775951551",
+"+Min heating coefficient value across all baseline period models,0.0532710592134",
+"+Max heating coefficient value across all baseline period models,8.46313754286",
+"+Mean cooling coefficient value across all baseline period models,4.9251955255",
+"+Min cooling coefficient value across all baseline period models,0.0492828717175",
+"+Max cooling coefficient value across all baseline period models,77.3224118073",
+"+Count of sites where number of model parameters changes between baseline and reporting,714",
+"+Count of sites where type of model changes between baseline and reporting,767",
+"+Min cooling balance point temp reporting period,70.0",
+"+Max cooling balance point temp reporting period,70.0",
+"+Average cooling balance point temp reporting period,70.0",
+"+Min heating balance point temp reporting period,60.0",
+"+Max heating balance point temp reporting period,60.0",
+"+Average heating balance point temp reporting period,60.0",
