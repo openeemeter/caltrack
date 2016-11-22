@@ -6,7 +6,7 @@ Total number of sites with year one annualized gross savings,1741
 Total number of sites with year two annualized gross savings,663
 Min cumulative gross savings,-18540.0440037
 Max cumulative gross savings,49713.1225577
-Average cumulative gross savings,729.927319703
+Average cumulative gross savings,730.365472055
 10th percentile value cumulative gross savings,-2602.83802247
 20th percentile value cumulative gross savings,-1177.97573119
 30th percentile value cumulative gross savings,-389.967784874
@@ -18,7 +18,7 @@ Average cumulative gross savings,729.927319703
 90th percentile value cumulative gross savings,4352.67398323
 Min normal year annualized savings,-8924.42154605
 Max normal year annualized savings,27329.6683352
-Average normal year annualized savings,415.433844482
+Average normal year annualized savings,415.674060304
 10th percentile value normal year annualized savings,-1420.91266002
 20th percentile value normal year annualized savings,-620.348335274
 30th percentile value normal year annualized savings,-205.30259405
@@ -30,7 +30,7 @@ Average normal year annualized savings,415.433844482
 90th percentile value normal year annualized savings,2432.99020794
 Min year one annualized savings,-10087.23763
 Max year one annualized savings,25232.6046515
-Average year one annualized savings,372.553248433
+Average year one annualized savings,372.762628026
 10th percentile value year one annualized savings,-1431.13714617
 20th percentile value year one annualized savings,-639.648337114
 30th percentile value year one annualized savings,-238.690411572
@@ -42,7 +42,7 @@ Average year one annualized savings,372.553248433
 90th percentile value year one annualized savings,2396.74335393
 Min year two annualized savings,-12355.7186104
 Max year two annualized savings,24480.5179063
-Average year two annualized savings,541.963354528
+Average year two annualized savings,542.436485623
 10th percentile value year two annualized savings,-1860.78638569
 20th percentile value year two annualized savings,-827.405503559
 30th percentile value year two annualized savings,-310.554597403
@@ -80,10 +80,10 @@ Count of heating + cooling models baseline period,366
 Count of heating only models baseline period,556
 Count of cooling only models baseline period,447
 Count of intercept-only models baseline period,372
-Mean heating coefficient value across all baseline period models,0.807883588945
+Mean heating coefficient value across all baseline period models,0.807982786874
 Min heating coefficient value across all baseline period models,0.052442359032
 Max heating coefficient value across all baseline period models,8.44866000411
-Mean cooling coefficient value across all baseline period models,4.98164637535
+Mean cooling coefficient value across all baseline period models,4.98519852891
 Min cooling coefficient value across all baseline period models,0.0490889412871
 Max cooling coefficient value across all baseline period models,110.649732707
 Count of sites where number of model parameters changes between baseline and reporting,789
