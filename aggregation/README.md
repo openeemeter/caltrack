@@ -95,7 +95,9 @@ A consistent estimator of the variance of this prediction is
 
 where
 
-`s^2=Σû_i^2/(N−k).`
+`s^2=Σû_i^2/(N−k)` 
+
+and `X` is the matrix of stage one covariates.
 
 The forecast error for a particular `y_0` is
 
