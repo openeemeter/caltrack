@@ -21,6 +21,23 @@ The main portfolio-level statistics of interest for Caltrack are:
 - Year-two gross savings prediction intervals (95%)
 - Unweighted total year-two gross savings
 
+### Steps for calculating aggregate uncertainty and aggregate means.
+
+While a detailed treatment of how to calculate each of these quantities is included below, the main formulations are below:
+
+1. Calculate the site-level Mean Squared Error (MSE) as an unbias estimator of the variance of the model errors, `s^2`:
+
+`s^2=Σû_i^2/(N−k).`
+
+2. Calculate the site-level savings variance using in prediction error as an consistent estimator using the MSE, `s^2`, and variance in the out-of-sample data, `x_0`:
+
+`V̂_s=s^2⋅x_0⋅(X′X)^−1⋅x_0′+s^2.`
+
+3. Calculate portfolio site-level inverse variance weighted mean savings using the savings variance and the following equation:
+
+![Equation for inverse variance weighting](https://www.dropbox.com/s/353ssd5u7725a7c/Screenshot%202016-10-20%2010.49.07.png?raw=true)
+
+
 ## Prepared Summary Statistics for Aggregation Comparison
 
 To ensure that the CalTrack analysis specification can produce consistent results, each beta tester will generate a set of aggregate statistics on each of the above site-level savings estimates that can be shared with the larger group through csvs saved to this repository. 
@@ -74,15 +91,17 @@ Given a vector `x_0` of reporting period, the predicted value for that observati
 
 A consistent estimator of the variance of this prediction is
 
-`V̂_p=s^22⋅x_0⋅(X′X)^−1⋅x_0′,`
+`V̂_p=s^2⋅x_0⋅(X′X)^−1⋅x_0′,`
 
 where
 
-`s^2=Σû_i^2/(N−k).`
+`s^2=Σû_i^2/(N−k)` 
+
+and `X` is the matrix of stage one covariates.
 
 The forecast error for a particular `y_0` is
 
-`ê =y_0 − ŷ_0= x_0*β + u_0 − ŷ_0.`
+`ê =y_0 − ŷ_0= x_0⋅β + u_0 − ŷ_0.`
 
 The zero covariance between `u_0` and `β̂` implies that
 
@@ -90,15 +109,15 @@ The zero covariance between `u_0` and `β̂` implies that
 
 and a consistent estimator of that is
 
-`V̂_f=s^2⋅x_0⋅(X′X)^−1⋅x_0′+s^2.`
+`V̂_s=s^2⋅x_0⋅(X′X)^−1⋅x_0′+s^2.`
 
-The `1−α` confidence interval will be:
+The `1−α` site-level confidence interval will be:
 
 `y_0 ± t_(1−α/2)⋅(V̂_p)^.5.`
 
-The 1−α prediction interval will be wider:
+The 1−α confidence interval on the savings will be wider, based on the estimated savings variance:
 
-`y_0 ± t_(1−α/2)⋅(V̂_f)^.5.`
+`y_0 ± t_(1−α/2)⋅(V̂_s)^.5.`
 
 
 #### Calculating Inverse-variance Weighted Portfolio Savings Means for Monthly Savings Analysis
