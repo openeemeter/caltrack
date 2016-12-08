@@ -6,7 +6,7 @@ Total number of sites with normal year annualized gross savings estimates,85
 Min cumulative gross savings,-587.32034677419347
 Max cumulative gross savings,679.97142997951892
 Average cumulative gross savings,108.54682454892564
-10th percentile value cumulative gross savings,-98.824670137107461
+10th percentile value cumulative gross savings,-98.824670137107418
 20th percentile value cumulative gross savings,-34.793315310010932
 30th percentile value cumulative gross savings,22.790318621728915
 40th percentile value cumulative gross savings,78.523665440215325
@@ -17,7 +17,7 @@ Average cumulative gross savings,108.54682454892564
 90th percentile value cumulative gross savings,342.01743330602523
 100th percentile value cumulative gross savings,679.97142997951892
 Cumulative gross savings average MSE,0.28860029079692978
-Cumulative gross savings average prediction error,3.3838039438780592
+Cumulative gross savings average prediction error,2.3605634348847135
 Min normal year annualized gross savings,-388.8467601126473
 Max normal year annualized gross savings,490.85364350550338
 Average normal year annualized gross savings,70.389388753404063
@@ -32,11 +32,11 @@ Average normal year annualized gross savings,70.389388753404063
 90th percentile value normal year annualized gross savings,278.67684683395964
 100th percentile value normal year annualized gross savings,490.85364350550338
 Normal year annualized gross savings average MSE,0.38866901247201002
-Normal year annualized gross savings average prediction error,3.7542766287884199
+Normal year annualized gross savings average prediction error,2.2045483858337396
 Min year one annualized gross savings,-389.08326612903227
 Max year one annualized gross savings,424.63304354132129
 Average year one annualized gross savings,61.029294617094564
-10th percentile value year one annualized gross savings,-65.715713211271293
+10th percentile value year one annualized gross savings,-65.715713211271279
 20th percentile value year one annualized gross savings,-16.401204521717474
 30th percentile value year one annualized gross savings,12.085902289973568
 40th percentile value year one annualized gross savings,45.942237414244197
@@ -47,7 +47,7 @@ Average year one annualized gross savings,61.029294617094564
 90th percentile value year one annualized gross savings,190.34101536819583
 100th percentile value year one annualized gross savings,424.63304354132129
 Year one annualized gross savings average MSE,0.28860029079692978
-Year one annualized gross savings average prediction error,2.4865522461190421
+Year one annualized gross savings average prediction error,1.7458390644025703
 Min year two annualized gross savings,-236.53003218031014
 Max year two annualized gross savings,235.68740969303397
 Average year two annualized gross savings,50.547726412326469
@@ -62,7 +62,7 @@ Average year two annualized gross savings,50.547726412326469
 90th percentile value year two annualized gross savings,159.2804636365147
 100th percentile value year two annualized gross savings,235.68740969303397
 Year two annualized gross savings average MSE,0.24489406485924267
-Year two annualized gross savings average prediction error,2.6795841134786076
+Year two annualized gross savings average prediction error,1.545185745104692
 Count of Heating + Cooling models baseline period,0
 Count of Heating only models baseline period,73
 Count of Cooling only models baseline period,0
