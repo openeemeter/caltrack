@@ -1,0 +1,104 @@
+Summary Stat,Value
+Total number of sites included in first-stage estimation,100
+Total number of sites with cumulative gross savings estimates,100
+Total number of sites with normal year annualized gross savings,100
+Total number of sites with year one annualized gross savings,100
+Total number of sites with year two annualized gross savings,46
+Min cumulative gross savings,-1077.05
+Max cumulative gross savings,731.880328425
+Average cumulative gross savings,93.4118602652
+10th percentile value cumulative gross savings,-133.117837498
+20th percentile value cumulative gross savings,-77.5009266508
+30th percentile value cumulative gross savings,8.90861646535
+40th percentile value cumulative gross savings,76.4373389541
+50th percentile value cumulative gross savings,125.170974221
+60th percentile value cumulative gross savings,143.050536276
+70th percentile value cumulative gross savings,196.514552268
+80th percentile value cumulative gross savings,237.25948799
+90th percentile value cumulative gross savings,345.316376901
+Cumulative gross savings average MSE,0.199408834417
+Cumulative gross savings average prediction error,30.2618062282
+Min normal year annualized savings,-336.15184351
+Max normal year annualized savings,464.383422553
+Average normal year annualized savings,65.8975370674
+10th percentile value normal year annualized savings,-73.5331293032
+20th percentile value normal year annualized savings,-40.5761114193
+30th percentile value normal year annualized savings,-14.4018240498
+40th percentile value normal year annualized savings,24.3716849617
+50th percentile value normal year annualized savings,59.8012252564
+60th percentile value normal year annualized savings,93.2465511214
+70th percentile value normal year annualized savings,128.921948498
+80th percentile value normal year annualized savings,157.1189087
+90th percentile value normal year annualized savings,249.271363775
+Normal year annualized savings average MSE,0.258677576775
+Normal year annualized savings average prediction error,50.7274755315
+Min year one annualized savings,-335.123884409
+Max year one annualized savings,419.985483272
+Average year one annualized savings,52.9938106889
+10th percentile value year one annualized savings,-72.0536173359
+20th percentile value year one annualized savings,-27.9365260814
+30th percentile value year one annualized savings,15.6929056725
+40th percentile value year one annualized savings,32.2486894813
+50th percentile value year one annualized savings,57.7162118594
+60th percentile value year one annualized savings,77.9062202692
+70th percentile value year one annualized savings,96.2449453791
+80th percentile value year one annualized savings,121.723144524
+90th percentile value year one annualized savings,165.180152068
+Year one annualized gross savings average MSE,0.199408834417
+Year one annualized gross savings average prediction error,14.0354251514
+Min year two annualized savings,-300.977388627
+Max year two annualized savings,292.632709378
+Average year two annualized savings,52.8964594188
+10th percentile value year two annualized savings,-80.2385100836
+20th percentile value year two annualized savings,-24.5054611543
+30th percentile value year two annualized savings,29.3745677004
+40th percentile value year two annualized savings,43.8497833667
+50th percentile value year two annualized savings,57.8839016638
+60th percentile value year two annualized savings,84.771537872
+70th percentile value year two annualized savings,110.520241476
+80th percentile value year two annualized savings,144.51034678
+90th percentile value year two annualized savings,160.310651387
+Year two annualized gross savings average MSE,0.186514541782
+Year two annualized gross savings average prediction error,16.6011674444
+Min heating balance point temp baseline period,60.0
+Max heating balance point temp baseline period,60.0
+Average heating balance point temp baseline period,60.0
+10th percentile value heating balance point temp baseline period,60.0
+20th percentile value heating balance point temp baseline period,60.0
+30th percentile value heating balance point temp baseline period,60.0
+40th percentile value heating balance point temp baseline period,60.0
+50th percentile value heating balance point temp baseline period,60.0
+60th percentile value heating balance point temp baseline period,60.0
+70th percentile value heating balance point temp baseline period,60.0
+80th percentile value heating balance point temp baseline period,60.0
+90th percentile value heating balance point temp baseline period,60.0
+Min cooling balance point temp baseline period,"Not applicable to gas"
+Max cooling balance point temp baseline period,"Not applicable to gas"
+Average cooling balance point temp baseline period,"Not applicable to gas"
+10th percentile value cooling balance point temp baseline period,"Not applicable to gas"
+20th percentile value cooling balance point temp baseline period,"Not applicable to gas"
+30th percentile value cooling balance point temp baseline period,"Not applicable to gas"
+40th percentile value cooling balance point temp baseline period,"Not applicable to gas"
+50th percentile value cooling balance point temp baseline period,"Not applicable to gas"
+60th percentile value cooling balance point temp baseline period,"Not applicable to gas"
+70th percentile value cooling balance point temp baseline period,"Not applicable to gas"
+80th percentile value cooling balance point temp baseline period,"Not applicable to gas"
+90th percentile value cooling balance point temp baseline period,"Not applicable to gas"
+Count of heating + cooling models baseline period,"Not applicable to gas"
+Count of heating only models baseline period,94
+Count of cooling only models baseline period,"Not applicable to gas"
+Count of intercept-only models baseline period,6
+Mean heating coefficient value across all baseline period models,0.219143118699
+Min heating coefficient value across all baseline period models,0.00340181984991
+Max heating coefficient value across all baseline period models,0.666259245697
+Mean cooling coefficient value across all baseline period models,"Not applicable to gas"
+Min cooling coefficient value across all baseline period models,"Not applicable to gas"
+Max cooling coefficient value across all baseline period models,"Not applicable to gas"
+Count of sites where number of model parameters changes between baseline and reporting,6
+Count of sites where type of model changes between baseline and reporting,6
+Min cooling balance point temp reporting period,"Not applicable to gas"
+Max cooling balance point temp reporting period,"Not applicable to gas"
+Average cooling balance point temp reporting period,"Not applicable to gas"
+Min heating balance point temp reporting period,60.0
+Max heating balance point temp reporting period,60.0
+Average heating balance point temp reporting period,60.0
