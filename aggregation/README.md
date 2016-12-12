@@ -1,8 +1,12 @@
 # Aggregating Savings Over Groups of Homes and Quantifying Uncertainty in Aggregate Savings Statistics
 
+=======
+
 The goal of CalTrack is to develop replicable, consistent, and methodologically defensible estimators of savings over portfolios of homes. 
 
-For CalTrack, portfolio-level savings will use prediction intervals and inverse variance weighted means for portfolio-level savings estimates.
+Portfolio-level savings statistics are based on aggregations of site-level savings estimates created using the CalTrack site-level monthly gross savings analysis methods.
+
+Portfolio-level savings statistics primarily use prediction intervals as estimates of site-level uncertainty and inverse variance weighted means for a consistent estimator of mean portfolio-level savings.
      
 ## Monthly Savings Estimate Aggregation Procedure
 
@@ -25,13 +29,13 @@ The main portfolio-level statistics of interest for Caltrack are:
 
 While a detailed treatment of how to calculate each of these quantities is included below, the main formulations are below:
 
-1. Calculate the site-level Mean Squared Error (MSE) as an unbias estimator of the variance of the model errors, `s^2`:
+1. Calculate the site-level Mean Squared Error (MSE) as an unbias estimator of the variance of the model errors, $s^2$:
 
-`s^2=Σû_i^2/(N−k).`
+$s^2 = \sum{\frac{\hat{u}_i^2}{N−k}$
 
-2. Calculate the site-level savings variance using in prediction error as an consistent estimator using the MSE, `s^2`, and variance in the out-of-sample data, `x_0`:
+2. Calculate the site-level savings variance using in prediction error as an consistent estimator using the MSE, $s^2$, and variance in the out-of-sample data, $x_0$:
 
-`V̂_s=s^2⋅x_0⋅(X′X)^−1⋅x_0′+s^2.`
+$\hat{V}_s = s^2*x_0*(X′X)^{−1}*x_0′ + s^2$
 
 3. Calculate portfolio site-level inverse variance weighted mean savings using the savings variance and the following equation:
 
@@ -83,41 +87,41 @@ For simplicity, and keeping with convention in the industry, site-level variance
 
 Take the stage one regression model with N observations and k regressors:
 
-`y=Xβ+u`
+$y = X\beta + u$
 
-Given a vector `x_0` of reporting period, the predicted value for that observation would be
+Given a vector (or matrix) $x_0$ of post-intervention (reporting) period degree day covariates, the predicted value for  observation would be
 
-`E[y|x_0] = ŷ_0 = x_0⋅β.`
+$E[y|x_0] = \hat{y}_0 = x_0\beta$
 
 A consistent estimator of the variance of this prediction is
 
-`V̂_p=s^2⋅x_0⋅(X′X)^−1⋅x_0′,`
+$\hat{V}_p = s^2*x_0*(X′X)^{−1}*x_0′$
 
 where
 
-`s^2=Σû_i^2/(N−k)` 
+$s^2=\sum{\frac{\hat{u}_i^2}{(N−k)}$ 
 
-and `X` is the matrix of stage one covariates.
+and $X$ is the matrix of stage one covariates.
 
-The forecast error for a particular `y_0` is
+The forecast error for a particular $y_0$ is
 
-`ê =y_0 − ŷ_0= x_0⋅β + u_0 − ŷ_0.`
+$\hat{e} = y_0 − \hat{y}_0= x_0\beta + u_0 − \hat{y}_0$
 
-The zero covariance between `u_0` and `β̂` implies that
+The zero covariance between $u_0$ and $\hat{β}$ implies that
 
-`Var[ê]=Var[ŷ_0]+Var[u_0],`
+$Var[\hat{e}] = Var[\hat{y}_0] + Var[u_0]$
 
 and a consistent estimator of that is
 
-`V̂_s=s^2⋅x_0⋅(X′X)^−1⋅x_0′+s^2.`
+$\hat{V}_s=s^2*x_0*(X′X)^{−1}*x_0′ + s^2$
 
-The `1−α` site-level confidence interval will be:
+The $1−\alpha$ site-level confidence interval will be:
 
-`y_0 ± t_(1−α/2)⋅(V̂_p)^.5.`
+$y_0 ± t_(1−\alpha/2)*(\hat{V}_p)^.5$
 
-The 1−α confidence interval on the savings will be wider, based on the estimated savings variance:
+The $1−α$ confidence interval on the savings will be wider, based on the estimated savings variance:
 
-`y_0 ± t_(1−α/2)⋅(V̂_s)^.5.`
+$y_0 ± t_(1−\alpha/2)*(\hat{V}_s)^.5$
 
 
 #### Calculating Inverse-variance Weighted Portfolio Savings Means for Monthly Savings Analysis
@@ -144,5 +148,5 @@ CalTrack will compute the Fractional Savings Uncertainty at the site level based
   
 To calculate confidence intervals using the following equation:
 
-`CI(95) = +/- (FSU * 1.96) * 100`
+$CI(95) = +/- (FSU * 1.96) * 100$
 
