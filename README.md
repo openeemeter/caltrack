@@ -22,7 +22,7 @@ Communication for the project will happen primarily on Slack. Any relevant chang
 
 Contributors:
 
-1. [Impact Labs](http://www.impactlabs.com)
+1. [Open Energy Efficiency](http://openeemeter.org)
 2. [EnergySavvy](http://www.energysavvy.com)
 3. [DNV GL](http://www.dnvgl.com)
 
