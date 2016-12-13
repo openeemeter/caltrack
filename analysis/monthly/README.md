@@ -1,4 +1,4 @@
-## CalTrack Site-level Monthly Gross Savings Estimation Technical Guideline
+## CalTRACK Site-level Monthly Gross Savings Estimation Technical Guideline
 
 ====
 
@@ -28,17 +28,17 @@ $\epsilon_{mi}$ is the site specific error term for a given month.
 
 In the second stage, using parameter estimates from the first stage equation, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated or actual use, depending on the quantity of interest.
 
-This site-level two-stage approach without the use of a comparison group, while having significant limitations and tradeoffs, was decided by the technical working group to be appropriate for the two main use cases for CalTrack, which emphasize effects on the grid and feedback to software vendors, rather than causal programatic effects. In addition to its long history of use in the EM&V liturature, it draws on a methodological foundation developed in the more general liturature on piecewise linear regression or segmented regression for policy analysis and effect estimates that is used in fields as divers as public health, medical research, and econometrics.
+This site-level two-stage approach without the use of a comparison group, while having significant limitations and tradeoffs, was decided by the technical working group to be appropriate for the two main use cases for CalTRACK, which emphasize effects on the grid and feedback to software vendors, rather than causal programatic effects. In addition to its long history of use in the EM&V liturature, it draws on a methodological foundation developed in the more general liturature on piecewise linear regression or segmented regression for policy analysis and effect estimates that is used in fields as divers as public health, medical research, and econometrics.
 
 We now proceed with a detailed technical treatment of the steps for monthly savings estimation.
 
-###Technical guidelines for implementing two-stage estimation on monthly electric and gas usage data for CalTrack
+###Technical guidelines for implementing two-stage estimation on monthly electric and gas usage data for CalTRACK
 
-Caltrack savings estimation begins with gas and electric usage data, project data, and weather data that have been cleaned and combined according to the Data Cleaning and Integration tecnical specification. Starting with the prepared data, site-level monthly gross savings analysis is performed by implmenting the following steps:
+CalTRACK savings estimation begins with gas and electric usage data, project data, and weather data that have been cleaned and combined according to the Data Cleaning and Integration tecnical specification. Starting with the prepared data, site-level monthly gross savings analysis is performed by implmenting the following steps:
 
 #### 1. Generate Use Per Day values and separate usage data into a pre- and a post-intervention data series
 
-The CalTrack monthly gross savings analysis uses average use per day ($UPD$) values for each month  by either using mon**summing daily use to monthly total use** by **calendar month**, then divide by the number of days in that month that had usage values, as follows:
+The CalTRACK monthly gross savings analysis uses average use per day ($UPD$) values for each month  by either using mon**summing daily use to monthly total use** by **calendar month**, then divide by the number of days in that month that had usage values, as follows:
 
 $UPD_m = \frac{1}{n_{U_d}}*\sum{U_d}$
 
@@ -64,7 +64,7 @@ Now split the series of $UPD_m$ values into pre- and post-intervention periods a
 
 #### 2. Set fixed degree day base temperature and calculated HDD and CDD
 
-Next you calculate total HDD and CDD for the each calendar month in the series. CalTrack will use a fixed degree day base for monthly billing analysis. The following balance point temperatures will be use:
+Next you calculate total HDD and CDD for the each calendar month in the series. CalTRACK will use a fixed degree day base for monthly billing analysis. The following balance point temperatures will be use:
 
 HDD base temp: 60 F 
 
@@ -111,7 +111,7 @@ $T_{ave}$ = the average temperature for day `d`
 
 For each site, all allowable models will be run as candidate models and then have minimum fitness criteria set for qualification.
 
-For CalTrack electric monthly savings analysis, the following candidate models are fit:
+For CalTRACK electric monthly savings analysis, the following candidate models are fit:
 
 1. $UPD_{mi} = \mu_i + \beta_{Hi}H_m + \beta_{Ci}C_m +  \epsilon_{mi} $
 
@@ -132,7 +132,7 @@ $\mu_i > 0$
 
 For electric, qualifying models for selection must have each parameter estimate meet the minimum significance criteria of $p < 0.1$ and are strictly positive. All qualifying models are considered for final model selection.
 
-For CalTrack gas monthly savings analysis, the following candidate models are fit:
+For CalTRACK gas monthly savings analysis, the following candidate models are fit:
 
 1. $UPD_{mi} = \mu_i + \beta_{Hi}H_m +  \epsilon_{mi} $
 
@@ -227,14 +227,14 @@ These site-level second stage quantities are calculated as follows:
 
 ### Post-estimation steps and portfolio aggregation
 
-The goal of CalTrack is to develop replicable, consistent, and methodologically defensible estimators of savings over **portfolios of homes**. In order to do that, the above site-level savings quantities must be aggregated to get portfolio-level totals, means, and varainces. Taking the site-level estimates, CalTrack then performs a set of aggregation steps that are specified [here](https://github.com/impactlab/caltrack-betatest/tree/master/aggregation).
+The goal of CalTRACK is to develop replicable, consistent, and methodologically defensible estimators of savings over **portfolios of homes**. In order to do that, the above site-level savings quantities must be aggregated to get portfolio-level totals, means, and varainces. Taking the site-level estimates, CalTRACK then performs a set of aggregation steps that are specified [here](https://github.com/impactlab/CalTRACK-betatest/tree/master/aggregation).
 
 _________________________________________________________
 
 
 #### Monthly Savings Estimation Summary Statistics for Analysis Comparison
 
-To ensure that the CalTrack analysis specification can produce consistent results, each beta tester will generate a set of summary statistics on each of the above site-level savings estimates that can be shared with the larger group through csvs saved to this repository. There will be one savings summary file generated by each Beta Tester. Each file will be a .csv and will have the following general format:
+To ensure that the CalTRACK analysis specification can produce consistent results, each beta tester will generate a set of summary statistics on each of the above site-level savings estimates that can be shared with the larger group through csvs saved to this repository. There will be one savings summary file generated by each Beta Tester. Each file will be a .csv and will have the following general format:
 
 
 | Summary Stat | Value | 

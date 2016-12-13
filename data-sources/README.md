@@ -1,8 +1,8 @@
 
-# Data Sources for CalTrack Beta Test
+# Data Sources for CalTRACK Beta Test
 
 
-Two major types of data files are supplied for the CalTrack Beta: project data and consumption data. This data is linked with "cross-reference" files that define the mapping between ID columns in the two types of files.
+Two major types of data files are supplied for the CalTRACK Beta: project data and consumption data. This data is linked with "cross-reference" files that define the mapping between ID columns in the two types of files.
 
 There are two types of project files, which have slightly different column types--`AHU` and `AHUP`--requiring different logic for determining baseline and reporting period dates.
 
@@ -12,9 +12,9 @@ The beta test set uses the following files:
 
 * Project: 
 
-    `CalTrack (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
-    `CalTrack (AHU) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
-    `CalTrack (AHU) from 7_1_15__6_30_16_v2_FINAL_090816.csv`
+    `CalTRACK (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
+    `CalTRACK (AHU) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
+    `CalTRACK (AHU) from 7_1_15__6_30_16_v2_FINAL_090816.csv`
 
 * Consumption:
     
@@ -206,6 +206,6 @@ _Natural Gas_
 ### Weather
 There are three weather source files necessary for the beta test.
 
-1. [CZ2010 weather normals for 86 stations in California](http://www.caltrack.org/weather.html)
-2. [Mapping of zip codes to weather stations](https://raw.githubusercontent.com/impactlab/caltrack-betatest/master/data-sources/weather/ZipCodetoCZ2010WeatherStationMap.csv)
+1. [CZ2010 weather normals for 86 stations in California](http://www.CalTRACK.org/weather.html)
+2. [Mapping of zip codes to weather stations](https://raw.githubusercontent.com/impactlab/CalTRACK-betatest/master/data-sources/weather/ZipCodetoCZ2010WeatherStationMap.csv)
 3. [Hourly weather station data pulled from the NOAA ISD weather data using USAF](http://www.ncdc.noaa.gov/cdo-web/)

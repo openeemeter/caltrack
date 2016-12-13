@@ -1,7 +1,7 @@
 
-# CalTrack Beta Test Data Preparation Guidelines
+# CalTRACK Beta Test Data Preparation Guidelines
 
-Data Cleaning and Quality Checks for the CalTrack Beta Test will consist of three main tasks
+Data Cleaning and Quality Checks for the CalTRACK Beta Test will consist of three main tasks
 
 1. Explore raw data sources with non-standard summary statistics
 2. Perform data cleaning and integration procedures on raw data
@@ -35,36 +35,36 @@ A number of cleaning steps are necessary to use the raw data.
 
 ### Creating Work Start and Work End dates from raw project data
 
-The dates for CalTrack Beta Test come from the following Final CalTrack files provided by Build it Green:
+The dates for CalTRACK Beta Test come from the following Final CalTRACK files provided by Build it Green:
 
-`CalTrack (AHU) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
+`CalTRACK (AHU) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
 
-`CalTrack (AHU) from 7_1_15__6_30_16_v2_FINAL_090816.csv`
+`CalTRACK (AHU) from 7_1_15__6_30_16_v2_FINAL_090816.csv`
 
-`CalTrack (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
+`CalTRACK (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
 
 
 The following rules are used for determining `work start dates`:
 
-- From the updated ‘AHUP’ file “CalTrack (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816”
+- From the updated ‘AHUP’ file “CalTRACK (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816”
 	- Column G – “Notice to Proceed Issued” (Best Proxy for ‘Work Start’)
 
-- From the updated ‘AHU with correlated XML files’ file “CalTrack (AHU) from 1_1_14__6_30_15_v2_FINAL_090816”
+- From the updated ‘AHU with correlated XML files’ file “CalTRACK (AHU) from 1_1_14__6_30_15_v2_FINAL_090816”
  	- Column F – “Initial Approval Date” (Best Proxy for ‘Work Start’)
 
-- From the updated ‘AHU Control Group (no XML files)’ file “CalTrack (AHU) from 7_1_15__6_30_16_v2_FINAL_090816”
+- From the updated ‘AHU Control Group (no XML files)’ file “CalTRACK (AHU) from 7_1_15__6_30_16_v2_FINAL_090816”
  	- Column F – “Initial Approval Date” (Best Proxy for ‘Work Start’)
 
  The following rules are used for determining `work end dates`:
 
-- From the updated ‘AHUP’ file “CalTrack (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816”
+- From the updated ‘AHUP’ file “CalTRACK (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816”
 	- Column H – “Full Application Started” (Best Proxy for ‘Work Finished’)
 	- Please Note – Column J – “Full Application Submitted” can represent a better proxy for ‘Work Finished’, if the project was not returned for correction(s) during the QA review process (i.e., if there is a date in Column I – “Full Application Returned”, it got returned for correction). If a project gets returned for correction, then Column J’s “Full Application Submitted” date becomes, effectively, a “Full Application ‘Re-submitted’”, and no longer represents a good proxy for ‘Work Finished’ as it is +1-10 Days (or more) removed at that point.
 
-- From the updated ‘AHU with correlated XML files’ file “CalTrack (AHU) from 1_1_14__6_30_15_v2_FINAL_090816”
+- From the updated ‘AHU with correlated XML files’ file “CalTRACK (AHU) from 1_1_14__6_30_15_v2_FINAL_090816”
 	- Column G – “Initial Submission Date” (Best Proxy for ‘Work Finished’)
 
-- From the updated ‘AHU Control Group (no XML files)’ file “CalTrack (AHU) from 7_1_15__6_30_16_v2_FINAL_090816”
+- From the updated ‘AHU Control Group (no XML files)’ file “CalTRACK (AHU) from 7_1_15__6_30_16_v2_FINAL_090816”
 	- Column G – “Initial Submission Date” (Best Proxy for ‘Work Finished’)
 
 
