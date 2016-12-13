@@ -28,6 +28,10 @@ $\epsilon_{mi}$ is the site specific error term for a given month.
 
 In the second stage, using parameter estimates from the first stage equation, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated or actual use, depending on the quantity of interest.
 
+This site-level two-stage approach without the use of a comparison group, while having significant limitations and tradeoffs, was decided by the technical working group to be appropriate for the two main use cases for CalTrack, which emphasize effects on the grid and feedback to software vendors, rather than causal programatic effects. In addition to its long history of use in the EM&V liturature, it draws on a methodological foundation developed in the more general liturature on piecewise linear regression or segmented regression for policy analysis and effect estimates that is used in fields as divers as public health, medical research, and econometrics.
+
+We now proceed with a detailed technical treatment of the steps for monthly savings estimation.
+
 ###Technical guidelines for implementing two-stage estimation on monthly electric and gas usage data for CalTrack
 
 Caltrack savings estimation begins with gas and electric usage data, project data, and weather data that have been cleaned and combined according to the Data Cleaning and Integration tecnical specification. Starting with the prepared data, site-level monthly gross savings analysis is performed by implmenting the following steps:
@@ -221,6 +225,10 @@ These site-level second stage quantities are calculated as follows:
 3. Compute `monthly_normal_year_gross_savings` = `predicted_baseline_monthly_use - predicted_reporting_monthly_use` for each normal year month.
 4. Sum  `monthly_normal_year_gross_savings` over entire normal year. 
 
+### Post-estimation steps and portfolio aggregation
+
+The goal of CalTrack is to develop replicable, consistent, and methodologically defensible estimators of savings over **portfolios of homes**. In order to do that, the above site-level savings quantities must be aggregated to get portfolio-level totals, means, and varainces. Taking the site-level estimates, CalTrack then performs a set of aggregation steps that are specified [here](https://github.com/impactlab/caltrack-betatest/tree/master/aggregation).
+
 _________________________________________________________
 
 
@@ -239,8 +247,6 @@ To ensure that the CalTrack analysis specification can produce consistent result
 
 **Combined Project Data Summary File**
 Output Filename: `monthly_billing_analysis_savings_summary_NAME_OF_TESTER.csv`
-
-#### Included Summary statistics
 
 #### Included Summary statistics
 
