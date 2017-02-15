@@ -136,7 +136,7 @@ For CalTRACK gas monthly savings analysis, the following candidate models are fi
 
 1. $UPD_{mi} = \mu_i + \beta_{Hi}H_m +  \epsilon_{mi} $
 
-2. $UPD_{mi} = \mu_i + \beta_{Ci}C_m +  \epsilon_{mi} $
+2. $UPD_{mi} = \beta_{Hi}H_m +  \epsilon_{mi} $
 
 3. $UPD_{mi} = \mu_i + \epsilon_{mi} $
 
