@@ -7,20 +7,21 @@ The CalTRACK Beta test worked primarily with hourly usage data, even for monthly
 A full accounting of the data cleaning and processing steps that were required for the purposes of the Beta test can be found here. General guidance suggests that data cleaning processes should be well documented and reviewed. There are countless small decisions that must be made as edge cases in the data arise. Thorough documentation ensures that evaluators understand the implications of these choices. Below are guidelines and a general process for addressing the most common issues that arise during data cleaning efforts for monthly billing analysis, based on the experience of the Beta testers doing prior billing analyses as well as lessons learned during the CalTRACK testing process. We recommend doing them in the order they appear because we found through testing that the final combined dataset you end up with is highly sensitive to the order of data preparation steps. 
 
 The CalTRACK data preparations guidelines for monthly billing analysis consist of the following steps:
-    1. Project data preparation 
-      a. Generate necessary project fields from raw project data
-      b. Deal with missing and miscoded values
-      c. Deduplicate project records
-    2. Weather data preparation
-    3. Monthly electric and gas use data preparation 
-    4. Link project and electric use files
-    5. Linked project+electric use data preparation
-        a. Deduplicate records based on combined attributes
-        b. Drop observations not meeting data sufficiency requirements
-    6. Link project records and gas use files
-    7. Linked project+gas use data preparation
-    8. Link weather data and project records
-    9. Final combined data sufficiency checks
+
+1. Project data preparation
+    - Generate necessary project fields from raw project data
+    - Deal with missing and miscoded values
+    - Deduplicate project records
+2. Weather data preparation
+3. Monthly electric and gas use data preparation 
+4. Link project and electric use files
+5. Linked project+electric use data preparation
+    - Deduplicate records based on combined attributes
+    - Drop observations not meeting data sufficiency requirements
+6. Link project records and gas use files
+7. Linked project+gas use data preparation
+8. Link weather data and project records
+9. Final combined data sufficiency checks
 
 ### 1. Project Data Preparation
 The minimum field requirements for project data under the CalTRACK monthly specification are outlined here. Notably, a prepared project file should consist of one row per project, with a unique ID that can be used to link to gas and/or electric usage data, project start and stop dates, and zip code for the site. The following data cleaning steps for project data are meant to ensure that the prepared project file meets these field requirements and uniqueness constraints. 
@@ -57,31 +58,32 @@ Occasionally, the project or consumption data may contain extreme values that ar
 
 ### 4. Link project records and usage files
 Once project, consumption, and weather data have met all of their respective requirements, the data must be matched in order for a savings estimation to be performed. We recommend using a key such as a utility account number that will clearly match a given project with a given meter. However, we also recognize that in certain cases, a project may encompass more than one meter or utility account. In these cases, we do not offer specific guidance.
- 
-For the purposes of the Beta test, projects were matched to consumption files using a cross reference file supplied by the program administrator.
- 
+* For the purposes of the Beta test, projects were matched to consumption files using a cross reference file supplied by the program administrator. 
  
 Unmatched data should be excluded from analysis.
-For the purposes of the Beta test, projects that were unmatched to usage data were listed in CalTRACK for data integrity reporting, but were not included in any estimation procedures and did not have estimated savings.
-5. Linked project+use data preparation
-Deduplicate records based on combined attributes
-If two duplicate records have identical consumption traces and date ranges, drop one at random
-If two duplicate records have identical consumption traces but different date ranges select the more complete record having more dates. If the dates are contiguous, or there are overlapping dates with the same usage values, combine the two traces into a single trace. 
-If the records have the same date ranges, but different usage values, the project should be flagged and the record excluded from the sample.
+* For the purposes of the Beta test, projects that were unmatched to usage data were listed in CalTRACK for data integrity reporting, but were not included in any estimation procedures and did not have estimated savings.
 
-Drop records not meeting data sufficiency requirements
+### 5. Linked project+use data preparation
+#### Deduplicate records based on combined attributes
+* If two duplicate records have identical consumption traces and date ranges, drop one at random
+* If two duplicate records have identical consumption traces but different date ranges select the more complete record having more dates. * If the dates are contiguous, or there are overlapping dates with the same usage values, combine the two traces into a single trace. 
+* If the records have the same date ranges, but different usage values, the project should be flagged and the record excluded from the sample.
+
+#### Drop records not meeting data sufficiency requirements
 Calculating energy efficiency savings requires a sufficient observation period of energy usage prior to and after an intervention. Generally, annualized models require at least 12 months of usage data on each side of an intervention in order to accurately calculate energy savings. Some models may be able to calculate energy savings with fewer than 12 months of data in the reporting period.
-12 complete months pre-retrofit for monthly billing data to qualify for estimation or 24 months with up to 2 missing values from different, non-contiguous months
-Post retrofit data sufficiency for estimation will be dealt with in post-estimation model fit criterion
-Total annual savings estimates will require 12 months post-retrofit
-Drop project records with unsupported characteristics 
-Drop homes with known PV or EV added 12 months prior to or up to 12 months after the intervention. During the CalTRACK beta test, these homes were identified from the presence of reverse flow in the AMI data and/or indications of net metering in the cross reference tables. However, if you only have access to billing data, we recommend working with the utility to get flags for accounts that have net metering present so they can be excluded from the analysis.
+* 12 complete months pre-retrofit for monthly billing data to qualify for estimation or 24 months with up to 2 missing values from different, non-contiguous months
+* Post retrofit data sufficiency for estimation will be dealt with in post-estimation model fit criterion
+* Total annual savings estimates will require 12 months post-retrofit
 
-6. Link weather data and project records
+#### Drop project records with unsupported characteristics 
+* Drop homes with known PV or EV added 12 months prior to or up to 12 months after the intervention. During the CalTRACK beta test, these homes were identified from the presence of reverse flow in the AMI data and/or indications of net metering in the cross reference tables. However, if you only have access to billing data, we recommend working with the utility to get flags for accounts that have net metering present so they can be excluded from the analysis.
+
+### 6. Link weather data and project records
 Weather station mapping requires locating the station nearest to the project. Each project file should contain a zip code that allows matching weather stations to projects
 
-For the purposes of the Beta test, weather station mapping was done using the 86 station standard mapping of zip code to CZ2010 weather files.
-7. Final combined data sufficiency checks
-Billing periods (the period between bill start date and bill end date in the monthly usage data) with more than 10% missing days of weather data will be thrown out and count against the required number of billing period observations
-Any projects with fewer than 12 months pre and 12 months post are not included in the analysis
+* For the purposes of the Beta test, weather station mapping was done using the 86 station standard mapping of zip code to CZ2010 weather files.
+
+### 7. Final combined data sufficiency checks
+* Billing periods (the period between bill start date and bill end date in the monthly usage data) with more than 10% missing days of weather data will be thrown out and count against the required number of billing period observations
+* Any projects with fewer than 12 months pre and 12 months post are not included in the analysis
 
