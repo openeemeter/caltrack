@@ -1,30 +1,29 @@
-# CalTRACK Beta test
+# CalTRACK Methods and Test Repository
 
-A Shared repository for beta testers of CalTRACK methods
+A shared repository for the discussion, testing, and publication of CalTRACK methods
 
 -----
 
 
-The CalTRACK Beta Test is intended to help test, refine and finalize the technical requirements and methods for CalTRACK. In it, the nitial draft requirements for CalTRACK developed by the technical working group will be tested in the field using data from PG&E to empirically verify assumptions made by the technical working group, identify areas of sensitivity, and agree on a first implementable system. Details about the Beta Test plan can can be found here.
+The CalTRACK open source repository is intended to facilitate the discussion, testing, refining and final publication of the technical requirements and methods for CalTRACK. Initial draft requirements for CalTRACK developed by the technical working group are tested using data from PG&E to empirically verify assumptions made by the technical working group, identify areas of sensitivity, and agree on publishable versions of the methods. Details about the CalTRACK technical working group processes can be found [here](http://www.caltrack.org/methods-dev-process.html).
 
 
-This repository is meant as a place for Beta Testers to share data, code, and outputs for comparison. The repository is structured in the following way:
+This repository is organized for sharing methods documentation as well as sharing data, code, and outputs from empirical tests of the methods. 
 
-``/data-sources`` contains a README with links and descriptions of each of the required datasets for the beta test. It also contains the weather station mapping file.
+The repository is structured as follows:
 
-``/data-prep`` contains a README that outlines CalTRACK data cleaning and integration procedures. It is also the repository for sharing data preparation code and summary statistics on the prepared among Beta Testers for comparison.
+``/docs`` contains Markdown files for publishing the official CalTRACK technical specification, guidance, and methods.
 
-``/analysis`` contains a README that outlines CalTRACK general data analysis procedures. It also contains three subdirectories: `/monthly`, `/daily`, `/hourly`. These directories contain READMEs with detailed technical guidance for month, daily, and hourly savings analysis under CalTRACK. Each of these directories will be used by Beta Testers to share data analysis code and testing outputs for the respective type of analysis performed.
+``/guides`` contains general guidance on the use of CalTRACK methods.
 
-``/aggregation`` contains a README that outlines CalTRACK aggregation proceedures. It is also the repository for sharing data aggregation code and outputs among from Beta Testers for comparison.
+``/tests`` contains detailed documentation, code, and results from empirical test of various versions of the CalTRACK methods by CalTRACK methods testers.
 
 ----
 
+Communication among committers and community members happens primarily through github issues, as well as a CalTRACK Slack organization. Any suggestions and modifications to the methods are handled through an open source development process outlined here.
 
-Communication for the project will happen primarily on Slack. Any relevant changes to the technical specification outlined in the CalTRACK Beta READMEs will be discussed and resolved as Github issues on this repository
+Primary Contributors:
 
-Contributors:
-
-1. [Open Energy Efficiency](http://openeemeter.org)
+1. [Open Energy Efficiency](http://openee.io)
 2. [EnergySavvy](http://www.energysavvy.com)
 3. [DNV GL](http://www.dnvgl.com)
