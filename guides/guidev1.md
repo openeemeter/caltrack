@@ -44,4 +44,4 @@ The two use cases that CalTRACK v1 is intended to support are:
 7. [Aggregation rules] (https://github.com/impactlab/caltrack-betatest/issues/32)
 8. [Future Participant Adjustments] (https://github.com/impactlab/caltrack-betatest/issues/32)
 9. [Fixed or variable degree days] (https://github.com/impactlab/caltrack-betatest/issues/37)
-10. 
+
