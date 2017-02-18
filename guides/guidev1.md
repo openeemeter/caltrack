@@ -42,5 +42,5 @@ The two use cases that CalTRACK v1 is intended to support are:
 5. [Data prep] (https://github.com/impactlab/caltrack/issues/12)
 6. [Monthly Data Requirements Specification] (https://github.com/impactlab/caltrack/issues/49)
 7. [Aggregation rules] (https://github.com/impactlab/caltrack/issues/32)
-8. [Future Participant Adjustments] (https://github.com/impactlab/caltrack/issues/32)
+8. [Future Participant Adjustments] (https://github.com/impactlab/caltrack/issues/20)
 9. [Fixed or variable degree days] (https://github.com/impactlab/caltrack/issues/37)
