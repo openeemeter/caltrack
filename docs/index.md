@@ -10,7 +10,7 @@ The CalTRACK Beta Test is intended to help test, refine and finalize the technic
 
 ----
 
-Communication for the project will happen primarily on Slack. Any relevant changes to the technical specification outlined in the CalTRACK docs will be discussed and resolved as Github issues on [this repository](https://github.com/impactlab/caltrack-betatest)
+Communication for the project will happen primarily on Slack. Any relevant changes to the technical specification outlined in the CalTRACK docs will be discussed and resolved as Github issues on [this repository](https://github.com/impactlab/caltrack)
 
 Contributors:
 
