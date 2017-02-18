@@ -6,10 +6,10 @@ It includes data requirements and technical specifications for data preparation 
 
 The complete technical specification for v1 monthly methods is found in four documents
 
-1. `monthly/data-sources.md` describes the necessary data requirements for running CalTRACK v1
-2. `monthly/data-prep.md` describes the sequence of steps required for preparing data for analysis
+1. `/monthly/data-sources.md` describes the necessary data requirements for running CalTRACK v1
+2. `/monthly/data-prep.md` describes the sequence of steps required for preparing data for analysis
 3. `/monthly/analysis.md` describes the methods use for calculating site-level savings using monthly data
-4. `monthly/aggregation.md` describes the methods use for aggregating site-level savings to group or portfolio average and total savings
+4. `/monthly/aggregation.md` describes the methods use for aggregating site-level savings to group or portfolio average and total savings
 
 The specification is intended to be done in order to ensure consistency and replicability.
 
@@ -32,3 +32,15 @@ The two use cases that CalTRACK v1 is intended to support are:
 ### Important Caveats
 
 1. The purpose of CalTRACK is to provide intermediate estimates of gross savings and not replace more detailed impact evaluations which focus on net savings measurement. In addition to excluding factors that are typically included in net savings estimation (selection effects, free ridership), v1 monthly methods omits corrections for population-wide factors that some consider part of gross savings (unobserved weather effects like solar exposure, macroeconomic shocks, etc.). Anyone using CalTRACK v1 methods should be aware that these potential effects on energy use are explicitly not adjusted for in v1 methods, and as a result, expose program participants and aggregators to some additional downside savings measurement risk and utilities to additional upside measurement risk. These measurement risks were weighed against the advantages in simplicity and replicability in deciding on the simple weather normalized savings approach in v1.
+
+### Discussions
+
+1. [Project Plan and Technical Requirements Working Group Document] (https://docs.google.com/document/d/1mfNgJwzHUrp8SKNVeK8PH0Sjbt8xDb_s3FLblG9A2Qw/edit#heading=h.56f2ui64an9j)
+2. [Homes with Solar, EVs, etc.] (https://github.com/impactlab/caltrack/issues/36)
+3. [Missing and anomalous data] (https://github.com/impactlab/caltrack/issues/35)
+4. [Zip Code Weather Station mapping] (https://github.com/impactlab/caltrack/issues/25)
+5. [Data prep] (https://github.com/impactlab/caltrack/issues/12)
+6. [Monthly Data Requirements Specification] (https://github.com/impactlab/caltrack/issues/49)
+7. [Aggregation rules] (https://github.com/impactlab/caltrack/issues/32)
+8. [Future Participant Adjustments] (https://github.com/impactlab/caltrack/issues/20)
+9. [Fixed or variable degree days] (https://github.com/impactlab/caltrack/issues/37)

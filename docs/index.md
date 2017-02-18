@@ -1,18 +1,16 @@
 # Welcome to the CalTRACK Technical Documentation
 
-A Shared repository for beta testers of CalTRACK methods
-
-Additional documentation on the CalTRACK process can be found a [caltrack.org](http://caltrack.org).
+This site represents the official technical documentation for CalTRACK, a set of open methods developed and tested through a multi-stakeholder process for estimating gross savings for residential energy efficiency programs in California.
 
 -----
 
-The CalTRACK Beta Test is intended to help test, refine and finalize the technical requirements and methods for CalTRACK. In it, the initial draft requirements for CalTRACK developed by the technical working group will be tested in the field using data from PG&E to empirically verify assumptions made by the technical working group, identify areas of sensitivity, and agree on a first implementable system. Details about the Beta Test plan can can be found here.
+Initial draft requirements for CalTRACK were developed by the CalTRACK technical working group, tested using data from PG&E to empirically verify assumptions and identify areas of sensitivity, the modify publish official versions of the methods through an open source process. Details about the CalTRACK technical working group processes can be found [here](http://www.caltrack.org/methods-dev-process.html).
 
 ----
 
-Communication for the project will happen primarily on Slack. Any relevant changes to the technical specification outlined in the CalTRACK docs will be discussed and resolved as Github issues on [this repository](https://github.com/impactlab/caltrack)
+Communication for CalTRACK methods development happens primarily through [Github issues](https://github.com/impactlab/caltrack/issues) and using a community communication tool called Slack. The source code for this documentation, as well as results from testing, discussion, and guidance for contribution can be found on the [CalTRACK Github repository](https://github.com/impactlab/caltrack)
 
-Contributors:
+Key Contributors and Testers:
 
 1. [Open Energy Efficiency](http://openeemeter.org)
 2. [EnergySavvy](http://www.energysavvy.com)

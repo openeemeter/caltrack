@@ -4,14 +4,14 @@ The CalTRACK Version 1.0 specification provides guidance for performing monthly 
 
 It includes data requirements and technical specifications for data preparation and cleaning, site-level billing analysis, and aggregation of site-level results.
 
-The complete technical specification for v1 monthly methods is found in four documents
+The complete technical specification for v1 monthly methods is found at [docs.caltrack.org](http://docs.caltrack.org), with the source file for the online documentation located in the `docs/` directory of this repository.
 
-1. `/data-sources/README.md` describes the necessary data requirements for running CalTRACK v1
-2. `/data-prep/README.md` describes the sequence of steps required for preparing data for analysis
-3. `/analysis/monthly/REAMDE.md` describes the methods use for calculating site-level savings using monthly data
-4. `/aggregation/README.md` describes the methods use for aggregating site-level savings to group or portfolio average and total savings
+Additionally, the detailed documentation of empirically testing of various draft version of the specification, as well as some results from final methods tests can be found in the 'tests/' directory. The 'test/' directory is organized as follows: 
 
-The specification is intended to be done in order to ensure consistency and replicability.
+1. `tests/data-sources/README.md` describes the necessary data requirements for running CalTRACK v1
+2. `tests/data-prep/README.md` describes the sequence of steps required for preparing data for analysis
+3. `tests/analysis/monthly/REAMDE.md` describes the methods use for calculating site-level savings using monthly data
+4. `tests/aggregation/README.md` describes the methods use for aggregating site-level savings to group or portfolio average and total savings
 
 ### Supported Use Cases
 
