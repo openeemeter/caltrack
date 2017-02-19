@@ -1,10 +1,10 @@
-## Site-level Monthly Gross Savings Estimation 
+## CalTRACK Site-level Monthly Gross Savings Estimation Technical Guideline
 
 --------
 
 ### Methodological Overview
 
-Site-level gross savings using monthly billing data (both electricity and gas) uses a two-stage estimation approach that closely follows methodological recommendations in the technical appendices of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, with some modifications and more specific guidance developed through empirical testing to ensure consistency and replicability of results.
+Site-level gross savings using monthly billing data (both electricity and gas) will use a two-stage estimation approach that closely follows methodological recommendations in the technical appendices of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, with some modifications and more specific guidance developed through empirical testing to ensure consistency and replicability of results.
 
 The idea behind two-stage site-level models is to model the energy use of each house before and after
 
@@ -30,7 +30,9 @@ Where
 
 In the second stage, using parameter estimates from the first stage equation, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated or actual use, depending on the quantity of interest.
 
-This site-level two-stage approach without the use of a comparison group was determined by the technical working group to be appropriate for the two main use cases for CalTRACK, which emphasize effects on the grid and to send a price signal to the market, rather than causal programatic effects. In addition to its long history of use in the EM&V literature, it draws on a methodological foundation developed in the more general literature on piecewise linear regression or segmented regression for policy analysis and effect estimates that is used in fields as divers as public health, medical research, and econometrics.
+This site-level two-stage approach without the use of a comparison group, while having significant limitations and tradeoffs, was decided by the technical working group to be appropriate for the two main use cases for CalTRACK, which emphasize effects on the grid and feedback to software vendors, rather than causal programatic effects. In addition to its long history of use in the EM&V literature, it draws on a methodological foundation developed in the more general literature on piecewise linear regression or segmented regression for policy analysis and effect estimates that is used in fields as divers as public health, medical research, and econometrics.
+
+We now proceed with a detailed technical treatment of the steps for monthly savings estimation.
 
 ###Technical guidelines for implementing two-stage estimation on monthly electric and gas usage data for CalTRACK
 
