@@ -4,13 +4,11 @@ This site represents the official technical documentation for CalTRACK, a set of
 
 A full process history and related resources can be found on the [CalTRACK](http://www.caltrack.org) website.
 
------
-
 Initial draft requirements for CalTRACK were developed by the CalTRACK technical working group based on methods developed as part of the OpenEEmeter open source platform and tested using data from PG&E to empirically verify assumptions and identify areas of sensitivity, the modify publish official versions of the methods through an open source process. Details about the CalTRACK technical working group processes can be found on the [CalTRACK](http://www.caltrack.org/methods-dev-process.html) website.
 
-----
-
 Communication for CalTRACK methods development happens primarily through [Github issues](https://github.com/impactlab/caltrack/issues) and using a community communication tool called Slack. The source code for this documentation, as well as results from testing, discussion, and guidance for contribution can be found on the [CalTRACK Github repository](https://github.com/impactlab/caltrack)
+
+-----
 
 **Project Lead:**
 [Open Energy Efficiency](http://openeemeter.org)
