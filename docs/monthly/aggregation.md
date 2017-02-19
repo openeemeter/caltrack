@@ -1,4 +1,4 @@
-# Technical Specification for Aggregating Site-level Gross Savings and Quantifying Uncertainty in Aggregate Savings Statistics
+# Aggregating Site-level Gross Savings and Quantifying Uncertainty in Aggregate Savings Statistics
 
 -----------
 
