@@ -1,4 +1,4 @@
-# Guide to Using CalTRACK v1.0 Monthly Gross Savings Methods
+# Using CalTRACK v1.0 Monthly Gross Savings Methods
 
 The CalTRACK Version 1.0 specification provides guidance for performing monthly billing analysis for whole home weather normalized gross savings for groups of residential energy efficiency projects.
 
