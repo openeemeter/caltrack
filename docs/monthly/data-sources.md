@@ -1,37 +1,14 @@
 
-# Data Sources for CalTRACK Beta Test
+# Data Sources 
 
 
-Two major types of data files are supplied for the CalTRACK Beta: project data and consumption data. This data is linked with "cross-reference" files that define the mapping between ID columns in the two types of files.
-
-There are two types of project files, which have slightly different column types--`AHU` and `AHUP`--requiring different logic for determining baseline and reporting period dates.
+Two major types of data files required to run the CalTRACK Methods: project data and consumption data. This data is linked with "cross-reference" files that define the mapping between ID columns in the two types of files.
 
 Consumption data is further broken down into five file types: 15 minutely electricity, hourly electricity, daily natural gas, monthly electricity, and monthly natural gas.
 
-The beta test set uses the following files:
+The columns of interest are as follows:
 
-* Project:
-
-    `CalTRACK (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
-    `CalTRACK (AHU) from 1_1_14__6_30_15_v2_FINAL_090816.csv`
-    `CalTRACK (AHU) from 7_1_15__6_30_16_v2_FINAL_090816.csv`
-
-* Consumption:
-
-    * 15 minutely electricity: `IDA.15MIN.SMY1.EES25162-EHUP.20160719161716.csv`
-    * Hourly electricity: `IDA.60MIN.SMY1.EES25162-EHUP.20160719161716`
-    * Daily natural gas: `EES25162_gasdy_160720.csv`
-    * Monthly electricity: `EES25162.ERESBL13.XPT...`
-    * Monthly natural gas: `EES25162.GRESBL13.XPT...`
-
-* Cross-reference
-
-    * Electricity: `EES25162_ELECINTV_XREF.csv`
-    * Natural Gas: `EES25162_GASINTV_XREF.csv`
-
-The columns of interest in these files are as follows:
-
-**Project AHUP**
+**Project **
 
 | Column Name | Description |
 | --- | --- |
@@ -42,18 +19,6 @@ The columns of interest in these files are as follows:
 | Full Application Returned | If populated, the project got returned for correction. |
 | Work Start Date | Date retrofit started, *always empty* |
 | Work Finish Date | Date retrofit ended, *always empty* |
-| Building ZIP Code | |
-
-**Project AHU**
-
-| Column Name | Description |
-| --- | --- |
-| Application No. | Project identifier |
-| Electric Service ID | ID used for matching with consumption files |
-| Gas Service ID |  ID used for matching with consumption files |
-| Initial Submission Date | Date of submission of energy retrofit project paperwork (after work completed) |
-| Work Start Date | Date retrofit started |
-| Work Finish Date | Date retrofit ended |
 | Building ZIP Code | |
 
 **Consumption**
@@ -93,12 +58,7 @@ _Electricity_
 | PDT__`i` (`i` [1,12]) | Previous date the meter was read |
 | KWH__`i` (`i` [1,12]) | Usage (KWH) |
 
-All other columns are ignored.
-
 SAS formatted dates count the number of days since Jan 1, 1960.
-
-Details on rate schedules: https://www.pge.com/tariffs/ERS.SHTML
-(Currently unused but might impact `interpretation` in the future.)
 
 _Natural Gas_
 
@@ -129,23 +89,12 @@ The cleaned data should be is as follows:
 
 **Projects**
 
-_AHU_
-
 | Field | Value |
 | --- | --- |
 | project_id | Project file, column `Application No.` |
 | zipcode | Project file, column `Building ZIP Code` |
 | baseline_period_end | Column `Work Start Date` unless empty, then column `Initial Approval Date` |
 | reporting_period_start | Column `Work Finish Date` unless empty, then column `Initial Submission Date` |
-
-_AHUP_
-
-| Field | Value |
-| --- | --- |
-| project_id | Project file, column `Application No.` |
-| zipcode | Project file, column `Building ZIP Code` |
-| baseline_period_end | Column `Notice to Proceed Issued` (Proxy for Work Start Date) |
-| reporting_period_start | If `Full Application Returned` is empty, column `Full Application Submitted`, otherwise column `Full Application Started` (Proxy for Work Finish Date) |
 
 **Consumption**
 
@@ -161,7 +110,6 @@ _Electricity_
 | label | `SA` + "-" + `SPID` + "-" + `DIR` |
 | unit | `KWH` |
 
-[1] Only a single consumption trace matches multiple projects in the beta test data set.
 
 _Natural Gas_
 
@@ -204,7 +152,7 @@ _Natural Gas_
 
 
 ### Weather
-There are three weather source files necessary for the beta test.
+There are three weather source files necessary for the CalTRACK Methods.
 
 1. [CZ2010 weather normals for 86 stations in California](http://www.CalTRACK.org/weather.html)
 2. [Mapping of zip codes to weather stations](https://raw.githubusercontent.com/impactlab/caltrack/master/data-sources/weather/ZipCodetoCZ2010WeatherStationMap.csv)
