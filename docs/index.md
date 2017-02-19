@@ -58,6 +58,8 @@ John Backus Mayes - Energysavvy
 
 Alfredo Gutierrez - ICF
 
+-----
+
 **Project Lead Technical Consultants:**
 [Open Energy Efficiency](http://openeemeter.org)
 
