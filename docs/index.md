@@ -15,11 +15,11 @@ Communication for CalTRACK methods development happens primarily through [Github
 **Project Lead:
 [Open Energy Efficiency](http://openeemeter.org)
 
-*Open Energy Efficiency team has provided technical support to the the CalTRACK effort under contract with PG&E since 2013. The core methods were initially defined during the Advnaced Home Upgrade Software Initiative process, then developed into the [OpenEEmeter](http://www.openeemeter.org) open source platform and documentation with support by the California Energy Commission, and finally tested and agreed to through the CalTRACK Beta Process. A history of this effort can be found on the [CalTRACK](http://www.caltrack.org/caltrack-history.html) website.
+Open Energy Efficiency team has provided technical support to the the CalTRACK effort under contract with PG&E since 2013. The core methods were initially defined during the Advnaced Home Upgrade Software Initiative process, then developed into the [OpenEEmeter](http://www.openeemeter.org) open source platform and documentation with support by the California Energy Commission, and finally tested and agreed to through the CalTRACK Beta Process. A history of this effort can be found on the [CalTRACK](http://www.caltrack.org/caltrack-history.html) website.
 
 **CalTRACK Working Group Contributers:
 
-*Leif Magnuson - PG&E Project Lead
+Leif Magnuson - PG&E Project Lead
 
 Matt Golden - Open Energy Efficiency 
 
