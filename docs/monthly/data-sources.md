@@ -110,7 +110,6 @@ _Electricity_
 | label | `SA` + "-" + `SPID` + "-" + `DIR` |
 | unit | `KWH` |
 
-
 _Natural Gas_
 
 | Field | Value |
@@ -148,8 +147,6 @@ _Natural Gas_
 | estimated | `False` |
 | label | monthly-`SA_ID` |
 | unit | `THM` |
-
-
 
 ### Weather
 There are three weather source files necessary for the CalTRACK Methods.
