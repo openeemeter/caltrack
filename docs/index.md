@@ -15,29 +15,52 @@ Communication for CalTRACK methods development happens primarily through [Github
 Project Lead:
 [Open Energy Efficiency](http://openeemeter.org)
 
-Open Energy Efficiency has lead the CalTRACK effort under contract with PG&E since 2013. The core methods were initially defined during the Advnaced Home Upgrade Software Initiative process, then developed into the [OpenEEmeter](http://www.openeemeter.org) open source platform and documentation with support by the California Energy Commission, and finally tested and agreed to through the CalTRACK Beta Process. A history of this effort can be found on the [CalTRACK](http://www.caltrack.org/caltrack-history.html) website.
+Open Energy Efficiency team has provided technical support to the the CalTRACK effort under contract with PG&E since 2013. The core methods were initially defined during the Advnaced Home Upgrade Software Initiative process, then developed into the [OpenEEmeter](http://www.openeemeter.org) open source platform and documentation with support by the California Energy Commission, and finally tested and agreed to through the CalTRACK Beta Process. A history of this effort can be found on the [CalTRACK](http://www.caltrack.org/caltrack-history.html) website.
 
 CalTRACK Working Group Contributers:
+
 Leif Magnuson - PG&E Project Lead
+
 Matt Golden - Open Energy Efficiency 
+
 Matt Gee - Open Energy Efficiency 
+
 McGee Young - Open Energy Efficiency
+
 Andy Fessel - PG&E
+
 Jarred Metoyer - DNVGL
+
 Jonathan Farland - DNVGL
+
 Ben Polly - NREL
+
 Beth Reid - Olivine
-Brian A. Smith - PG&E 
+
+Brian A. Smith - PG&E
+
 Charlene Chi-Johnston - PG&E
-Cynthia Swaim - Sempra Utilities​
-​Denise Parker - SoCal Edison
+
+Cynthia Swaim - Sempra Utilities
+
+Denise Parker - SoCal Edison
+
 Gamaliel Lodge - Optimiser Energy 
+
 Jake Oster -  Energysavvy 
+
 Lisa Schmidt - Home Energy Analyzer
+
 Martha Brook - CEC
+
 Richard Ridge, PhD - PG&E
+
 Robert Hansen - CPUC
+
 Ryan Bullard - SoCal Edison
+
 Torsten Glidden - Buid it Green
+
 John Backus Mayes - Energysavvy
+
 Alfredo Gutierrez - ICF
