@@ -24,7 +24,7 @@ The CalTRACK data preparations guidelines for monthly billing analysis consist o
 9. Final combined data sufficiency checks
 
 ### 1. Project Data Preparation
-The minimum field requirements for project data under the CalTRACK monthly specification are outlined here. Notably, a prepared project file should consist of one row per project, with a unique ID that can be used to link to gas and/or electric usage data, project start and stop dates, and zip code for the site. The following data cleaning steps for project data are meant to ensure that the prepared project file meets these field requirements and uniqueness constraints.
+The minimum field requirements for project data under the CalTRACK monthly specification are outlined [here] (https://github.com/impactlab/caltrack/blob/master/docs/monthly/data-sources.md). Notably, a prepared project file should consist of one row per project, with a unique ID that can be used to link to gas and/or electric usage data, project start and stop dates, and zip code for the site. The following data cleaning steps for project data are meant to ensure that the prepared project file meets these field requirements and uniqueness constraints.
 
 #### Creating Work Start and Work End dates from raw project data
 Accurately identifying baseline and reporting periods is important for reducing the modeling error associated with a savings calculation. However, considerable variation may occur in database records identifying dates associated with project start and project completion.
