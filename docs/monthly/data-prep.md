@@ -40,7 +40,9 @@ If a building appears multiple times within a project database, and the project 
 If a building appears multiple times within a project database and the project dates differ because there are multiple measures installed associated with the same incentive program, the start date of the intervention should be the earliest of the project start dates across projects and the end date for the intervention should be the latest of the project end dates.
 
 ### 2. Weather Data Preparation
-For CalTRACK monthly billing analysis, the weather data requirements are detailed here. For monthly analysis, since the daily average temperature data from a nearby weather station is used to create values for the number of heating degree days (below 60F) and cooling degree days (above 70F) in each billing period, the primary consideration in preparing the data is how to deal with missing values.
+For CalTRACK monthly billing analysis, the weather data requirements are straightforward. For monthly analysis, since the daily average temperature data from a nearby weather station is used to create values for the number of heating degree days (below 60F) and cooling degree days (above 70F) in each billing period, the primary consideration in preparing the data is how to deal with missing values.
+Additional weather data can be found [here] (https://github.com/impactlab/caltrack/blob/master/docs/monthly/data-sources.md#weather)
+For further discussions regarding weather data, see issues #10, #16. 
 
 #### Dealing with missing values
 Weather data is notoriously incomplete, especially at the granular sub-daily level. Some weather stations generally fail to report data, other weather stations are simply inconsistent in reporting data. This becomes an issue when trying to match projects to their local weather conditions. If a nearby non-reporting weather station is selected, the savings model will fail. If the project is connected to a nearby intermittently reporting weather station, the model will suffer. Additionally, if a project is connected to a weather station that experiences a significantly different local micro-climate, the model will suffer.
