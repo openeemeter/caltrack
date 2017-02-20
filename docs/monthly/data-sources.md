@@ -29,6 +29,7 @@ _Electricity_
 | --- | --- |
 | SPID | Service Point ID - identifies the physical meter |
 | SA |  Service Agreement ID - generated when a customer signs a service agreement. Can be many SAs for a single SPID. Corresponds to `Electric Service ID` in project files. |
+| prem_id | Corresponds to `char_prem_id` in Cross Reference file |
 | UOM | Unit of Measure (KWH or THERM) |
 | DIR | Direction of electricity flow (D=delivered, R=received) |
 | DATE | Day for this row of consumption data |
@@ -44,6 +45,7 @@ _Natural Gas_
 | Column Name | Description |
 | --- | --- |
 | Service Point | Service Point ID - identifies the physical meter. Corresponds to `sp_id` in cross-reference table. |
+| prem_id | Corresponds to `char_prem_id` in Cross Reference file |
 | Measurement Date | |
 | Therms per day | |
 
@@ -80,6 +82,7 @@ Both types of cross-reference files contain the same columns of interest.
 | --- | --- |
 | sa_id | Corresponds to `Electric Service ID` or `Gas Service ID` in projects file |
 | sp_id | Corresponds to `SPID` in electricity consumption file and `Service Point` in natural gas file |
+| char_prem_id | Corresponds to `prem_id` in electricity and natural gas consumption files |
 
 
 ### Weather
