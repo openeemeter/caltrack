@@ -114,7 +114,7 @@ While sampling methods would actually be preferable for characterizing the poste
 
 The two primary considerations for higher-frequency savings models are the need to take into account stronger autocorrelation and increased model specification error.
 
-M&V standards for industrial savings estimation, which has been dealing with AMI data longer, provides useful guidance for dealing with these two considerations. Following ASHRAE Guideline 14-2002, and augmenting work done by the NW SEM Collaborative, CalTRACK employs the follwoing method:
+M&V standards for industrial savings estimation, which has been dealing with AMI data longer, provides useful guidance for dealing with these two considerations. Following ASHRAE Guideline 14-2002, and augmenting work done by the NW SEM Collaborative, CalTRACK employs the following method:
 
 ##### Fractional Savings uncertainty calculation
 
@@ -136,4 +136,4 @@ $$CI(95) = +/- (FSU * 1.96) * 100$$
 
 #### Note on the lack of comparison group adjustments in CalTRACK technical specification
 
-While the technical working group acknowledged the potential use of comparison groups in gross savings estimation to correct for population-wide exogenous effects on use, after extensive debate, it was decided that the CalTRACK use cases (pay-for-performance in particular) required the ability for non-utility actors to be able to estimate savings without access to comparison group data. While several ideas were developed through the technical working group process about how to address this issue, there were significant concern about the feasbility of potential approaches. 
+While the technical working group acknowledged the potential use of comparison groups in gross savings estimation to correct for population-wide exogenous effects on use, after extensive debate, it was decided that the CalTRACK use cases (pay-for-performance in particular) required the ability for non-utility actors to be able to estimate savings without access to comparison group data. While several ideas were developed through the technical working group process about how to address this issue, there were serious concern about feasbility.
