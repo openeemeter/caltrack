@@ -37,12 +37,12 @@ Both aggregator and utility users of CalTRACK should be aware that the CalTRACK 
 
 ### Discussions
 
-1. [Project Plan and Technical Requirements Working Group Document] (https://docs.google.com/document/d/1mfNgJwzHUrp8SKNVeK8PH0Sjbt8xDb_s3FLblG9A2Qw/edit#heading=h.56f2ui64an9j)
-2. [Homes with Solar, EVs, etc.] (https://github.com/impactlab/caltrack/issues/36)
-3. [Missing and anomalous data] (https://github.com/impactlab/caltrack/issues/35)
-4. [Zip Code Weather Station mapping] (https://github.com/impactlab/caltrack/issues/25)
-5. [Data prep] (https://github.com/impactlab/caltrack/issues/12)
-6. [Monthly Data Requirements Specification] (https://github.com/impactlab/caltrack/issues/49)
-7. [Aggregation rules] (https://github.com/impactlab/caltrack/issues/32)
-8. [Future Participant Adjustments] (https://github.com/impactlab/caltrack/issues/20)
-9. [Fixed or variable degree days] (https://github.com/impactlab/caltrack/issues/37)
+1. [Project Plan and Technical Requirements Working Group Document](https://docs.google.com/document/d/1mfNgJwzHUrp8SKNVeK8PH0Sjbt8xDb_s3FLblG9A2Qw/edit#heading=h.56f2ui64an9j)
+2. [Homes with Solar, EVs, etc.](https://github.com/impactlab/caltrack/issues/36)
+3. [Missing and anomalous data](https://github.com/impactlab/caltrack/issues/35)
+4. [Zip Code Weather Station mapping](https://github.com/impactlab/caltrack/issues/25)
+5. [Data prep](https://github.com/impactlab/caltrack/issues/12)
+6. [Monthly Data Requirements Specification](https://github.com/impactlab/caltrack/issues/49)
+7. [Aggregation rules](https://github.com/impactlab/caltrack/issues/32)
+8. [Future Participant Adjustments](https://github.com/impactlab/caltrack/issues/20)
+9. [Fixed or variable degree days](https://github.com/impactlab/caltrack/issues/37)
