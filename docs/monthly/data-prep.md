@@ -75,7 +75,7 @@ Unmatched data should be excluded from analysis.
 #### Drop records not meeting data sufficiency requirements
 Calculating energy efficiency savings requires a sufficient observation period of energy usage prior to and after an intervention. Generally, annualized models require at least 12 months of usage data on each side of an intervention in order to accurately calculate energy savings. Some models may be able to calculate energy savings with fewer than 12 months of data in the reporting period.
 * 12 complete months pre-retrofit for monthly billing data to qualify for estimation or 24 months with up to 2 missing values from different, non-contiguous months
-* Post retrofit data sufficiency for estimation will be dealt with in post-estimation model fit criterion
+* Post retrofit data sufficiency for estimation will be dealt with in [post-estimation model fit criterion] (https://github.com/impactlab/caltrack/blob/master/docs/monthly/analysis.md#3-fit-all-candidate-models-and-apply-qualification-criteria)
 * Total annual savings estimates will require 12 months post-retrofit
 
 #### Drop project records with unsupported characteristics
