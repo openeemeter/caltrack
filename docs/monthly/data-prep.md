@@ -83,7 +83,7 @@ Calculating energy efficiency savings requires a sufficient observation period o
 ### 6. Link weather data and project records
 Weather station mapping requires locating the station nearest to the project. Each project file should contain a zip code that allows matching weather stations to projects
 
-* For California, weather station mapping was done using the 86 station standard mapping of zip code to CZ2010 weather files. Clean versions of these files can be found [here}(http://www.caltrack.org/weather.html).
+* For California, weather station mapping was done using the 86 station standard mapping of zip code to CZ2010 weather files. Clean versions of these files can be found [here](https://github.com/impactlab/caltrack/blob/master/tests/data-sources/weather/stationmapping_v2.csv).
 
 ### 7. Final combined data sufficiency checks
 * Billing periods (the period between bill start date and bill end date in the monthly usage data) with more than 10% missing days of weather data will be thrown out and count against the required number of billing period observations
