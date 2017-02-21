@@ -31,9 +31,11 @@ The two use cases that CalTRACK v1 is intended to support are:
 
 ### Further Considerations
 
-1. The purpose of CalTRACK is to provides an estimate of weather normalized gross savings and is not ia replacement for net savings measurement arrived at through impact evaluations.
+The purpose of CalTRACK is to provides an estimate of weather normalized gross savings and is not a replacement for net savings measurement arrived at through impact evaluations.
 
 Both aggregator and utility users of CalTRACK should be aware that the CalTRACK methods do not apply corrections for exogenous changes such as economic conditions, energy costs, unobserved weather effects, and other factors that may impact consumption patterns and savings at a population level.
+
+However, savings from treatment groups as well as control groups (once identified) can be calculated using CalTRACK methods.
 
 ### Discussions
 
