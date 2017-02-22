@@ -4,57 +4,59 @@ This site represents the official technical documentation for CalTRACK, a set of
 
 A full process history and related resources can be found on the [CalTRACK](http://www.caltrack.org) website.
 
-Initial draft requirements for CalTRACK were developed by the CalTRACK technical working group based on methods developed as part of the OpenEEmeter open source platform and tested using data from PG&E to empirically verify assumptions and identify areas of sensitivity, the modify publish official versions of the methods through an open source process. Details about the CalTRACK technical working group processes can be found on the [CalTRACK](http://www.caltrack.org/methods-dev-process.html) website.
+Initial draft requirements for CalTRACK were developed by the CalTRACK technical working group and tested using data from PG&E to empirically verify assumptions and identify areas of sensitivity, the modify publish official versions of the methods through an open source process. Details about the CalTRACK technical working group processes can be found on the [CalTRACK](http://www.caltrack.org/methods-dev-process.html) website.
 
 Communication for CalTRACK methods development happens primarily through [Github issues](https://github.com/impactlab/caltrack/issues) and using a community communication tool called Slack. The source code for this documentation, as well as results from testing, discussion, and guidance for contribution can be found on the [CalTRACK Github repository](https://github.com/impactlab/caltrack)
 
 -----
 
-**CalTRACK Working Group Contributers:**
+**CalTRACK Working Group Contributors:**
 
-Leif Magnuson - PG&E Project Lead
-
-Matt Golden - Open Energy Efficiency 
-
-Matt Gee - Open Energy Efficiency 
-
-McGee Young - Open Energy Efficiency
+Leif Magnuson - PG&E
 
 Andy Fessel - PG&E
-
-Jarred Metoyer - DNVGL
-
-Jonathan Farland - DNVGL
-
-Ben Polly - NREL
-
-Beth Reid - Olivine
 
 Brian A. Smith - PG&E
 
 Charlene Chi-Johnston - PG&E
 
+Richard Ridge, PhD - PG&E
+
+Matt Golden - Open Energy Efficiency
+
+Matt Gee - Open Energy Efficiency
+
+McGee Young - Open Energy Efficiency
+
+Jarred Metoyer - DNVGL
+
+Jonathan Farland - DNVGL
+
+Jake Oster -  EnergySavvy
+
+John Backus Mayes - EnergySavvy
+
+Blake Hough - EnergySavvy
+
+Ben Polly - NREL
+
+Beth Reid - Olivine
+
 Cynthia Swaim - Sempra Utilities
 
 Denise Parker - SoCal Edison
 
-Gamaliel Lodge - Optimiser Energy 
-
-Jake Oster -  Energysavvy 
+Gamaliel Lodge - Optimiser Energy
 
 Lisa Schmidt - Home Energy Analyzer
 
 Martha Brook - CEC
 
-Richard Ridge, PhD - PG&E
-
 Robert Hansen - CPUC
 
 Ryan Bullard - SoCal Edison
 
-Torsten Glidden - Buid it Green
-
-John Backus Mayes - Energysavvy
+Torsten Glidden - Build it Green
 
 Alfredo Gutierrez - ICF
 

@@ -30,7 +30,7 @@ The main portfolio-level statistics of interest for CalTRACK are:
 
 While a detailed treatment of how to calculate each of these quantities is included below, the main formulations are below:
 
-1. Calculate the site-level Mean Squared Error (MSE) as an unbias estimator of the variance of the model errors, $s^2$ :
+1. Calculate the site-level Mean Squared Error (MSE) as an unbiased estimator of the variance of the model errors, \(s^2\) :
 
 $$s^2 = \sum{\frac{\hat{u}_i^2}{N−k}}$$
 
@@ -67,7 +67,7 @@ Take the stage one regression model with N observations and k regressors:
 
 $$y = X\beta + u$$
 
-Given a vector (or matrix) $x_0$ of post-intervention (reporting) period degree day covariates, the predicted value for  observation would be
+Given a vector (or matrix) \(x_0\) of post-intervention (reporting) period degree day covariates, the predicted value for  observation would be
 
 $$E[y|x_0] = \hat{y}_0 = x_0\beta$$
 
@@ -108,14 +108,6 @@ Using site-level forecast variance as the consistent estimator of site-level gro
 
 $$\hat{y} = \frac{\sum_i{y_i/ \sigma_i^2}}{\sum_i{1/ \sigma^2_i}}$$
 
-#### Calculating uncertainty for daily and hourly methods
-
-While sampling methods would actually be preferable for characterizing the posterior distribution of savings estimates using higher-frequency AMI data, due to lack of adoption of Bayesian methods in industry and increased computational complexity, CalTRACK use more frequently adopted.
-
-The two primary considerations for higher-frequency savings models are the need to take into account stronger autocorrelation and increased model specification error.
-
-M&V standards for industrial savings estimation, which has been dealing with AMI data longer, provides useful guidance for dealing with these two considerations. Following ASHRAE Guideline 14-2002, and augmenting work done by the NW SEM Collaborative, CalTRACK employs the following method:
-
 ##### Fractional Savings uncertainty calculation
 
 Because variances are larger in larger homes, normalizing levels of uncertainty using fractional savings uncertainty is an important aggregate metric, both for model comparison and selection, as well as final output. CalTRACK will compute the Fractional Savings Uncertainty at the site level based on the following equation:
@@ -124,9 +116,9 @@ Because variances are larger in larger homes, normalizing levels of uncertainty 
 
 Where
 
-$CV$ is the coefficient of variance on the savings mean using prediction errors specified above
-$t$ is the relevant t-statistic for the desired level of confidence
-$F$ is the relevant F-statistic given degrees of freedom for the selected model
+$$CV$$ is the coefficient of variance on the savings mean using prediction errors specified above
+$$t$$ is the relevant t-statistic for the desired level of confidence
+$$F$$ is the relevant F-statistic given degrees of freedom for the selected model
 
 ##### Calculating 95% confidence intervals using fractional savings uncertainty
 
@@ -134,6 +126,6 @@ To calculate confidence intervals using the following equation:
 
 $$CI(95) = +/- (FSU * 1.96) * 100$$
 
-#### Note on the lack of comparison group adjustments in CalTRACK technical specification
+#### Note on the lack of comparison group adjustments in v1 Monthly CalTRACK technical specification
 
-While the technical working group acknowledged the potential use of comparison groups in gross savings estimation to correct for population-wide exogenous effects on use, after extensive debate, it was decided that the CalTRACK use cases (pay-for-performance in particular) required the ability for non-utility actors to be able to estimate savings without access to comparison group data. While several ideas were developed through the technical working group process about how to address this issue, there were serious concern about feasbility.
+While the technical working group acknowledged the potential use of comparison groups in gross savings estimation to correct for population-wide exogenous effects on use, after extensive debate, it was decided that the CalTRACK use cases (pay-for-performance in particular) required the ability for non-utility actors to be able to estimate savings without access to comparison group data. While several ideas were developed through the technical working group process about how to address this issue, there were serious concern about feasibility and the issue was tabled for future versions of CalTRACK.
