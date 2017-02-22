@@ -65,4 +65,4 @@ Alfredo Gutierrez - ICF
 **Project Lead Technical Consultants:**
 [Open Energy Efficiency](http://openeemeter.org)
 
-the Open Energy Efficiency team has provided technical support to the the CalTRACK effort under contract with PG&E since 2013. The core methods were initially defined during the Advnaced Home Upgrade Software Initiative process, then developed into the [OpenEEmeter](http://www.openeemeter.org) open source platform and documentation with support by the California Energy Commission, and finally tested and agreed to through the CalTRACK Beta Process. A history of this effort can be found on the [CalTRACK](http://www.caltrack.org/caltrack-history.html) website.
+the Open Energy Efficiency team has provided technical support to the the CalTRACK effort under contract with PG&E since 2012. The core methods that became CalTRACK were initially defined during the Advanced Home Upgrade Software Initiative process, then developed into the OpenEEmeter open source code with support of the California Energy Commission. These methods were then further refined and tested in the final beta phase of this effort, resulting in the CalTRACK v1.0 Methods.
