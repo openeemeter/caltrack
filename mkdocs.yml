@@ -12,7 +12,6 @@ pages:
 - Home: index.md
 - Getting Started Guides:
   - Guide to Version 1.0 Monthly Methods: guides/v1guide.md
-  - Guide to Version 1.1 Daily Methods: guides/v1.1guide.md
 - Monthly:
   - Data Sources for Monthly Methods: monthly/data-sources.md
   - Data Preparation for Monthly Methods: monthly/data-prep.md
