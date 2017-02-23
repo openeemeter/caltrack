@@ -39,7 +39,7 @@ However, savings from treatment groups as well as control groups (once identifie
 
 ### Discussions
 
-1. [Project Plan and Technical Requirements Working Group Document](https://docs.google.com/document/d/1mfNgJwzHUrp8SKNVeK8PH0Sjbt8xDb_s3FLblG9A2Qw/edit#heading=h.56f2ui64an9j)
+1. [Project Plan and Technical Requirements Working Group Document (outdated)](https://docs.google.com/document/d/1mfNgJwzHUrp8SKNVeK8PH0Sjbt8xDb_s3FLblG9A2Qw/edit#heading=h.56f2ui64an9j)
 2. [Homes with Solar, EVs, etc.](https://github.com/impactlab/caltrack/issues/36)
 3. [Missing and anomalous data](https://github.com/impactlab/caltrack/issues/35)
 4. [Zip Code Weather Station mapping](https://github.com/impactlab/caltrack/issues/25)
