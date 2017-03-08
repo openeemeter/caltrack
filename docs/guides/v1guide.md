@@ -8,10 +8,10 @@ The complete technical specification for v1 monthly methods is found in four doc
 
 1. `/monthly/data-sources.md` describes the necessary data requirements for running CalTRACK v1
 2. `/monthly/data-prep.md` describes the sequence of steps required for preparing data for analysis
-3. `/monthly/analysis.md` describes the methods use for calculating site-level savings using monthly data
-4. `/monthly/aggregation.md` describes the methods use for aggregating site-level savings to group or portfolio average and total savings
+3. `/monthly/analysis.md` describes the methods used for calculating site-level savings using monthly data
+4. `/monthly/aggregation.md` describes the methods used for aggregating site-level savings to group or portfolio average and total savings
 
-The specification is intended to be done in order to ensure consistency and replicability.
+The specification is intended to be completed in sequential order to ensure consistency and replicability.
 
 ### Supported Use Cases
 
@@ -31,11 +31,13 @@ The two use cases that CalTRACK v1 is intended to support are:
 
 ### Further Considerations
 
-The purpose of CalTRACK is to provides an estimate of weather normalized gross savings and is not a replacement for net savings measurement arrived at through impact evaluations.
+The purpose of CalTRACK is to provide an estimate of weather normalized gross savings and is not a replacement for net savings measurement arrived at through impact evaluations.
 
 Both aggregator and utility users of CalTRACK should be aware that the CalTRACK methods do not apply corrections for exogenous changes such as economic conditions, energy costs, unobserved weather effects, and other factors that may impact consumption patterns and savings at a population level.
 
 However, savings from treatment groups as well as control groups (once identified) can be calculated using CalTRACK methods.
+
+Not all methods in these documents are fully specified and implementation variance can be quite substantial. The monthly methods specification represents a compromise between a desire to reach methodological consensus and a recognition that certain edge cases, methodological choices, and program rules remain either insufficiently tested or left to the discretion of the program implementer.
 
 ### Discussions
 
