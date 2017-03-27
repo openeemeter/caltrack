@@ -37,7 +37,7 @@ Both aggregator and utility users of CalTRACK should be aware that the CalTRACK 
 
 However, savings from treatment groups as well as control groups (once identified) can be calculated using CalTRACK methods.
 
-Not all methods in these documents are fully specified and implementation variance can be quite substantial. The monthly methods specification represents a compromise between a desire to reach methodological consensus and a recognition that certain edge cases, methodological choices, and program rules remain either insufficiently tested or left to the discretion of the program implementer.
+The methods in these documents are not fully specified and implementation variance can be quite substantial and thus not entirely replicable. Users of this document must be aware that CalTRACK monthly methods were not empirically tested by the CalTRACK beta testers but were developed based on the expertise of the beta test group. The monthly methods specification represents a compromise between a desire to reach methodological consensus and a recognition that certain edge cases, methodological choices, and program rules remain either insufficiently tested or left to the discretion of the implementer. We are further developing daily methods as a replacement to the monthly methods for the specific use cases of Caltrack which are programs in service territories with AMI data available.
 
 ### Discussions
 
