@@ -30,11 +30,11 @@ Where
 
 In the second stage, using parameter estimates from the first stage equation, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated or actual use, depending on the quantity of interest.
 
-This site-level two-stage approach without the use of a comparison group, while having significant limitations and tradeoffs, was decided by the technical working group to be appropriate for the two main use cases for CalTRACK, which emphasize effects on the grid and feedback to software vendors, rather than causal programatic effects. In addition to its long history of use in the EM&V literature, it draws on a methodological foundation developed in the more general literature on piecewise linear regression or segmented regression for policy analysis and effect estimates that is used in fields as divers as public health, medical research, and econometrics.
+This site-level two-stage approach without the use of a comparison group, while having significant limitations and tradeoffs, was decided by the technical working group to be appropriate for the two main use cases for CalTRACK, which emphasize effects on the grid and feedback to software vendors, rather than causal programatic effects. In addition to its long history of use in the EM&V literature, it draws on a methodological foundation developed in the more general literature on piecewise linear regression or segmented regression for policy analysis and effect estimates that is used in fields as diverse as public health, medical research, and econometrics.
 
 We now proceed with a detailed technical treatment of the steps for monthly savings estimation.
 
-###Technical guidelines for implementing two-stage estimation on monthly electric and gas usage data for CalTRACK
+### Technical guidelines for implementing two-stage estimation on monthly electric and gas usage data for CalTRACK
 
 CalTRACK savings estimation begins with gas and electric usage data, project data, and weather data that have been cleaned and combined according to the Data Cleaning and Integration technical specification. Starting with the prepared data, site-level monthly gross savings analysis is performed by implementing the following steps:
 
