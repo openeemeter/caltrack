@@ -32,11 +32,11 @@ In general, users should try to identify the fields in a project record that mos
 CalTRACK implementations should use official work start date and work end date fields provided by aggregators rather then proxy fields when available.
 
 #### Dealing with miscoded dates
-Implausible day values (>31) should be coded as the beginning of month if project start date and end of month if project end date so that the entire month is included in the intervention window
+Implausible day values (>31) should be coded as the beginning of month if project start date and end of month if project end date so that the entire month is included in the intervention window.
 Implausible month and year values should be flagged and that home not included in estimation.
 
 #### Deduplicate project records
-If a building appears multiple times within a project database, and the project dates are the same the most complete record for that building should be used
+If a building appears multiple times within a project database, and the project dates are the same the most complete record for that building should be used.
 If a building appears multiple times within a project database and the project dates differ because there are multiple measures installed associated with the same incentive program, the start date of the intervention should be the earliest of the project start dates across projects and the end date for the intervention should be the latest of the project end dates.
 
 ### 2. Weather Data Preparation
@@ -68,15 +68,15 @@ Unmatched data should be excluded from analysis.
 
 ### 5. Linked project+use data preparation
 #### Deduplicate records based on combined attributes
-* If two duplicate records have identical consumption traces and date ranges, drop one at random
+* If two duplicate records have identical consumption traces and date ranges, drop one at random.
 * If two duplicate records have identical consumption traces but different date ranges select the more complete record having more dates. * If the dates are contiguous, or there are overlapping dates with the same usage values, combine the two traces into a single trace.
 * If the records have the same date ranges, but different usage values, the project should be flagged and the record excluded from the sample.
 
 #### Drop records not meeting data sufficiency requirements
 Calculating energy efficiency savings requires a sufficient observation period of energy usage prior to and after an intervention. Generally, annualized models require at least 12 months of usage data on each side of an intervention in order to accurately calculate energy savings. Some models may be able to calculate energy savings with fewer than 12 months of data in the reporting period.
-* 12 complete months pre-retrofit for monthly billing data to qualify for estimation or 24 months with up to 2 missing values from different, non-contiguous months
-* Post retrofit data sufficiency for estimation will be dealt with in [post-estimation model fit criterion] (https://github.com/impactlab/caltrack/blob/master/docs/monthly/analysis.md#3-fit-all-candidate-models-and-apply-qualification-criteria)
-* Total annual savings estimates will require 12 months post-retrofit
+* 12 complete months pre-retrofit for monthly billing data to qualify for estimation or 24 months with up to 2 missing values from different, non-contiguous months.
+* Post retrofit data sufficiency for estimation will be dealt with in [post-estimation model fit criterion](https://github.com/impactlab/caltrack/blob/master/docs/monthly/analysis.md#3-fit-all-candidate-models-and-apply-qualification-criteria).
+* Total annual savings estimates will require 12 months post-retrofit.
 
 #### Drop project records with unsupported characteristics
 * Drop homes with known PV or EV added 12 months prior to or up to 12 months after the intervention. During the CalTRACK beta test, these homes were identified from the presence of reverse flow in the AMI data and/or indications of net metering in the cross reference tables. However, if you only have access to billing data, CalTRACK recommends working with the utility to get flags for accounts that have net metering present so they can be excluded from the analysis.
@@ -88,5 +88,5 @@ Weather station mapping requires locating the station nearest to the project. Ea
 * For California, weather station mapping was done using the 86 station standard mapping of zip code to CZ2010 weather files. Clean versions of these files can be found [here](https://github.com/impactlab/caltrack/blob/master/tests/data-sources/weather/stationmapping_v2.csv).
 
 ### 7. Final combined data sufficiency checks
-* Billing periods (the period between bill start date and bill end date in the monthly usage data) with more than 10% missing days of weather data will be thrown out and count against the required number of billing period observations
-* Any projects with fewer than 12 months pre and 12 months post are not included in the analysis
+* Billing periods (the period between bill start date and bill end date in the monthly usage data) with more than 10% missing days of weather data will be thrown out and count against the required number of billing period observations.
+* Any projects with fewer than 12 months pre and 12 months post are not included in the analysis.
