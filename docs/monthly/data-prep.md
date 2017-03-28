@@ -24,7 +24,7 @@ The CalTRACK data preparations guidelines for monthly billing analysis consist o
 9. Final combined data sufficiency checks
 
 ### 1. Project Data Preparation
-The minimum field requirements for project data under the CalTRACK monthly specification are outlined [here] (https://github.com/impactlab/caltrack/blob/master/docs/monthly/data-sources.md). Notably, a prepared project file should consist of one row per project, with a unique ID that can be used to link to gas and/or electric usage data, project start and stop dates, and zip code for the site. The following data cleaning steps for project data are meant to ensure that the prepared project file meets these field requirements and uniqueness constraints.
+The minimum field requirements for project data under the CalTRACK monthly specification are outlined [here](https://github.com/impactlab/caltrack/blob/master/docs/monthly/data-sources.md). Notably, a prepared project file should consist of one row per project, with a unique ID that can be used to link to gas and/or electric usage data, project start and stop dates, and zip code for the site. The following data cleaning steps for project data are meant to ensure that the prepared project file meets these field requirements and uniqueness constraints.
 
 #### Creating Work Start and Work End dates from raw project data
 Accurately identifying baseline and reporting periods is important for reducing the modeling error associated with a savings calculation. However, considerable variation may occur in database records identifying dates associated with project start and project completion.
@@ -41,7 +41,7 @@ If a building appears multiple times within a project database and the project d
 
 ### 2. Weather Data Preparation
 For CalTRACK monthly billing analysis, the weather data requirements are straightforward. For monthly analysis, since the daily average temperature data from a nearby weather station is used to create values for the number of heating degree days (below 60F) and cooling degree days (above 70F) in each billing period, the primary consideration in preparing the data is how to deal with missing values.
-Additional weather data can be found [here] (https://github.com/impactlab/caltrack/blob/master/docs/monthly/data-sources.md#weather)
+Additional weather data can be found [here](https://github.com/impactlab/caltrack/blob/master/docs/monthly/data-sources.md#weather)
 For further discussions regarding weather data, see issues #10, #16. 
 
 #### Dealing with missing values
