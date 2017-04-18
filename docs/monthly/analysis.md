@@ -6,7 +6,7 @@
 
 Site-level gross savings using monthly billing data (both electricity and gas) will use a two-stage estimation approach that closely follows methodological recommendations in the technical appendices of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, with some modifications and more specific guidance developed through empirical testing to ensure consistency and replicability of results.
 
-The idea behind two-stage site-level models is to model the energy use of each house before and after
+The idea behind two-stage site-level models is to model the energy use of each house before and after an energy efficiency retrofit.
 
 More formally, the two-stage approach first fits **two** separate parametric models to daily average energy use, one on the pre-intervention (baseline) period and one on the post-intervention (reporting) period for a single site using an ordinary least squares regression of the general form:
 
