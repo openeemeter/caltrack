@@ -126,6 +126,3 @@ To calculate confidence intervals using the following equation:
 
 $$CI(95) = +/- (FSU * 1.96) * 100$$
 
-#### Note on the lack of comparison group adjustments in v1 Monthly CalTRACK technical specification
-
-While the technical working group acknowledged the potential use of comparison groups in gross savings estimation to correct for population-wide exogenous effects on use, after extensive debate, it was decided that the CalTRACK use cases (pay-for-performance in particular) required the ability for non-utility actors to be able to estimate savings without access to comparison group data. While several ideas were developed through the technical working group process about how to address this issue, there were serious concern about feasibility and the issue was tabled for future versions of CalTRACK.
