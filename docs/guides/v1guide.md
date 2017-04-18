@@ -33,11 +33,7 @@ The two use cases that CalTRACK v1 is intended to support are:
 
 The purpose of CalTRACK is to provide an estimate of weather normalized gross savings and is not a replacement for net savings measurement arrived at through impact evaluations.
 
-Both aggregator and utility users of CalTRACK should be aware that the CalTRACK methods do not apply corrections for exogenous changes such as economic conditions, energy costs, unobserved weather effects, and other factors that may impact consumption patterns and savings at a population level.
-
-However, savings from treatment groups as well as control groups (once identified) can be calculated using CalTRACK methods.
-
-The methods in these documents are not fully specified and implementation variance can be quite substantial and thus not entirely replicable. Users of this document must be aware that CalTRACK monthly methods were not empirically tested by the CalTRACK beta testers but were developed based on the expertise of the beta test group. The monthly methods specification represents a compromise between a desire to reach methodological consensus and a recognition that certain edge cases, methodological choices, and program rules remain either insufficiently tested or left to the discretion of the implementer. We are further developing daily methods as a replacement to the monthly methods for the specific use cases of Caltrack which are programs in service territories with AMI data available.
+Both aggregator and utility users of CalTRACK should be aware that the CalTRACK methods do not apply corrections for exogenous changes such as economic conditions, energy costs, unobserved weather effects, and other factors that may impact net savings at a population and premise level.
 
 ### Discussions
 
