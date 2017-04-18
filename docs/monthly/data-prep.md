@@ -4,7 +4,7 @@
 CalTRACK employs the following processes when preparing monthly consumption, weather, and project data for performing the monthly billing analysis specified in the CalTRACK v1 monthly methods.
 
 ### *Data Preparation Overview*
-There are countless small decisions that must be made as edge cases in the data arise. Thorough documentation ensures that evaluators understand the implications of these choices. Below are guidelines and a general process for addressing the most common issues that arise during data cleaning efforts for monthly billing analysis. It is recommended conduct these steps in the order they appear because the final combined dataset is highly sensitive to the order of data preparation steps.
+There are countless small decisions that must be made as edge cases in the data arise. Thorough documentation ensures that users understand the implications of these choices. Below are guidelines and a general process for addressing the most common issues that arise during data cleaning efforts for monthly billing analysis. It is recommended that users conduct these steps in the order they appear because the final combined dataset is highly sensitive to the order of data preparation steps.
 
 The CalTRACK data preparations guidelines for monthly billing analysis consist of the following steps:
 
