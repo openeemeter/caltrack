@@ -337,6 +337,8 @@ For each file in the above list, perform the following steps:
 
 Optionally, between step 4 and 5 you could split the file into multiple CSVs to make the files easier to work with.
 
+This step should yield 6,890,783 trace records and 4,223 traces.
+
 Monthly Gas Use Preparation
 ---
 The following files are cleaned and formatted in this section:
