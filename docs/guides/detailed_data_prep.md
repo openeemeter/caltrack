@@ -74,6 +74,48 @@ Unmatched data should be excluded from analysis.
 * Drop homes with known PV or EV added 12 months prior to or up to 12 months after the intervention. During the CalTRACK beta test, these homes were identified from the presence of reverse flow in the AMI data and/or indications of net metering in the cross reference tables. 
 * Future efforts may provide the ability to access sub-meter data that may allow for backing out onsite generation and storage to arrive at savings.
 
+Guidelines for Monthly Electric and Gas Usage Preparation
+---
+### Dealing with missing values in monthly usage data
+
+Usage data generally undergoes significant cleaning prior to release to program administrators or the general public. There are generally three types of missing usage data. First, monthly billing data will be populated with “estimated” reads, when the utility has imputed a likely consumption amount for the month for the purposes of billing, but has not actually recorded a meter reading. Second, there are gaps in AMI meter data, where there may have been a hardware failure or another similar type of infrastructure breakdown where the data was not recorded. Finally, there is the issue of data that goes missing in the process of transferring to program evaluators (in the CalTrack Beta test, two of the zip files holding monthly billing data were corrupted and unreadable). Each of these issues represents a unique challenge and must be dealt with independently.
+
+* For the case of missing values where the cumulative value is in the following period (as in an estimated read), the cumulative number of days between the two periods will be used to generate the use per day for that period.
+* Missing usage values with no cumulative amount in the following period (such as missing AMI data) will be counted against data sufficiency requirements.
+* CalTRACK does not offer firm guidance on auditing data sets for completeness, however, a data audit was conducted for the purposes of the Beta test and was found to have identified several missing data issues that would not have otherwise been identified. Thus, a data audit is generally recommended.
+* If flags exist for estimated values, they are counted as missing and count against the site’s data sufficiency criteria detailed later in this guidance.
+
+### Dealing with extreme values in usage data
+
+Occasionally, the project or consumption data may contain extreme values that are likely the result of a data error, but may also be an indicator of another factor (such as the presence of solar panels) and should be handled based on the following guidance:
+
+* Negative values for monthly use should be treated as missing and count against sufficiency criterion. Negative values in monthly data may also be a valid sign of possible solar/net metering and should be flagged for verification.
+
+### Deduplicate records based on combined attributes
+
+* If two duplicate records have identical consumption traces and date ranges, drop one at random.
+* If two duplicate records have identical consumption traces but different date ranges select the more complete record having more dates. If the dates are contiguous, or there are overlapping dates with the same usage values, combine the two traces into a single trace.
+* If the records have the same date ranges, but different usage values, the project should be flagged and the record excluded from the sample.
+
+### Drop records not meeting data sufficiency requirements
+
+Calculating energy efficiency savings requires a sufficient observation period of energy usage prior to and after an intervention. Generally, annualized models require at least 12 months of usage data on each side of an intervention in order to accurately calculate energy savings. Some models may be able to calculate energy savings with fewer than 12 months of data in the reporting period.
+
+* 12 complete months pre-retrofit for monthly billing data to qualify for estimation or 24 months with up to 2 missing values from different, non-contiguous months.
+* Post retrofit data sufficiency for estimation will be dealt with in [post-estimation model fit criterion](https://github.com/impactlab/caltrack/blob/master/docs/monthly/analysis.md#3-fit-all-candidate-models-and-apply-qualification-criteria).
+* Total annual savings estimates will require 12 months post-retrofit.
+
+### Drop project records with unsupported characteristics
+
+* Drop homes with known PV or EV added 12 months prior to or up to 12 months after the intervention. During the CalTRACK beta test, these homes were identified from the presence of reverse flow in the AMI data and/or indications of net metering in the cross reference tables. However, if you only have access to billing data, CalTRACK recommends working with the utility to get flags for accounts that have net metering present so they can be excluded from the analysis.
+* Future efforts may provide the ability to access sub-meter data that may allow for backing out onsite generation and storage to arrive at savings.
+
+Guidelines for Linking Project and Usage Files
+---
+Once project, consumption, and weather data have met all of their respective requirements, the data must be matched in order for a savings estimation to be performed. CalTRACK recommends using a key such as a utility account number that will clearly match a given project with a given meter. However, we also recognize that in certain cases, a project may encompass more than one meter or utility account. In these cases, CalTRACK does not offer specific guidance.
+
+Unmatched data should be excluded from analysis.
+
 Guidelines for Linking Weather Data and Project Records
 ---
 Weather station mapping requires locating the station nearest to the project. Each project file should contain a zip code that allows matching weather stations to projects
@@ -82,6 +124,9 @@ Weather station mapping requires locating the station nearest to the project. Ea
 Guidelines for Final Combined Data Sufficiency Checks
 ---
 It is recommended that you run a final audit of your data to evaluate the outputs of the data cleaning process. You should be able to match the number of projects eliminated from your analysis at each step listed above. Your final audit will also serve as a useful reference for further data analysis and aggregation.
+
+* Billing periods (the period between bill start date and bill end date in the monthly usage data) with more than 10% missing days of weather data will be thrown out and count against the required number of billing period observations.
+* Any projects with fewer than 12 months pre and 12 months post are not included in the analysis.
 
 Detailed Data Preparation Instructions
 ===
@@ -246,7 +291,7 @@ Perform the following:
 3. Remove duplicate records.
     1. Since the file is now sorted, compare the previous row's *DATE* and *SPID*. If they are the same, check each of the interval columns. If all match, throw out one of the records. 566 duplicates should be removed this way across 163 unique SPIDs.
 4. Format trace records.
-    1. *trace_id* -> `[SA]-[SPID]-[DIR]`
+    1. *trace_id* -> `elec-15min-[SA]-[SPID]-[DIR]`
     2. If *DIR* is *D*, the *interpretation* is *ELECTRICITY_CONSUMPTION_SUPPLIED*. If *R*, it is *ELECTRICITY_ON_SITE_GENERATION_UNCONSUMED*.
     3. *estimated* -> False
     4. *unit* -> KWH
@@ -271,7 +316,7 @@ Perform the following:
 3. Remove duplicate records.
     1. Since the file is now sorted, compare the previous row’s *DATE* and *SPID*. If they are the same, check each of the interval columns. If all match, throw out one of the records.
 4. Format trace records.
-    1. *trace_id* -> `[SA]-[SPID]-[DIR]`
+    1. *trace_id* -> `elec-hourly-[SA]-[SPID]-[DIR]`
     2. If *DIR* is *D*, the *interpretation* is *ELECTRICITY_CONSUMPTION_SUPPLIED*. If *R*, it is *ELECTRICITY_ON_SITE_GENERATION_UNCONSUMED*.
     3. *estimated* -> False
     4. *unit* -> KWH
