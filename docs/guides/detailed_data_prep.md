@@ -326,7 +326,7 @@ Perform the following:
 
 Optionally, between step 3 and 4 you could split the file into multiple CSVs to make the files easier to work with. This is advisable for this file in particular since it is quite large.
 
-This step should yield 161,755,296 trace records and 8,712 traces.
+This step should yield 161,755,296 trace records and 8,778 traces.
 
 Monthly Electric Use Preparation
 ---
@@ -382,7 +382,7 @@ For each file in the above list, perform the following steps:
 
 Optionally, between step 4 and 5 you could split the file into multiple CSVs to make the files easier to work with.
 
-This step should yield 6,890,783 trace records and 4,223 traces.
+This step should yield 6,892,834 trace records and 4,223 traces.
 
 Monthly Gas Use Preparation
 ---
