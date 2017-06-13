@@ -1,6 +1,6 @@
 Data Preparation for CalTRACK Beta
 ===
-CalTRACK employs the following processes when preparing weather, project, and daily/hourly/monthly consumption data for performing the analysis specified in the CalTRACK v1.1 methods.
+CalTRACK employs the following processes when preparing weather, project, and daily/hourly/monthly consumption data for performing the analysis specified in the CalTRACK v1.0 methods.
 
 Overview
 ---
