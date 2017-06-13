@@ -10,23 +10,23 @@ The idea behind two-stage site-level models is to model the energy use of each h
 
 More formally, the two-stage approach first fits **two** separate parametric models to daily average energy use, one on the pre-intervention (baseline) period and one on the post-intervention (reporting) period for a single site using an ordinary least squares regression of the general form:
 
-$$UPD_{mi} = \mu_i + \beta_{Hi}H_m + \beta_{Ci}C_m +  \epsilon_{mi} $$
+UPDmi = 𝜇i + 𝛽Hi Hm + 𝛽Ci Cm +  𝜖mi $$
 
 Where
 
-\(UPD_{mi}\) is average use (gas in therms, electricity in kWh) per day during billing period \(m\) for site \(i\).
+UPDmi is average use (gas in therms, electricity in kWh) per day during billing period m for site i.
 
-\(\mu_i\) is the mean use for site `i`, or intercept.
+𝜇i is the mean use for site `i`, or intercept.
 
-\(\beta_{Hi}\) is the coefficient site `i` on average heating degree days per day.
+𝛽Hi is the coefficient site `i` on average heating degree days per day.
 
-\(\beta_{Ci}\) is the coefficient or site `i` on average cooling degree days per day.
+𝛽Ci is the coefficient or site `i` on average cooling degree days per day.
 
-\(H_m\) is the average number of heating degree days per day in billing period `m`, which is a function of a fixed base temperature, the average daily temperatures from the weather station matched to site `i` during the billing period `m`, and the number of days in billing period `m` with matched usage and weather data for site `i`.
+Hm is the average number of heating degree days per day in billing period `m`, which is a function of a fixed base temperature, the average daily temperatures from the weather station matched to site `i` during the billing period `m`, and the number of days in billing period `m` with matched usage and weather data for site `i`.
 
-\(C_m\) is the average number of cooling degree days per day in month `m`, which is a function of a selected base temperature, the average daily temperatures from the weather station matched to site `i` during month `m`, and the number of days in month `m` with matched usage and weather data for site `i`.
+Cm is the average number of cooling degree days per day in month `m`, which is a function of a selected base temperature, the average daily temperatures from the weather station matched to site `i` during month `m`, and the number of days in month `m` with matched usage and weather data for site `i`.
 
-\(\epsilon_{mi}\) is the site specific error term for a given month.
+𝜖mi is the site specific error term for a given month.
 
 In the second stage, using parameter estimates from the first stage equation, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated or actual use, depending on the quantity of interest.
 
@@ -42,25 +42,25 @@ CalTRACK savings estimation begins with gas and electric usage data, project dat
 
 The CalTRACK monthly gross savings analysis uses average use per day (\(UPD\)) values for each month by taking the bill-period usage values, then dividing by the number of days in that bill period, as follows:
 
-$$UPD_m = \frac{1}{n_{U_d}} * \sum{U_d}$$
+UPDm = 1/nUd * sum(Ud)
 
 Where
 
-\(UPD_m\) is the average use per day for a given month `m`
+UPDm is the average use per day for a given month `m`
 
-\(\sum{U_d}\) is the sum of all daily use values \(U_d\) for a given month `m’
+sum(Ud) is the sum of all daily use values (Ud) for a given month `m’
 
-\(n_{U_d}\) is the total number of daily use values provided in the usage series that are between the first calendar day of month `m` and the last calendar day of month `m`
+nUd is the total number of daily use values provided in the usage series that are between the first calendar day of month `m` and the last calendar day of month `m`
 
 *Note: If daily use data for gas or electric is not available, monthly billing data can be used for the monthly billing analysis. However, modifications of the denominators for average use per day and for average HDD and CDD per day are necessary.*
 
-Now split the series of \(UPD_m\) values into pre- and post-intervention periods according to the following rules:
+Now split the series of UPDm values into pre- and post-intervention periods according to the following rules:
 
-*Pre-intervention period*: all \(UPD_m\) values from the beginning of the series up to the the complete billing month prior to the `work_start_date`. The month containing `work_start_date` is excluded from this series.
+*Pre-intervention period*: all UPDm values from the beginning of the series up to the the complete billing month prior to the `work_start_date`. The month containing `work_start_date` is excluded from this series.
 
-*Post-intervention period*: all \(UPD_m\) values from the first billing month after the `work_end_date` to the end of the series.
+*Post-intervention period*: all UPDm values from the first billing month after the `work_end_date` to the end of the series.
 
-**Final data sufficiency qualification check**: All qualifying sites must have at least 12 months of contiguous $UPD_m$ values in the pre-intervention series and at least 12 months of contiguous post-intervention \(UPD_m\) values starting with the month after `work_end_date`.
+**Final data sufficiency qualification check**: All qualifying sites must have at least 12 months of contiguous UPDm values in the pre-intervention series and at least 12 months of contiguous post-intervention UPDm values starting with the month after `work_end_date`.
 
 **All sites not meeting these minimum data requirements are thrown out of the analysis**
 
@@ -74,37 +74,37 @@ CDD base temp: 70 F
 
 HDD and CDD values are calculated as follows
 
-$$HDD_m = \frac{1}{n_{U_d}} * \sum{ \max(60 - T_{ave}, 0) }$$
+HDDm = 1/nUd * sum(max(60 - Tave, 0))
 
 
 Where
 
-\(HDD_m\) = Average heating degree days per day for billing period `m`
+HDDm = Average heating degree days per day for billing period `m`
 
-\(n_{U_d}\) = the number of days with both weather and usage data
+nUd = the number of days with both weather and usage data
 
-\(\sum\) = the sum of the degree  over each day `d` in billing period `m`
+sum = the sum of the degree  over each day `d` in billing period `m`
 
-\(\max\) = the maximum of the two values in ()
+max = the maximum of the two values in ()
 
-\(T_{ave}\) = the average temperature for day `d`
+Tave = the average temperature for day `d`
 
 
 And
 
-$$CDD_m = \frac{1}{n_{U_d}} * \sum{ max(ave_temp_d - 70, 0) }$$
+CDDm = 1/nUd * sum(max(ave_temp_d - 70, 0))
 
 Where
 
-\(CDD_m\) = Cooling degree days for billing period `m`
+CDDm = Cooling degree days for billing period `m`
 
-\(n_{U_d}\) = the number of days with both weather and usage data
+nUd = the number of days with both weather and usage data
 
-\(\sum\) = the sum of values in {} over each day `d` in billing period `m`
+sum = the sum of values in {} over each day `d` in billing period `m`
 
-\(\max\) = the maximum of the two values in ()
+max = the maximum of the two values in ()
 
-\(T_{ave}\) = the average temperature for day `d`
+Tave = the average temperature for day `d`
 
 
 *Daily average temperatures are taken from the GSOD average data temperature dataset provided by NOAA*
@@ -115,38 +115,38 @@ For each site, all allowable models will be run as candidate models and then hav
 
 For CalTRACK electric monthly savings analysis, the following candidate models are fit:
 
-$$ UPD_{mi} = \mu_i + \beta_{Hi}H_m + \beta_{Ci}C_m +  \epsilon_{mi} $$
+UPDmi = 𝜇i + 𝛽Hi Hm + 𝛽Ci Cm +  𝜖mi
 
-$$ UPD_{mi} = \mu_i + \beta_{Hi}H_m +  \epsilon_{mi} $$
+UPDmi = 𝜇i + 𝛽HiHm +  𝜖mi
 
-$$ UPD_{mi} = \mu_i + \beta_{Ci}C_m +  \epsilon_{mi} $$
+UPDmi = 𝜇i + 𝛽CiCm +  𝜖mi
 
-$$ UPD_{mi} = \mu_i + \epsilon_{mi} $$
+UPDmi = 𝜇i + 𝜖mi
 
 
 with the constraints
 
-$$\beta_{H} > 0$$
+𝛽H > 0
 
-$$\beta_{C} > 0$$
+𝛽C > 0
 
-$$\mu_i > 0$$
+𝜇i > 0
 
 For electric, qualifying models for selection must have each parameter estimate meet the minimum significance criteria of $p < 0.1$ and are strictly positive. All qualifying models are considered for final model selection.
 
 For CalTRACK gas monthly savings analysis, the following candidate models are fit:
 
-$$UPD_{mi} = \mu_i + \beta_{Hi}H_m +  \epsilon_{mi} $$
+UPDmi = 𝜇i + 𝛽Hi Hm +  𝜖mi
 
-$$UPD_{mi} = \mu_i + \beta_{Ci}C_m +  \epsilon_{mi} $$
+UPDmi = 𝜇i + 𝛽Ci Cm +  𝜖mi
 
-$$UPD_{mi} = \mu_i + \epsilon_{mi} $$
+UPDmi = 𝜇i + 𝜖mi
 
 with the constraints
 
-$$\beta_{H} > 0$$
+𝛽H > 0
 
-$$\mu_i > 0$$
+𝜇i > 0
 
 If each parameter estimate meets minimum significance criteria (p < 0.1) and are strictly positive, then the model is a qualifying model for inclusion in model selection.
 
@@ -158,19 +158,19 @@ All qualifying pre-intervention models are compared to each other and among qual
 For the monthly billing analysis, because we are using fixed degree days instead of variable degree days, adjusted R-squared will be defined as
 
 
-$$ adjR^2 = 1 - \frac{SS_{res}/df_e}{SS_{tot}/df_t} $$
+adj R^2 = 1 - (SSres/df_e) / (SStot/df_t)
 
 
 Where
 
 
-\( SS_{res} \) is the sum of squares of residuals
+SSres is the sum of squares of residuals
 
-\( df_e \) is the degrees of freedom of the estimate of the underlying population error variance, and is calculated using `n-p-1`, where `n` is the number of observations in the sample used to estimate the model and `p` is the number of explanatory variables, not including the constant term and not including degree day base temperature as a parameter because it’s fixed
+df_e is the degrees of freedom of the estimate of the underlying population error variance, and is calculated using `n-p-1`, where `n` is the number of observations in the sample used to estimate the model and `p` is the number of explanatory variables, not including the constant term and not including degree day base temperature as a parameter because it’s fixed
 
-\( SS_{tot} \) is the total sum of squares
+SStot is the total sum of squares
 
-\( df_t \) is the degrees of freedom of the estimate of the population variance of the dependent variable, and is calculated as `n-1`, were `n` is the size of the sample use to estimate the model
+df_t is the degrees of freedom of the estimate of the population variance of the dependent variable, and is calculated as `n-1`, were `n` is the size of the sample use to estimate the model
 
 All qualifying post-intervention models are compared to each other and among qualifying models, the model with the maximum adjusted R-squared will be selected for second-stage savings estimation.
 
