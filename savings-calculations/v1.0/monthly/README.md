@@ -10,7 +10,7 @@ The idea behind two-stage site-level models is to model the energy use of each h
 
 More formally, the two-stage approach first fits **two** separate parametric models to daily average energy use, one on the pre-intervention (baseline) period and one on the post-intervention (reporting) period for a single site using an ordinary least squares regression of the general form:
 
-UPDmi = 𝜇i + 𝛽Hi Hm + 𝛽Ci Cm +  𝜖mi $$
+UPDmi = 𝜇i + 𝛽Hi Hm + 𝛽Ci Cm +  𝜖mi 
 
 Where
 
@@ -132,7 +132,7 @@ with the constraints
 
 𝜇i > 0
 
-For electric, qualifying models for selection must have each parameter estimate meet the minimum significance criteria of $p < 0.1$ and are strictly positive. All qualifying models are considered for final model selection.
+For electric, qualifying models for selection must have each parameter estimate meet the minimum significance criteria of p < 0.1 and are strictly positive. All qualifying models are considered for final model selection.
 
 For CalTRACK gas monthly savings analysis, the following candidate models are fit:
 
