@@ -1,6 +1,0 @@
-Summary Stat,Value
-Number of unique SAIDs in joined data,2935
-Number of unique SPIDs in hourly electricity data,3970
-Number of unique SPIDs in the electricity cross reference dataset,4102
-Number of unique SAIDs in the electricity cross reference dataset,7999
-% Records successfully matched between hourly electricity data to project data,67.34740706746214

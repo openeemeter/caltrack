@@ -1,6 +1,0 @@
-Summary Stat,Value
-Number of unique SPIDs [for electric accounts] in combined project data,3460
-Number of unique SPIDs in hourly electric data,3131
-Number of unique SAIDs in electric cross reference data,3461
-Number of unique SAIDs in gas cross reference data,385
-% records successfully matched between hourly electric and project data,90.49
