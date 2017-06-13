@@ -10,10 +10,9 @@ markdown_extensions:
 
 pages:
 - Home: index.md
-- Getting Started Guides:
-  - Guide to Version 1.0 Monthly Methods: guides/v1guide.md
-- Monthly:
-  - Data Sources for Monthly Methods: monthly/data-sources.md
-  - Data Preparation for Monthly Methods: monthly/data-prep.md
-  - Analysis of Monthly Data: monthly/analysis.md
-  - Aggregration of Site-level Savings: monthly/aggregation.md
+- Technical Specifications:
+  - Data Sources: data-sources/v1.0/README.md
+  - Data Preparation: data-prep/v1.0/README.md
+  - Analysis of Monthly Data: savings-calculations/v1.0/monthly/README.md
+  - Analysis of Daily Data: savings-calculations/v1.0/daily/README.md
+  - Aggregration of Site-level Savings: aggregation/v1.0/README.md
