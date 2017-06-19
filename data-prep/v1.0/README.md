@@ -39,7 +39,7 @@ Generally, the quality of your consumption data may vary substantially from samp
 3. Where available, the presence of net-metering is clearly marked (CalTRACK excludes homes that are net-metered)
 4. Traces are not duplicated in whole or in part
 
-The dataset generated for the CalTRACK beta test originated from a pool of projects and consumption data provided by PG&E (see [Data Sources](https://docs.google.com/document/d/1S08-RsisKa250Vw7nc5OQcHR4UZdJg6TUGByB-7I1bA/edit#heading=h.avqmwzkwotx9)). A smaller set of 1000 natural gas meters and 1000 electricity meters were selected from this larger pool for the purposes of testing. These meters were selected based on location (attempting to maximize coverage over each of the climate zones) and data sufficiency (each meter contains at least two years of historical usage data prior to the intervention period). 
+The dataset generated for the CalTRACK beta test originated from a pool of projects and consumption data provided by PG&E (see [Data Sources](https://github.com/impactlab/caltrack/tree/reorganization/data-sources/v1.0)). A smaller set of 1000 natural gas meters and 1000 electricity meters were selected from this larger pool for the purposes of testing. These meters were selected based on location (attempting to maximize coverage over each of the climate zones) and data sufficiency (each meter contains at least two years of historical usage data prior to the intervention period). 
 
 ### Roll up sub-daily interval data to daily totals
 
