@@ -130,7 +130,7 @@ It is recommended that you run a final audit of your data to evaluate the output
 
 Detailed Data Preparation Instructions
 ===
-What follows in an example of data prep steps that could be used to create files for use in the [eemeter](http://eemeter.readthedocs.io/en/latest/). These steps, combined with use of the *eemeter*, are one example implementation of the guidelines laid out above.
+What follows in an example of data prep steps that could be used to create files for analysis. These steps are one example implementation of the guidelines laid out above.
 
 Overall, 3 types of files are generated during this process for use in the CalTRACK methods:
 1. Project data
@@ -147,10 +147,10 @@ Trace Data files should have the following fields:
 1. *trace_id*: A unique identifier for the trace (can occur more than once in the file to identify individual trace records).
 2. *unit*: Unit of measurement for the trace record (“KWH” or “THERM”).
 3. *estimated*: Whether this is an estimated reading (“True” or “False”).
-4. *interpretation*: An interpretation matching one of these values: http://eemeter.readthedocs.io/en/latest/eemeter_api.html#module-eemeter.structures. For purposes of this data, one of the following is always used:
-    1. ELECTRICITY_CONSUMPTION_SUPPLIED
-    2. ELECTRICITY_ON_SITE_GENERATION_UNCONSUMED
-    3. NATURAL_GAS_CONSUMPTION_SUPPLIED
+4. *interpretation*: For purposes of this data, one of the following is always used:
+    1. ELECTRICITY_CONSUMPTION_SUPPLIED - Represents the amount of utility-supplied electrical energy consumed on-site, as metered at a single usage point, such as a utility-owned electricity meter. Specifically does not include consumption of electricity generated on site, such as by locally installed solar photovoltaic panels.
+    2. ELECTRICITY_ON_SITE_GENERATION_UNCONSUMED - Represents the amount of excess locally generated energy, which instead of being consumed on-site, is fed back into the grid or sold back a utility.
+    3. NATURAL_GAS_CONSUMPTION_SUPPLIED - Represents the amount of energy supplied by a utility in the form of natural gas and used on site, as metered at a single usage point.
 5. *start*: Starting date time for the trace record.
 6. *value*: Value of the trace record (i.e. number of KWH/THERM)
 
@@ -423,5 +423,5 @@ This step should yield 233,053 trace records and 6,893 traces.
 
 Linking Projects to Usage/Trace Data
 ---
-Throughout the process above you've been building a dictionary of projects to traces or outputting files with project to trace mappings as you go. If the former, simply spin through your dictionary and write a single record for each project-trace mapping in a 2 column CSV file with `project_id` and `trace_id`. If you are using the [eemeter datastore](http://eemeter.readthedocs.io/en/latest/datastore_index.html), these mappings can be loaded last via this methodology.
+Throughout the process above you've been building a dictionary of projects to traces or outputting files with project to trace mappings as you go. If the former, simply spin through your dictionary and write a single record for each project-trace mapping in a 2 column CSV file with `project_id` and `trace_id`. 
 
