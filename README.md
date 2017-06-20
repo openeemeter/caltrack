@@ -1,14 +1,5 @@
-# **CalTRACK Executive ****Summary**
+# **CalTRACK Executive Summary**
 
- 
-
-*Draft - For Working Group Members Only*
-
-* *
-
-*Revised June 19, 2017*
-
- 
 
 **Definition**
 
