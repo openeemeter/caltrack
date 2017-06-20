@@ -77,11 +77,11 @@ We have taken this first step towards an empirically-informed, professionally-te
 
 ●  	*McGee Young - Open Energy Efficiency**
 
-●  	*Ken Agnew – DNVGL**
+●  	*Ken Agnew – DNV GL**
 
-●  	*Jarred Metoyer – DNVGL**
+●  	*Jarred Metoyer – DNV GL**
 
-●  	*Jonathan Farland – DNVGL**
+●  	*Jonathan Farland – DNV GL**
 
 ●  	*Ben Polly - NREL*
 
@@ -119,6 +119,6 @@ We have taken this first step towards an empirically-informed, professionally-te
 
 
 
-*Open Energy Efficiency, DNVGL, and EnergySavvy participated in methods development and testing for both monthly and daily methods.
+*Open Energy Efficiency, DNV GL, and EnergySavvy participated in methods development and testing for both monthly and daily methods.
 
  
