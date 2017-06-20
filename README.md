@@ -1,22 +1,16 @@
-# CalTRACK Technical Documentation
-
-This site represents the official technical documentation for CalTRACK, a set of open methods developed and tested through a multi-stakeholder process for estimating gross savings for residential energy efficiency programs in California.
-
-Initial draft requirements for CalTRACK were developed by the CalTRACK technical working group and tested using data from PG&E to empirically verify assumptions and identify areas of sensitivity, the modify publish official versions of the methods through an open source process. 
-
-Communication for CalTRACK methods development happens primarily through [Github issues](https://github.com/impactlab/caltrack/issues) and using a community communication tool called Slack. The documentation, as well as results from testing, discussion, and guidance for contribution can be found on the [CalTRACK Github repository](https://github.com/impactlab/caltrack)
+# CalTRACK Executive Summary
 
 -----
 
-Definition
+**Definition
  
 CalTRACK is a set of methods for calculating site-based, weather-normalized, metered energy savings from an existing conditions baseline and applied to single family residential retrofits using data from utility meters.
  
-Scope
+**Scope
  
 CalTRACK can be used by Program Administrators or third party implementers for managing energy efficiency programs. CalTRACK also supports Pay-for-Performance programs by tracking metered savings using calculations that are transparent and replicable. When both parties - purchaser and vendor - use the same standardized set of methods for calculating energy savings, a mature and robust energy efficiency market is possible.
  
-CalTRACK attempts to comply with AB-802 (Williams, 2015) and SB-350 (de León, 2015).
+CalTRACK attempts to comply with AB-802 [Williams, 2015](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB802) and SB-350 [de León, 2015](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160SB350).
  
 CalTRACK calculates the whole-building site-based savings that result from any mix of measures, building types, and consumer behavior. CalTRACK does not estimate the amount of savings that can be attributed to a particular measure.
  
@@ -32,7 +26,7 @@ The empirical testing and refinement of the methods was performed using historic
  
 CalTRACK allows third-party energy efficiency program implementers to conduct energy savings analysis on their own customers themselves, provided they are given access to their customers’ energy consumption data via Green Button or other means. This ability to track program performance in real time gives implementers an essential tool to monitor their performance and adjust their implementation practices. It also allows aggregators to quantify their expected yields for Pay-for-Performance programs.
  
-Methods
+**Methods
  
 The technical working group arrived at two sets of methods specifications, the first for calculating savings using monthly data, and the second for calculating savings using daily data. These methods are referred to as Monthly and Daily, respectively, and have each been tagged with a version number of 1.0.
  
@@ -40,7 +34,7 @@ The purpose of versioning the CalTRACK methods specification that informed the i
  
 We have taken this first step towards an empirically-informed, professionally-tested, and transparent set of methods. We encourage others to work together to continue to make progress.
  
-CalTRACK Working Group
+**CalTRACK Working Group
  
 ●   Leif Magnuson - PG&E Project Lead
 ●  	Matt Golden - Open Energy Efficiency*
