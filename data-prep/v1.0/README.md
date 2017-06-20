@@ -65,7 +65,6 @@ Unmatched data should be excluded from analysis.
 * 12 months consumption data prior to the date of the intervention recommended for all projects.
 * Data is considered sufficient when it contains usage data for 90% of coverage period.
 * 12 months consumption data after the date of the intervention is recommended for all projects. 
-* For days missing consumption data after the date of the intervention, a baseline mask should exclude those days from consideration as part of a savings calculation.
 * Data is considered missing if it is clearly marked as NaN or similar by the data provider.
 * Consumption records marked as “estimated” are rare when parsing AMI data, but if any should appear they should be discarded.
 
