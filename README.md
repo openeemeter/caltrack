@@ -2,16 +2,13 @@
 
 
 **Definition**
-
  
-
+ 
 CalTRACK is a set of methods for calculating site-based, weather-normalized, metered energy savings from an existing conditions baseline and applied to single family residential retrofits using data from utility meters.
-
  
 
 **Scope**
 
- 
 
 CalTRACK can be used by Program Administrators or third party implementers for managing energy efficiency programs. CalTRACK also supports Pay-for-Performance programs by tracking metered savings using calculations that are transparent and replicable. When both parties - purchaser and vendor - use the same standardized set of methods for calculating energy savings, a mature and robust energy efficiency market is possible.
 
@@ -23,7 +20,7 @@ CalTRACK attempts to comply with[ AB-802](https://leginfo.legislature.ca.gov/fac
 
 CalTRACK calculates the whole-building site-based savings that result from any mix of measures, building types, and consumer behavior. CalTRACK does not estimate the amount of savings that can be attributed to a particular measure.
 
- 
+
 
 CalTRACK does not take the place of program evaluation. Calculating site-based, weather normalized metered energy savings is often a first step in a program evaluation, but a full evaluation that seeks to control for other effects, such as exogenous factors like economic growth or technology adoption or endogenous factors like socioeconomic status would be expected to consider additional variables.
 
@@ -122,3 +119,5 @@ We have taken this first step towards an empirically-informed, professionally-te
 *Open Energy Efficiency, DNV GL, and EnergySavvy participated in methods development and testing for both monthly and daily methods.
 
  
+=======
+
