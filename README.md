@@ -30,7 +30,11 @@ These methods focus specifically on calculating site-based, weather-normalized m
 
  
 
-The CalTRACK technical working group’s empirical testing of these methods is archived in a Github repository. The repository contains the results of a variety of tests related to the methods choices. In general, the group limited its discussions to focus on specific technical issues rather than on broader, policy-oriented issues. These discussions can be found in the "[Issues](https://github.com/impactlab/caltrack/issues?utf8=%E2%9C%93&q=is%3Aissue)" section of the[ CalTRACK Github repository](https://github.com/impactlab/caltrack). While summary statistics are presented for both monthly and daily analysis, the intent was to use testing to inform methods guidance rather than to provide for a software equivalency testing process.
+CalTRACK allows third-party energy efficiency program implementers to conduct energy savings analysis on their own customers themselves, provided they are given access to their customers’ energy consumption data via Green Button or other means. This ability to track program performance in real time gives implementers an essential tool to monitor their performance and adjust their implementation practices. It also allows aggregators to quantify their expected yields for Pay-for-Performance programs.
+
+
+
+**Testing**
 
  
 
@@ -42,9 +46,10 @@ The empirical testing and refinement of the methods was performed using historic
 
  
 
-CalTRACK allows third-party energy efficiency program implementers to conduct energy savings analysis on their own customers themselves, provided they are given access to their customers’ energy consumption data via Green Button or other means. This ability to track program performance in real time gives implementers an essential tool to monitor their performance and adjust their implementation practices. It also allows aggregators to quantify their expected yields for Pay-for-Performance programs.
+The CalTRACK technical working group’s empirical testing of these methods is archived in a Github repository. The repository contains the results of a variety of tests related to the methods choices. In general, the group limited its discussions to focus on specific technical issues rather than on broader, policy-oriented issues. These discussions can be found in the "[Issues](https://github.com/impactlab/caltrack/issues?utf8=%E2%9C%93&q=is%3Aissue)" section of the[ CalTRACK Github repository](https://github.com/impactlab/caltrack). While summary statistics are presented for both monthly and daily analysis, the intent was to use testing to inform methods guidance rather than to provide for a software equivalency testing process.
 
- 
+
+
 
 **Methods**
 
