@@ -147,7 +147,7 @@ Trace Data files should have the following fields:
     1. ELECTRICITY_CONSUMPTION_SUPPLIED - Represents the amount of utility-supplied electrical energy consumed on-site, as metered at a single usage point, such as a utility-owned electricity meter. Specifically does not include consumption of electricity generated on site, such as by locally installed solar photovoltaic panels.
     2. ELECTRICITY_ON_SITE_GENERATION_UNCONSUMED - Represents the amount of excess locally generated energy, which instead of being consumed on-site, is fed back into the grid or sold back a utility.
     3. NATURAL_GAS_CONSUMPTION_SUPPLIED - Represents the amount of energy supplied by a utility in the form of natural gas and used on site, as metered at a single usage point.
-    
+
 5. *start*: Starting date time for the trace record.
 6. *value*: Value of the trace record (i.e. number of KWH/THERM)
 
@@ -288,6 +288,7 @@ Perform the following:
 
     1. There should only be one project per *char_prem_id*. Build a dictionary with *char_prem_id* as the key and a list of projects as the value.
     2. If there is more than one project for a *char_prem_id*, merge the projects.
+    
         1. Set *Work Start Date* to the earliest available.
         2. Set *Work Finish Date* to the latest available.
 
