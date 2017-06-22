@@ -1,11 +1,11 @@
-## **CalTRACK Site-level Daily Gross Savings Estimation Technical Guidelines**
+## **CalTRACK Site-level Daily Weather Normalized, Metered Energy Savings Estimation Technical Guidelines**
 
 * * *
 
 
 ### **Methodological Overview**
 
-Site-level Gross Savings using daily billing data (both electricity and gas) will use a two-stage estimation approach that builds on the technical appendix of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, while providing more specific guidance to ensure replicability and address specific methodological issues related to both the data sources and the CalTRACK-specific use cases that are not addressed in prior standards.
+Site-level Weather Normalized, Metered Energy Savings using daily billing data (both electricity and gas) will use a two-stage estimation approach that builds on the technical appendix of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, while providing more specific guidance to ensure replicability and address specific methodological issues related to both the data sources and the CalTRACK-specific use cases that are not addressed in prior standards.
 
 The two-stage approach fits two separate parametric models to daily energy use data in both the pre-intervention (baseline) period and the post-intervention (reporting) period using ordinary least squares with the following first stage equation:
 
@@ -30,13 +30,13 @@ Where:
 
 **Note**: during the beta test we explored the use of robust linear regression instead of ordinary least squares but ultimately decided to use ordinary least squares for the initial CalTRACK use case.  A robust regression may offer some significant advantages, as described [here](https://github.com/impactlab/caltrack/issues/56) along with our reasons for sticking with ordinary least squares, and is worth considering as a future improvement to these methods.
 
-In the second stage, using parameter estimates from the first stage equation, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated or actual use, depending on the quantity of interest.
+In the second stage, using parameter estimates from the first stage equation, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized metered energy savings), or by using current-year weather to project forward baseline period use (current year weather normalized metered energy savings) and differencing between baseline and reporting period estimated or actual use, depending on the quantity of interest.
 
 We now proceed with a detailed technical treatment of the steps for daily savings estimation.
 
 ### **Technical guidelines for implementing two-stage estimation on daily electric and gas usage data for CalTRACK**
 
-CalTRACK savings estimation begins with gas and electric usage data, project data, and weather data that have been cleaned and combined according to the Data Preparation technical specification. Starting with the prepared data, site-level daily gross savings analysis is performed by implementing the following steps:
+CalTRACK savings estimation begins with gas and electric usage data, project data, and weather data that have been cleaned and combined according to the Data Preparation technical specification. Starting with the prepared data, site-level daily metered energy savings analysis is performed by implementing the following steps:
 
 1. Usage data used in the CalTRACK daily analysis will be done on Use Per Day (\(UPD\)) values from daily AMI usage data.
 
@@ -94,33 +94,33 @@ Among qualifying models, the model with the maximum adjusted R-squared will be s
 
 During the second stage, four savings quantities will be estimated for each site that meets the minimum data sufficiency criteria for that savings statistic.
 
-1. Cumulative gross savings over entire performance period
-2. Normal year annualized gross savings
-3. Year one annualized gross savings in the the reporting (post-intervention) period
-4. Year two annualized gross savings in the the reporting (post-intervention) period
+1. Cumulative weather normalized metered energy savings over entire performance period
+2. Normal year annualized weather normalized metered energy savings
+3. Year one annualized weather normalized metered energy savings in the the reporting (post-intervention) period
+4. Year two annualized weather normalized metered energy savings in the the reporting (post-intervention) period
 
 These site-level second stage quantities are calculated as follows:
 
-**Cumulative gross savings over entire performance period (site-level)**
+**Cumulative weather normalized metered energy savings over entire performance period (site-level)**
 
 1. Compute `predicted_baseline_use` for each day after `work_end_date` using the Stage One model with the reporting period weather data. Be sure to use balance point temperatures from the baseline model when calculating reporting period HDD and CDD values.
 2. Compute `daily_gross_savings` = `predicted_baseline_use - actual_use` for every day after `work_end_date`.
 3. Sum  `daily_gross_savings` over every day since `work_end_date`.
 
-**Normal year annualized gross savings (site-level)**
+**Normal year annualized weather normalized metered energy savings (site-level)**
    
 1. Compute `predicted_baseline_use` using the Stage One model from the baseline period and degree days from the CZ2010 normal weather year. Be sure to use balance point temperatures from the baseline model when calculating baseline period HDD and CDD values.
 2. Compute `predicted_reporting_use` using the Stage One model from the reporting period and degree days from the CZ2010 normal weather year file. Be sure to use balance point temperatures from the reporting period model when calculating reporting period HDD and CDD values.
 3. Compute `daily_normal_year_gross_savings` = `predicted_baseline_use - predicted_reporting_use` for normal year days
 4. Sum  `daily_normal_year_gross_savings` over entire normal year.
 
-**Year one gross savings from 1 to 12 months after site visit.  (site-level)**
+**Year one weather normalized metered energy savings from 1 to 12 months after site visit.  (site-level)**
    
 1. Compute `predicted_baseline_use` for each day after `work_end_date` until 12 calendar months after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point temperatures from the baseline model when calculating reporting period HDD and CDD values.
 2. Compute `daily_gross_savings` = `predicted_baseline_use - actual_daily_use` for 12 complete calendar months after `work_end_date` for project. For days missing consumption data after the date of the intervention, a baseline mask should exclude those days from consideration as part of a savings calculation.
 3. Sum  `daily_gross_savings` over the 12 calendar months since `work_end_date`.
 
-**Year two gross savings from 13 to 24 months after site visit.  (site-level)**
+**Year two weather normalized metered energy savings from 13 to 24 months after site visit.  (site-level)**
 
 1. Compute `predicted_baseline_use` for each day starting 13 months after `work_end_date` until 24 calendar months after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point temperatures from the baseline model when calculating reporting period HDD and CDD values.
 2. Compute `daily_gross_savings` = `predicted_baseline_use - actual_daily_use` for month 13 to month 24 after `work_end_date` for project. For days missing consumption data after the date of the intervention, a baseline mask should exclude those days from consideration as part of a savings calculation.
