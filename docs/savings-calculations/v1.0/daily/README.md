@@ -10,23 +10,23 @@ Site-level Gross Savings using daily billing data (both electricity and gas) wil
 The two-stage approach fits two separate parametric models to daily energy use data in both the pre-intervention (baseline) period and the post-intervention (reporting) period using ordinary least squares with the following first stage equation:
 
 
-UPDDi = 𝜇i + 𝛽HiHD + 𝛽CiCD + 𝜖Di
+$$UPD_{di} = \mu_i + \beta_{Hi}HDD_d + \beta_{Ci}CDD_d + \epsilon_{di}$$
 
 Where:
 
-UPDDi is the total use (therms for gas, kWh for electricity) per day on day, D, for site, i
+\(UPD_{di}\) is the total use (therms for gas, kWh for electricity) per day on day, \(d\), for site, \(i\)
 
-𝜇i is the mean use for site, i
+\(\mu_i\) is the mean use for site, \(i\)
 
-𝛽Hi is the coefficient for site, i, of heating degree days
+\(\beta_{Hi}\) is the coefficient for site, \(i\), of heating degree days
 
-𝛽Ci is the coefficient for site, i, of cooling degree days
+\(\beta_{Ci}\) is the coefficient for site, \(i\), of cooling degree days
 
-HD is the number of heating degree days on day, D, calculated as `max(heating balance point - average daily temperature at site i, 0)`
+\(HDD_d\) is the number of heating degree days on day, \(d\), calculated as `max(heating balance point - average daily temperature at site i, 0)`
 
-CD is the number of cooling degree days on day, D, calculated as `max(average daily temperature at site i - cooling balance point, 0)`
+\(CDD_d\) is the number of cooling degree days on day, \(d\), calculated as `max(average daily temperature at site i - cooling balance point, 0)`
 
-𝜖Di is the error term at site, i, for day, D
+\(\epsilon_{di}\) is the error term at site, \(i\), for day, \(d\)
 
 **Note**: during the beta test we explored the use of robust linear regression instead of ordinary least squares but ultimately decided to use ordinary least squares for the initial CalTRACK use case.  A robust regression may offer some significant advantages, as described [here](https://github.com/impactlab/caltrack/issues/56) along with our reasons for sticking with ordinary least squares, and is worth considering as a future improvement to these methods.
 
@@ -38,7 +38,7 @@ We now proceed with a detailed technical treatment of the steps for daily saving
 
 CalTRACK savings estimation begins with gas and electric usage data, project data, and weather data that have been cleaned and combined according to the Data Preparation technical specification. Starting with the prepared data, site-level daily gross savings analysis is performed by implementing the following steps:
 
-1. Usage data used in the CalTRACK daily analysis will be done on Use Per Day (UPD) values from daily AMI usage data.
+1. Usage data used in the CalTRACK daily analysis will be done on Use Per Day (\(UPD\)) values from daily AMI usage data.
 
 2. Stage one modeling will be done sequentially as a joint optimization problem using minimum model qualification criteria to constrain the space of candidate models, then using model selection criteria for choosing the "best" among candidate models for savings estimation.
 
@@ -47,10 +47,12 @@ CalTRACK savings estimation begins with gas and electric usage data, project dat
 CalTRACK daily methods will use variable degree day base temperatures. Balance point temperatures will be selected by doing a search over the one or two parameter HDD and CDD models separately using the following grid search criteria:
 
 1) Search range for HDD base temp: `55 degrees F to 65 degrees F`
+
 2) Search range for CDD base temp: `65 degrees F to 75 degrees F`
+
 3) With the constraint `HDD Base Temp`<=`CDD Base Temp`
 
-4) Grid search step size: `1 degrees`
+4) Grid search step size: `1 degree`
 
 **Grid Search Data Sufficiency**
 
@@ -63,7 +65,6 @@ When searching across balance points, only model those balance points for which 
 This avoids overfitting in the case where only a few days exist with usage and nonzero degree-days, and the usage happens by chance to be unusually high on those days.
 
 **Model Qualification**
-
  
 
 For each site, the choice must be made between using one of the single parameter models (just `HDD` or `CDD`) or combined models (`HDD` and `CDD`), or the intercept-only model.  This choice is called *model selection*.  Before model selection, choose qualifying models in the following way:
@@ -74,9 +75,9 @@ For each site, the choice must be made between using one of the single parameter
 
 2. Qualifying models are those meeting the following constraints:
 
-* `beta_HDD, beta_CDD >= 0`
+3. \( \beta_{Hi}, \beta_{Ci} >= 0 \)
 
-* p-values for `beta_HDD` and  `beta_CDD` are < 0.1
+4. p-values for \(\beta_{Hi}\) and  \(\beta_{Ci}\) are \(< 0.1\)
 
  
 
