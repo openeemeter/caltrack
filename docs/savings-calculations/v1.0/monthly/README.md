@@ -1,10 +1,10 @@
-## CalTRACK Site-level Monthly Gross Savings Estimation Technical Guideline
+## CalTRACK Site-level Monthly Weather Normalized, Metered Energy Savings Estimation Technical Guideline
 
 --------
 
 ### Methodological Overview
 
-Site-level gross savings using monthly billing data (both electricity and gas) will use a two-stage estimation approach that closely follows methodological recommendations in the technical appendices of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, with some modifications and more specific guidance developed through empirical testing to ensure consistency and replicability of results.
+Site-level weather normalized, metered energy savings using monthly billing data (both electricity and gas) will use a two-stage estimation approach that closely follows methodological recommendations in the technical appendices of the Uniform Methods Project for Whole Home Building Analysis and the California Evaluation Project, with some modifications and more specific guidance developed through empirical testing to ensure consistency and replicability of results.
 
 The idea behind two-stage site-level models is to model the energy use of each house before and after an energy efficiency retrofit.
 
@@ -32,19 +32,19 @@ Where
 
 
 
-In the second stage, using parameter estimates from the first stage equation, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized gross savings), or by using current-year weather to project forward baseline period use (current year weather normalized gross savings) and differencing between baseline and reporting period estimated or actual use, depending on the quantity of interest.
+In the second stage, using parameter estimates from the first stage equation, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized metered energy savings), or by using current-year weather to project forward baseline period use (current year weather normalized metered energy savings) and differencing between baseline and reporting period estimated or actual use, depending on the quantity of interest.
 
-This site-level two-stage approach without the use of a comparison group, while having significant limitations and tradeoffs, was decided by the technical working group to be appropriate for the two main use cases for CalTRACK, which emphasize effects on the grid and feedback to software vendors, rather than causal programatic effects. In addition to its long history of use in the EM&V literature, it draws on a methodological foundation developed in the more general literature on piecewise linear regression or segmented regression for policy analysis and effect estimates that is used in fields as diverse as public health, medical research, and econometrics.
+This site-level two-stage approach without the use of a comparison group was decided by the technical working group to be appropriate for the two main use cases for CalTRACK, which emphasize effects on the grid and feedback to software vendors, rather than causal programatic effects. In addition to its long history of use in the EM&V literature, it draws on a methodological foundation developed in the more general literature on piecewise linear regression or segmented regression for policy analysis and effect estimates that is used in fields as diverse as public health, medical research, and econometrics.
 
 We now proceed with a detailed technical treatment of the steps for monthly savings estimation.
 
 ### Technical guidelines for implementing two-stage estimation on monthly electric and gas usage data for CalTRACK
 
-CalTRACK savings estimation begins with gas and electric usage data, project data, and weather data that have been cleaned and combined according to the Data Cleaning and Integration technical specification. Starting with the prepared data, site-level monthly gross savings analysis is performed by implementing the following steps:
+CalTRACK savings estimation begins with gas and electric usage data, project data, and weather data that have been cleaned and combined according to the Data Cleaning and Integration technical specification. Starting with the prepared data, site-level monthly weather normalized metered energy savings analysis is performed by implementing the following steps:
 
 #### 1. Generate Use Per Day values and separate usage data into a pre- and a post-intervention data series
 
-The CalTRACK monthly gross savings analysis uses average use per day (\(UPD\)) values for each month by taking the bill-period usage values, then dividing by the number of days in that bill period, as follows:
+The CalTRACK monthly weather normalized metered energy savings analysis uses average use per day (\(UPD\)) values for each month by taking the bill-period usage values, then dividing by the number of days in that bill period, as follows:
 
 $$UPD_m = \frac{1}{n_{U_d}} * \sum{U_d}$$
 
@@ -178,19 +178,19 @@ Where
 
 All qualifying post-intervention models are compared to each other and among qualifying models, the model with the maximum adjusted R-squared will be selected for second-stage savings estimation.
 
-#### 5. Estimate second-stage gross savings quantities based on selected first stage pre- and post-intervention models
+#### 5. Estimate second-stage weather normalized metered energy savings quantities based on selected first stage pre- and post-intervention models
 
 During the second stage, up to five savings quantities will be estimated for each site that meets the minimum data sufficiency criteria for that savings statistic.
 
-Cumulative gross savings over entire performance period
-Year one annualized actual gross savings in the the reporting (post-intervention) period
-Year two annualized actual gross savings in the the reporting (post-intervention) period
-Year one annualized gross savings in the normal year
-Year two annualized gross savings in the normal year
+Cumulative weather normalized metered energy savings over entire performance period
+Year one annualized actual weather normalized metered energy savings in the the reporting (post-intervention) period
+Year two annualized actual weather normalized metered energy savings in the the reporting (post-intervention) period
+Year one annualized weather normalized metered energy savings in the normal year
+Year two annualized weather normalized metered energy savings in the normal year
 
 These site-level second stage quantities are calculated as follows:
 
-#### Cumulative gross savings over entire performance period (site-level)
+#### Cumulative weather normalized metered energy savings over entire performance period (site-level)
 
 
 1. Compute `predicted_baseline_use` for each complete billing period after `work_end_date` using parameter estimates from the stage one model from the pre-intervention (baseline) period model and the associated average degree days for each month in the post-intervention (reporting) period, ensuring that the same degree day values calculated for stage one model fits are use in stage two estimation.
@@ -198,7 +198,7 @@ These site-level second stage quantities are calculated as follows:
 3. Sum  `monthly_gross_savings` over every complete billing period since `work_end_date`.
 
 
-#### Year one gross savings from 1 to 12 months after site visit. (site-level)
+#### Year one weather normalized metered energy savings from 1 to 12 months after site visit. (site-level)
 
 
 1. Compute `predicted_baseline_use` for each complete billing period after `work_end_date` until 12 billing periods after `work_end_date`  using parameter estimates from the stage one model from the pre-intervention (baseline) period model and the associated average degree days for each month in the post-intervention (reporting) period, ensuring that the same degree day values calculated for stage one model fits are use in stage two estimation.
@@ -206,7 +206,7 @@ These site-level second stage quantities are calculated as follows:
 3. Sum  `monthly_gross_savings` over the 12 billing periods since `work_end_date`.
 
 
-#### Year two gross savings from 13 to 24 months after site visit. (site-level)
+#### Year two weather normalized metered energy savings from 13 to 24 months after site visit. (site-level)
 
 
 1. Compute `predicted_baseline_use` for each complete billing period starting 13 months after `work_end_date` until 24 billing periods after `work_end_date`  using parameter estimates from the stage one model from the pre-intervention (baseline) period model and the associated average degree days for each month in the post-intervention (reporting) period, ensuring that the same degree day values calculated for stage one model fits are use in stage two estimation.
@@ -214,7 +214,7 @@ These site-level second stage quantities are calculated as follows:
 3. Sum  `monthly_gross_savings` over the 12 billing periods from 13 months after `work_end_date` to 24 months.
 
 
-#### Year one site-level annualized gross savings in the normal year
+#### Year one site-level annualized weather normalized metered energy savings in the normal year
 
 
 1. Compute `predicted_baseline_monthly_use` using the stage one model from the baseline period and average degree days from the CZ2010 normal weather year. Use the full month of available values when calculating the average degree days per billing period for the normal year.
@@ -223,7 +223,7 @@ These site-level second stage quantities are calculated as follows:
 4. Sum  `monthly_normal_year_gross_savings` over entire normal year.
 
 
-#### Year two site-level annualized gross savings in the normal year
+#### Year two site-level annualized weather normalized metered energy savings in the normal year
 
 
 1. Compute `predicted_baseline_monthly_use` using the stage one model from the baseline period and degree days from the CZ2010 normal weather year.
