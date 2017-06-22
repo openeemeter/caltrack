@@ -221,13 +221,17 @@ Also required for this cleaning step will be the following:
 With the electricity cross reference file, perform the following:
 
 1. Obtain all net metered Service Account Ids from the 15 minute file electricity file.
-    a. In the 15 minute and hourly electricity data, any record where *DIR* is *R* is net metered.
+
+    1. In the 15 minute and hourly electricity data, any record where *DIR* is *R* is net metered.
+
 2. Obtain all net metered SA ids from the hourly electricity file, combine with those found in step 1.
 3. Left pad with zeroes (or zfill) to 10 all *char_prem_id*s.
 4. Using the Electricity Cross Reference file, build a map of *sa_id* to *char_prem_id*.
 5. Using a combination of the Electricity Cross Reference file, the net metered SA id set from steps 1 and 2, and the map from 4, add the *is_net_metered* column to the Electricity Cross Reference file.
-    a. Any row in the file that has *net_mtr_ind* set to *Y* is net metered
-    b. Any row that has an *sa_id* in the set from steps 1 and 2 is net metered
+
+    1. Any row in the file that has *net_mtr_ind* set to *Y* is net metered
+    2. Any row that has an *sa_id* in the set from steps 1 and 2 is net metered
+
 5. Build a map of *sa_id* to *char_prem_id*.
 6. Build a map of *sp_id* to *char_prem_id*.
 
@@ -259,24 +263,35 @@ You’ll also be using the *sa_id* to *char_prem_id* maps you created from the E
 Perform the following:
 
 1. Combine the 3 project files into a single file.
-    a. The *CalTrack (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816.csv* file has a column called *Application: Application No.* instead of simply *Application No.* like the other two files - the column should be treated the same when combining the files.
+
+    1. The *CalTrack (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816.csv* file has a column called *Application: Application No.* instead of simply *Application No.* like the other two files - the column should be treated the same when combining the files.
+
 2. Estimate project dates using the combined file - each project should have a *Work Start Date* and a *Work Finish Date*.
     1. For each row, check if the *Notice to Proceed Issued* column is blank.
+
         1. If it is, this is a project from one of the AHU files. Set the *Work Start Date* to the *Initial Approval Date* and the *Work Finish Date* to the *Initial Submission Date*.
         2. If it is not, this is a project from the AHUP file. Set the *Work Start Date* to the *Notice to Proceed Issued*.
+
             1. If the *Full Application Returned* field is blank, set the *Work Finish Date* to *Full Application Submitted*.
             2. Otherwise set *Work Finish Date* to *Full Application Started*.
+
     2. If after completing step 2a above your *Work Finish Date* is still blank and your *Work Start Date* is not, set the *Work Finish Date* to 60 days after the *Work Start Date*.
+
 3. Using the *sa_id* to *char_prem_id* maps you saved from **Cross Reference File Preparation**, add a *char_prem_id* column to your combined project file.
+
     1. For each row, check *Electric Service ID* against the *sa_id* in your electric map.
     2. For each row, check *Gas Service ID* against the *sa_id* in your gas map.
+
 4. Merge duplicate projects into one project.
+
     1. There should only be one project per *char_prem_id*. Build a dictionary with *char_prem_id* as the key and a list of projects as the value.
     2. If there is more than one project for a *char_prem_id*, merge the projects.
         1. Set *Work Start Date* to the earliest available.
         2. Set *Work Finish Date* to the latest available.
+
 5. Build a map of *char_prem_id* to *Application No.* for later use in mapping projects to traces.
 6. Translate the file into the format required. If using the format laid out in **Overview**, map the following:
+
     1. *project_id* -> Application No.
     2. *zipcode* -> Building ZIP Code
     3. *baseline_period_end* -> Work Start Date
@@ -297,8 +312,11 @@ Perform the following:
 1. Adjust the dates in the *DATE* column to *yyyy-MM-dd* format for sorting purposes.
 2. Sort the file by *DIR*, then *SPID*, then *DATE*.
 3. Remove duplicate records.
+
     1. Since the file is now sorted, compare the previous row's *DATE* and *SPID*. If they are the same, check each of the interval columns. If all match, throw out one of the records. 566 duplicates should be removed this way across 163 unique SPIDs.
+
 4. Format trace records.
+
     1. *trace_id* -> `elec-15min-[SA]-[SPID]-[DIR]`
     2. If *DIR* is *D*, the *interpretation* is *ELECTRICITY_CONSUMPTION_SUPPLIED*. If *R*, it is *ELECTRICITY_ON_SITE_GENERATION_UNCONSUMED*.
     3. *estimated* -> False
@@ -324,8 +342,11 @@ Perform the following:
 1. Adjust the dates in the *DATE* column to `yyyy-MM-dd` format for sorting purposes.
 2. Sort the file by *DIR*, then *SPID*, then *DATE*.
 3. Remove duplicate records.
+
     1. Since the file is now sorted, compare the previous row’s *DATE* and *SPID*. If they are the same, check each of the interval columns. If all match, throw out one of the records.
+
 4. Format trace records.
+
     1. *trace_id* -> `elec-hourly-[SA]-[SPID]-[DIR]`
     2. If *DIR* is *D*, the *interpretation* is *ELECTRICITY_CONSUMPTION_SUPPLIED*. If *R*, it is *ELECTRICITY_ON_SITE_GENERATION_UNCONSUMED*.
     3. *estimated* -> False
@@ -355,12 +376,17 @@ For each file in the list above, perform the following:
 1. Convert from XPORT to CSV format.
 2. Sort the file by *SA_ID*.
 3. Remove duplicate records.
+
     1. With the file sorted by *SA_ID*, you can simply check whether the previous *SA_ID* matches the current *SA_ID*. If it does, discard one of the records. There should be no duplicate records in this data.
+
 4. Convert the SAS dates.
+
     1. SAS dates are represented as a number of days since 1960-Jan-01.
     2. The file has columns named `CDT__1, CDT__2...  CDT__12` for the months of the year (as well as `KWH__1, KWH__2... KWH__12` for the consumption values that correspond to those months). Each of the *CDT__x* dates needs to be converted.
+
 5. Pad left with zeroes to 10 (zfill) the *PREM_ID*.
 6. Format trace records.
+
     1. *trace_id* -> “elec_monthly_” + SA_ID 
     2. *interpretation* -> ELECTRICITY_CONSUMPTION_SUPPLIED
     3. For *start*, it is necessary to unroll each interval column into a separate line/record. i.e. the value in `CDT__1, CDT__2` (which should be a converted date value from step 4) should have its own record where it is the start.
@@ -384,8 +410,11 @@ For each file in the above list, perform the following steps:
 2. Convert the dates in the *Measurement Date* column to `yyyy-MM-dd` format for sorting purposes.
 3. Sort by *Service Point*, then by *Measurement Date*.
 4. Remove duplicate records.
+
     1. Since the file is now sorted, if *Service Point* and *Measurement Date* match the previous row, discard one of the rows.
+
 5. Format trace records.
+
     1. *trace_id* -> Service Point
     2. *start* -> Measurement Date
     3. *value* -> Therms per Day
@@ -422,11 +451,16 @@ For each file in the list above, perform the following:
 1. Convert from XPORT to CSV format.
 2. Sort the file by *SA_ID*, then by *CDT__1*.
 3. Remove duplicate records.
+
     1. Since the file is now sorted, if *SA_ID* and *CDT__1* match the previous record, one of them should be discarded.
+
 4. Convert the SAS dates.
+
     1. SAS dates are represented as a number of days since 1960-Jan-01.
     2. The file has columns named `CDT__1, CDT__2...  CDT__12` for the months of the year (as well as `THM__1, THM__2... THM__12` for the consumption values that correspond to those months). Each of the *CDT__x* dates needs to be converted.
+
 5. Format trace records.
+
     1. *trace_id* -> “gas-monthly-” + SA_ID
     2. *interpretation* -> NATURAL_GAS_CONSUMPTION_SUPPLIED
     3. *unit* -> THERM
