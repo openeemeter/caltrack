@@ -1,6 +1,9 @@
 site_name: CalTRACK Technical Documentation
 theme: readthedocs
-site_description: 'Technical Documentation for CalTRACK savings estimation'
+docs_dir: docs
+repo_url: https://github.com/impactlab/caltrack
+site_url: http://docs.caltrack.org
+site_description: 'Technical Documentation for CalTRACK savings estimation procedures'
 
 extra_javascript:
     - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
