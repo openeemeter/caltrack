@@ -1,4 +1,4 @@
-Data Preparation for CalTRACK Beta
+Data Preparation for CalTRACK Methods
 ===
 CalTRACK employs the following processes when preparing weather, project, and daily/hourly/monthly consumption data for performing the analysis specified in the CalTRACK v1.0 methods.
 
@@ -8,7 +8,7 @@ Below are guidelines and a general process for addressing the most common issues
 
 Guidelines on Project Data Preparation
 ---
-The minimum field requirements for project data under the CalTRACK daily specification are outlined [here](https://github.com/impactlab/caltrack/blob/master/docs/monthly/data-sources.md). Notably, a prepared project file should consist of one row per project, with a unique ID that can be used to link to gas and/or electric usage data, project start and stop dates, and zip code for the site.
+The minimum field requirements for project data under the CalTRACK daily specification are outlined [here](https://github.com/impactlab/caltrack/tree/master/docs/data-sources/v1.0). Notably, a prepared project file should consist of one row per project, with a unique ID that can be used to link to gas and/or electric usage data, project start and stop dates, and zip code for the site.
 
 The following data cleaning steps for project data are meant to ensure that the prepared project file meets these field requirements and uniqueness constraints.
 
@@ -39,7 +39,7 @@ Generally, the quality of your consumption data may vary substantially from samp
 3. Where available, the presence of net-metering is clearly marked (CalTRACK excludes homes that are net-metered)
 4. Traces are not duplicated in whole or in part
 
-The dataset generated for the CalTRACK beta test originated from a pool of projects and consumption data provided by PG&E (see [Data Sources](https://github.com/impactlab/caltrack/tree/reorganization/data-sources/v1.0)). A smaller set of 1000 natural gas meters and 1000 electricity meters were selected from this larger pool for the purposes of testing. These meters were selected based on location (attempting to maximize coverage over each of the climate zones) and data sufficiency (each meter contains at least two years of historical usage data prior to the intervention period). 
+The dataset generated for the CalTRACK beta test originated from a pool of projects and consumption data provided by PG&E (see [Data Sources](https://github.com/impactlab/caltrack/tree/master/docs/data-sources/v1.0)). A smaller set of 1000 natural gas meters and 1000 electricity meters were selected from this larger pool for the purposes of testing. These meters were selected based on location (attempting to maximize coverage over each of the climate zones) and data sufficiency (each meter contains at least two years of historical usage data prior to the intervention period). 
 
 ### Roll up sub-daily interval data to daily totals
 
@@ -101,7 +101,6 @@ Occasionally, the project or consumption data may contain extreme values that ar
 Calculating energy efficiency savings requires a sufficient observation period of energy usage prior to and after an intervention. Generally, annualized models require at least 12 months of usage data on each side of an intervention in order to accurately calculate energy savings. Some models may be able to calculate energy savings with fewer than 12 months of data in the reporting period.
 
 * 12 complete months pre-retrofit for monthly billing data to qualify for estimation or 24 months with up to 2 missing values from different, non-contiguous months.
-* Post retrofit data sufficiency for estimation will be dealt with in [post-estimation model fit criterion](https://github.com/impactlab/caltrack/blob/master/docs/monthly/analysis.md#3-fit-all-candidate-models-and-apply-qualification-criteria).
 * Total annual savings estimates will require 12 months post-retrofit.
 
 ### Drop project records with unsupported characteristics
@@ -118,7 +117,7 @@ Unmatched data should be excluded from analysis.
 Guidelines for Linking Weather Data and Project Records
 ---
 Weather station mapping requires locating the station nearest to the project. Each project file should contain a zip code that allows matching weather stations to projects
-* For California, weather station mapping was done using the 86 station standard mapping of zip code to CZ2010 weather files. Clean versions of these files can be found [here](https://github.com/impactlab/caltrack/blob/master/tests/data-sources/weather/stationmapping_v2.csv).
+* For California, weather station mapping was done using the 86 station standard mapping of zip code to CZ2010 weather files. Clean versions of these files can be found [here](https://github.com/impactlab/caltrack/tree/master/resources/weather).
 
 Guidelines for Final Combined Data Sufficiency Checks
 ---
