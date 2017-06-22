@@ -1,11 +1,11 @@
-# **Aggregating Site-level Gross Savings and Quantifying Uncertainty in Aggregate Savings Statistics**
+# **Aggregating Site-level Weather Normalized Metered Energy Savings and Quantifying Uncertainty in Aggregate Savings Statistics**
 
 * * *
 
 
 The goal of CalTRACK is to develop replicable, consistent, and methodologically defensible estimators of savings over portfolios of residential single family buildings.
 
-Portfolio-level savings statistics are based on aggregations of site-level savings gross savings estimates created using the CalTRACK site-level daily gross savings analysis methods.
+Portfolio-level savings statistics are based on aggregations of site-level savings estimates created using the CalTRACK site-level daily weather normalized metered energy savings analysis methods.
 
 ### **Recommendations calculating aggregate payable savings for portfolios site-level savings estimates.**
 
