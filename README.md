@@ -123,6 +123,4 @@ We have taken this first step towards an empirically-informed, professionally-te
 
 *Open Energy Efficiency, DNV GL, and EnergySavvy participated in methods development and testing for both monthly and daily methods.
 
- 
-=======
 

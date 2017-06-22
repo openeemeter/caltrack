@@ -31,7 +31,7 @@ While project data can be incredibly rich and incredibly varied, the CalTRACK me
   </tr>
   <tr>
     <td>Work Finish Date</td>
-    <td>Preferably the date that actual work on the retrofit or intervention, not the date that the reimbursement was filed or approved</td>
+    <td>Preferably the date that actual work on the retrofit or intervention was finished, not the date that the reimbursement was filed or approved</td>
   </tr>
   <tr>
     <td>Building ZIP Code</td>
@@ -82,7 +82,7 @@ Consumption data for this project took the form of 15-minute and hourly electric
 
 ## Cross-reference files
 
-Both types of cross-reference files contain the same columns of interest. These files were used to obtain a mapping between project files and consumption files.
+Both *electric and gas* cross-reference files contain the same columns of interest. These files were used to obtain a mapping between project files and consumption files.
 
 <table>
   <tr>
@@ -99,14 +99,14 @@ Both types of cross-reference files contain the same columns of interest. These 
   </tr>
   <tr>
     <td>Premise ID</td>
-    <td>(Optional) This typically corresponds to a unique premise can can be necessary for combining multiple usage records into a single premise-level record in the event that households have multiple meters for one fuel type, or usage IDs change when the same customer enters into a new service agreement with the utility</td>
+    <td>(Optional) This typically corresponds to a unique premise can be necessary for combining multiple usage records into a single premise-level record in the event that households have multiple meters for one fuel type, or usage IDs change when the same customer enters into a new service agreement with the utility</td>
   </tr>
 </table>
 
 
 ## Weather
 
-Both actual observed weather data and normal year weather data are used in the Caltrack analysis. The appropriate observed weather and normal year weather for each project are determined using the site’s ZIP code, which is mapped to weather stations using [the mapping file](https://github.com/impactlab/caltrack/tree/master/resources/weather), which has five fields for each ZIP code in California:
+Both actual observed weather data and normal year weather data are used in the CalTRACK analysis. The appropriate observed weather and normal year weather for each project are determined using the site’s ZIP code, which is mapped to weather stations using [the mapping file](https://github.com/impactlab/caltrack/tree/master/resources/weather), which has five fields for each ZIP code in California:
 
 <table>
   <tr>
