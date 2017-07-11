@@ -268,16 +268,16 @@ Perform the following:
 
     1. The *CalTrack (AHUP) from 1_1_14__6_30_15_v2_FINAL_090816.csv* file has a column called *Application: Application No.* instead of simply *Application No.* like the other two files - the column should be treated the same when combining the files.
 
-2. Estimate project dates using the combined file - each project should have a *Work Start Date* and a *Work Finish Date*.
+2. Estimate project dates using the combined file - each project should have a *Work Start Date* and a *Work End Date*.
     1. For each row, check if the *Notice to Proceed Issued* column is blank.
 
-        1. If it is, this is a project from one of the AHU files. Set the *Work Start Date* to the *Initial Approval Date* and the *Work Finish Date* to the *Initial Submission Date*.
+        1. If it is, this is a project from one of the AHU files. Set the *Work Start Date* to the *Initial Approval Date* and the *Work End Date* to the *Initial Submission Date*.
         2. If it is not, this is a project from the AHUP file. Set the *Work Start Date* to the *Notice to Proceed Issued*.
 
-            1. If the *Full Application Returned* field is blank, set the *Work Finish Date* to *Full Application Submitted*.
-            2. Otherwise set *Work Finish Date* to *Full Application Started*.
+            1. If the *Full Application Returned* field is blank, set the *Work End Date* to *Full Application Submitted*.
+            2. Otherwise set *Work End Date* to *Full Application Started*.
 
-    2. If after completing step 2a above your *Work Finish Date* is still blank and your *Work Start Date* is not, set the *Work Finish Date* to 60 days after the *Work Start Date*.
+    2. If after completing step 2a above your *Work End Date* is still blank and your *Work Start Date* is not, set the *Work End Date* to 60 days after the *Work Start Date*.
 
 3. Using the *sa_id* to *char_prem_id* maps you saved from **Cross Reference File Preparation**, add a *char_prem_id* column to your combined project file.
 
@@ -290,7 +290,7 @@ Perform the following:
     2. If there is more than one project for a *char_prem_id*, merge the projects.
     
         1. Set *Work Start Date* to the earliest available.
-        2. Set *Work Finish Date* to the latest available.
+        2. Set *Work End Date* to the latest available.
 
 5. Build a map of *char_prem_id* to *Application No.* for later use in mapping projects to traces.
 6. Translate the file into the format required. If using the format laid out in **Overview**, map the following:
@@ -298,7 +298,7 @@ Perform the following:
     1. *project_id* -> Application No.
     2. *zipcode* -> Building ZIP Code
     3. *baseline_period_end* -> Work Start Date
-    4. reporting_period_start -> Work Finish Date
+    4. reporting_period_start -> Work End Date
 
 Upon completion you should have 4206 projects.
 
