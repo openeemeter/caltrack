@@ -114,13 +114,13 @@ These site-level second stage quantities are calculated as follows:
 3. Compute `daily_normal_year_gross_savings` = `predicted_baseline_use - predicted_reporting_use` for normal year days
 4. Sum  `daily_normal_year_gross_savings` over entire normal year.
 
-**Year one weather normalized metered energy savings from 1 to 12 months after site visit.  (site-level)**
+**Year one weather normalized metered energy savings from 1 to 12 months after work-end-date.  (site-level)**
    
 1. Compute `predicted_baseline_use` for each day after `work_end_date` until 12 calendar months after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point temperatures from the baseline model when calculating reporting period HDD and CDD values.
 2. Compute `daily_gross_savings` = `predicted_baseline_use - actual_daily_use` for 12 complete calendar months after `work_end_date` for project. For days missing consumption data after the date of the intervention, a baseline mask should exclude those days from consideration as part of a savings calculation.
 3. Sum  `daily_gross_savings` over the 12 calendar months since `work_end_date`.
 
-**Year two weather normalized metered energy savings from 13 to 24 months after site visit.  (site-level)**
+**Year two weather normalized metered energy savings from 13 to 24 months after work-end-date.  (site-level)**
 
 1. Compute `predicted_baseline_use` for each day starting 13 months after `work_end_date` until 24 calendar months after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point temperatures from the baseline model when calculating reporting period HDD and CDD values.
 2. Compute `daily_gross_savings` = `predicted_baseline_use - actual_daily_use` for month 13 to month 24 after `work_end_date` for project. For days missing consumption data after the date of the intervention, a baseline mask should exclude those days from consideration as part of a savings calculation.
