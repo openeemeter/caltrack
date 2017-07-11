@@ -30,7 +30,7 @@ While project data can be incredibly rich and incredibly varied, the CalTRACK me
     <td>Preferably the date actual work on the retrofit started, not the date that the application was made or approved</td>
   </tr>
   <tr>
-    <td>Work Finish Date</td>
+    <td>Work End Date</td>
     <td>Preferably the date that actual work on the retrofit or intervention was finished, not the date that the reimbursement was filed or approved</td>
   </tr>
   <tr>
