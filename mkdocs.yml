@@ -1,7 +1,7 @@
 site_name: CalTRACK Technical Documentation
 theme: readthedocs
 docs_dir: docs
-repo_url: https://github.com/impactlab/caltrack
+repo_url: https://github.com/caltrack-2/caltrack
 site_url: http://docs.caltrack.org
 site_description: 'Technical Documentation for CalTRACK savings estimation procedures'
 
