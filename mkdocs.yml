@@ -6,7 +6,7 @@ site_url: http://docs.caltrack.org
 site_description: 'Technical Documentation for CalTRACK savings estimation procedures'
 
 extra_javascript:
-    - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 markdown_extensions:
     - mdx_math
