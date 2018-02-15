@@ -14,8 +14,8 @@ markdown_extensions:
 pages:
 - Home: index.md
 - Technical Specifications:
-  - Data Sources: data-sources/v1.0/README.md
-  - Data Preparation: data-prep/v1.0/README.md
-  - Analysis of Monthly Data: savings-calculations/v1.0/monthly/README.md
-  - Analysis of Daily Data: savings-calculations/v1.0/daily/README.md
-  - Aggregration of Site-level Savings: aggregation/v1.0/README.md
+  - Data Sources: v1.0/data-sources/README.md
+  - Data Preparation: v1.0/data-prep/README.md
+  - Analysis of Monthly Data: v1.0/savings-calculations/monthly/README.md
+  - Analysis of Daily Data: v1.0/savings-calculations/daily/README.md
+  - Aggregration of Site-level Savings: v1.0/aggregation/README.md
