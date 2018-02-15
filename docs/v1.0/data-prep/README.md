@@ -8,7 +8,7 @@ Below are guidelines and a general process for addressing the most common issues
 
 Guidelines on Project Data Preparation
 ---
-The minimum field requirements for project data under the CalTRACK daily specification are outlined [here](http://docs.caltrack.org/data-sources/v1.0/README/). Notably, a prepared project file should consist of one row per project, with a unique ID that can be used to link to gas and/or electric usage data, project start and stop dates, and zip code for the site.
+The minimum field requirements for project data under the CalTRACK daily specification are outlined [here](https://caltrack-2.github.io/caltrack/v1.0/data-sources/README/). Notably, a prepared project file should consist of one row per project, with a unique ID that can be used to link to gas and/or electric usage data, project start and stop dates, and zip code for the site.
 
 The following data cleaning steps for project data are meant to ensure that the prepared project file meets these field requirements and uniqueness constraints.
 
@@ -27,7 +27,7 @@ If a building appears multiple times within a project database, and the project 
 Guidelines on Weather Data Preparation
 ---
 Weather station mapping requires locating the station nearest to the project. Each project file should contain a zip code that allows matching weather stations to projects
-* For California, weather station mapping was done using the 86 station standard mapping of zip code to CZ2010 weather files. Clean versions of these files can be found [here](https://github.com/impactlab/caltrack/tree/master/resources/weather).
+* For California, weather station mapping was done using the 86 station standard mapping of zip code to CZ2010 weather files. Clean versions of these files can be found [here](https://github.com/caltrack-2/caltrack/tree/master/resources/weather).
 
 Guidelines on Daily Electric and Gas Usage Preparation
 ---
@@ -38,7 +38,7 @@ Generally, the quality of your consumption data may vary substantially from samp
 3. Where available, the presence of net-metering is clearly marked (CalTRACK excludes homes that are net-metered)
 4. Traces are not duplicated in whole or in part
 
-The dataset generated for the CalTRACK beta test originated from a pool of projects and consumption data provided by PG&E (see [Data Sources](https://github.com/impactlab/caltrack/tree/master/docs/data-sources/v1.0)). A smaller set of 1000 natural gas meters and 1000 electricity meters were selected from this larger pool for the purposes of testing. These meters were selected based on location (attempting to maximize coverage over each of the climate zones) and data sufficiency (each meter contains at least two years of historical usage data prior to the intervention period). 
+The dataset generated for the CalTRACK beta test originated from a pool of projects and consumption data provided by PG&E (see [Data Sources](https://caltrack-2.github.io/caltrack/v1.0/data-sources/README/)). A smaller set of 1000 natural gas meters and 1000 electricity meters were selected from this larger pool for the purposes of testing. These meters were selected based on location (attempting to maximize coverage over each of the climate zones) and data sufficiency (each meter contains at least two years of historical usage data prior to the intervention period). 
 
 ### Roll up sub-daily interval data to daily totals
 

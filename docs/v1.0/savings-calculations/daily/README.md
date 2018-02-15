@@ -28,7 +28,7 @@ Where:
 
 \(\epsilon_{di}\) is the error term at site, \(i\), for day, \(d\)
 
-**Note**: during the beta test we explored the use of robust linear regression instead of ordinary least squares but ultimately decided to use ordinary least squares for the initial CalTRACK use case.  A robust regression may offer some significant advantages, as described [here](https://github.com/impactlab/caltrack/issues/56) along with our reasons for sticking with ordinary least squares, and is worth considering as a future improvement to these methods.
+**Note**: during the beta test we explored the use of robust linear regression instead of ordinary least squares but ultimately decided to use ordinary least squares for the initial CalTRACK use case.  A robust regression may offer some significant advantages, as described [here](https://github.com/caltrack-2/caltrack/issues/57) along with our reasons for sticking with ordinary least squares, and is worth considering as a future improvement to these methods.
 
 In the second stage, using parameter estimates from the first stage equation, weather normalized savings for both the baseline period and reporting period can be computed by using corresponding temperature normals for the relevant time period (typical year weather normalized metered energy savings), or by using current-year weather to project forward baseline period use (current year weather normalized metered energy savings) and differencing between baseline and reporting period estimated or actual use, depending on the quantity of interest.
 
@@ -128,6 +128,6 @@ These site-level second stage quantities are calculated as follows:
 
 ### **Post-estimation steps and portfolio aggregation**
 
-The goal of CalTRACK is to develop replicable, consistent, and methodologically defensible estimators of savings over portfolios of homes. In order to do that, the above site-level savings quantities must be aggregated to get portfolio-level totals, means, and variances. Taking the site-level estimates, CalTRACK then performs a set of aggregation steps that are specified [here](https://github.com/impactlab/caltrack/tree/master/aggregation).
+The goal of CalTRACK is to develop replicable, consistent, and methodologically defensible estimators of savings over portfolios of homes. In order to do that, the above site-level savings quantities must be aggregated to get portfolio-level totals, means, and variances. Taking the site-level estimates, CalTRACK then performs a set of aggregation steps that are specified [here](https://caltrack-2.github.io/caltrack/v1.0/aggregation/README/).
 
 

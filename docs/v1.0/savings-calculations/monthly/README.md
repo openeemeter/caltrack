@@ -233,6 +233,6 @@ These site-level second stage quantities are calculated as follows:
 
 ### Post-estimation steps and portfolio aggregation
 
-The goal of CalTRACK is to develop replicable, consistent, and methodologically defensible estimators of savings over **portfolios of homes**. In order to do that, the above site-level savings quantities must be aggregated to get portfolio-level totals, means, and variances. Taking the site-level estimates, CalTRACK then performs a set of aggregation steps that are specified [here](https://github.com/impactlab/caltrack/tree/master/aggregation).
+The goal of CalTRACK is to develop replicable, consistent, and methodologically defensible estimators of savings over **portfolios of homes**. In order to do that, the above site-level savings quantities must be aggregated to get portfolio-level totals, means, and variances. Taking the site-level estimates, CalTRACK then performs a set of aggregation steps that are specified [here](https://caltrack-2.github.io/caltrack/v1.0/aggregation/README/).
 
 _________________________________________________________

@@ -106,7 +106,7 @@ Both *electric and gas* cross-reference files contain the same columns of intere
 
 ## Weather
 
-Both actual observed weather data and normal year weather data are used in the CalTRACK analysis. The appropriate observed weather and normal year weather for each project are determined using the site’s ZIP code, which is mapped to weather stations using [the mapping file](https://github.com/impactlab/caltrack/tree/master/resources/weather), which has five fields for each ZIP code in California:
+Both actual observed weather data and normal year weather data are used in the CalTRACK analysis. The appropriate observed weather and normal year weather for each project are determined using the site’s ZIP code, which is mapped to weather stations using [the mapping file](https://github.com/caltrack-2/caltrack/tree/master/resources/weather), which has five fields for each ZIP code in California:
 
 <table>
   <tr>
@@ -136,5 +136,5 @@ Once the appropriate WthrStationNum is identified, the observed temperatures can
 
 The available hourly temperatures for each day (where day is defined by dropping the HHMM fields from the date/time field) are averaged together and converted to degrees Fahrenheit to produce the daily temperature, which is then used to calculate heating and cooling degree days. Missing data points are ignored as long as at least one hourly temperature reading for a given day is available. 
 
-Normal year temperatures are determined using the CZ2010 files available [here](https://github.com/impactlab/caltrack/tree/master/resources/weather); the particular file for each ZIP code is identified by the WeatherFile field in the mapping file described above. Again, the only relevant columns are Date (MM/DD/YYYY),Time (HH:MM), and Dry-bulb (C), where the year is ignored. The normal year temperatures are averaged over days as with the ISD observed temperature data.
+Normal year temperatures are determined using the CZ2010 files available [here](https://github.com/caltrack-2/caltrack/tree/master/resources/weather); the particular file for each ZIP code is identified by the WeatherFile field in the mapping file described above. Again, the only relevant columns are Date (MM/DD/YYYY),Time (HH:MM), and Dry-bulb (C), where the year is ignored. The normal year temperatures are averaged over days as with the ISD observed temperature data.
 

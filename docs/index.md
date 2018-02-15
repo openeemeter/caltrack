@@ -46,7 +46,7 @@ The empirical testing and refinement of the methods was performed using historic
 
 
 
-The CalTRACK technical working group’s empirical testing of these methods is archived in a Github repository. The repository contains the results of a variety of tests related to the methods choices. In general, the group limited its discussions to focus on specific technical issues rather than on broader, policy-oriented issues. These discussions can be found in the "[Issues](https://github.com/impactlab/caltrack/issues?utf8=%E2%9C%93&q=is%3Aissue)" section of the[ CalTRACK Github repository](https://github.com/impactlab/caltrack). While summary statistics are presented for both monthly and daily analysis, the intent was to use testing to inform methods guidance rather than to provide for a software equivalency testing process.
+The CalTRACK technical working group’s empirical testing of these methods is archived in a Github repository. The repository contains the results of a variety of tests related to the methods choices. In general, the group limited its discussions to focus on specific technical issues rather than on broader, policy-oriented issues. These discussions can be found in the "[Issues](https://github.com/caltrack-2/caltrack/issues?utf8=%E2%9C%93&q=is%3Aissue)" section of the[ CalTRACK Github repository](https://github.com/caltrack-2/caltrack). While summary statistics are presented for both monthly and daily analysis, the intent was to use testing to inform methods guidance rather than to provide for a software equivalency testing process.
 
 
 
