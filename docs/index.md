@@ -4,7 +4,7 @@
 **Definition**
 
 
-CalTRACK is a set of methods for calculating site-based, weather-normalized, metered energy savings from an existing conditions baseline and applied to single family residential retrofits using data from utility meters.
+CalTRACK is a set of methods for calculating site-based, weather-normalized, metered energy savings from an existing conditions baseline and applied to building retrofits using data from utility meters.
 
 
 **Scope**
@@ -46,7 +46,7 @@ The empirical testing and refinement of the methods was performed using historic
 
 
 
-The CalTRACK technical working group’s empirical testing of these methods is archived in a Github repository. The repository contains the results of a variety of tests related to the methods choices. In general, the group limited its discussions to focus on specific technical issues rather than on broader, policy-oriented issues. These discussions can be found in the "[Issues](https://github.com/caltrack-2/caltrack/issues?utf8=%E2%9C%93&q=is%3Aissue)" section of the[ CalTRACK Github repository](https://github.com/caltrack-2/caltrack). While summary statistics are presented for both monthly and daily analysis, the intent was to use testing to inform methods guidance rather than to provide for a software equivalency testing process.
+The CalTRACK technical working group’s empirical testing of these methods is archived in a Github repository. The repository contains the results of a variety of tests related to the methods choices. In general, the group limited its discussions to focus on specific technical issues rather than on broader, policy-oriented issues. These discussions can be found in the "[Issues](https://github.com/caltrack-2/caltrack/issues?utf8=%E2%9C%93&q=is%3Aissue)" section of the[ CalTRACK Github repository](https://github.com/caltrack-2/caltrack). While summary statistics are presented for both billing period and daily analysis, the intent was to use testing to inform methods guidance rather than to provide for a software equivalency testing process.
 
 
 
@@ -55,7 +55,7 @@ The CalTRACK technical working group’s empirical testing of these methods is a
 
 
 
-The technical working group arrived at two sets of methods specifications, the first for calculating savings using monthly data, and the second for calculating savings using daily data. These methods are referred to as Monthly and Daily, respectively, and have each been tagged with a version number of 1.0.
+The technical working group arrived at two sets of methods specifications, the first for calculating savings using billing period data, and the second for calculating savings using daily data. These methods are referred to as Billing Period and Daily, respectively, and have each been tagged with a version number of 2.0.
 
 
 
@@ -121,7 +121,7 @@ We have taken this first step towards an empirically-informed, professionally-te
 
 
 
-*Open Energy Efficiency, DNV GL, and EnergySavvy participated in methods development and testing for both monthly and daily methods.
+*Open Energy Efficiency, DNV GL, and EnergySavvy participated in methods development and testing for both billing period and daily methods.
 
 
 =======
