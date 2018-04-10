@@ -147,6 +147,7 @@ $$\mu_i > 0$$
 
 If parameter estimates are strictly positive, then the model qualifies for inclusion in model selection.
 
+
 For CalTRACK gas billing period savings analysis, the following candidate models are fit:
 
 $$UPD_{mi} = \mu_i + \beta_{Hi}HDD_m + \epsilon_{mi}$$
