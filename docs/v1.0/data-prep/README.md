@@ -1,6 +1,6 @@
 Data Preparation for CalTRACK Methods
 ===
-CalTRACK employs the following processes when preparing weather, project, and daily/hourly/billing period consumption data for performing the analysis specified in the CalTRACK v2.0 methods.
+CalTRACK employs the following processes when preparing weather, project, and daily/hourly/monthly consumption data for performing the analysis specified in the CalTRACK v1.0 methods.
 
 Overview
 ---
@@ -59,31 +59,24 @@ Unmatched data should be excluded from analysis.
 * If the dates are contiguous, or there are overlapping dates with the same usage values, combine the two traces into a single trace.
 * If the records have the same date ranges, but different usage values, the project should be flagged and the record excluded from the sample.
 
-### Drop records not meeting general data sufficiency requirements
+### Drop records not meeting data sufficiency requirements
 
-* 365 days of consumption data prior to the date of the intervention recommended for all projects.
-* 365 days of consumption data after the date of the intervention is recommended for all projects. 
+* 12 months consumption data prior to the date of the intervention recommended for all projects.
 * Data is considered sufficient when it contains usage data for 90% of coverage period.
-* Consumption records marked as “estimated” are rare when parsing AMI data, but if any should appear they should be discarded.
-* Meter data used to fit either a baseline or reporting model cannot come from meters with net metering or negative usage      values.
-* Sufficient meter and temperature roll-ups for 90% of days of the coverage period is considered sufficient total coverage.
-* A daily meter data period roll up is considered sufficient under the following conditions:
-    * When summing to total period usage from higher frequency interval data, no more than 50% of values should be missing, and        missing values should be filled in with the average of non-missing values. Values of 0 are considered missing for                  electricity data, but not gas data.
-    * Although this is rare in interval data, if periods are estimated they should be combined with previous periods.
-    * When averaging from higher frequency temperature data, no more than 50% of temperature values should be missing.
-    * When using daily temperature data, ensure that the daily periods match the meter daily periods.  
+* 12 months consumption data after the date of the intervention is recommended for all projects. 
 * Data is considered missing if it is clearly marked as NaN or similar by the data provider.
+* Consumption records marked as “estimated” are rare when parsing AMI data, but if any should appear they should be discarded.
 
 ### Drop project records with unsupported characteristics
 
 * Drop homes with known PV or EV added 12 months prior to or up to 12 months after the intervention. During the CalTRACK beta test, these homes were identified from the presence of reverse flow in the AMI data and/or indications of net metering in the cross reference tables. 
 * Future efforts may provide the ability to access sub-meter data that may allow for backing out onsite generation and storage to arrive at savings.
 
-Guidelines for Billing Period Electric and Gas Usage Preparation
+Guidelines for Monthly Electric and Gas Usage Preparation
 ---
-### Dealing with missing values in billing period usage data
+### Dealing with missing values in monthly usage data
 
-Usage data generally undergoes significant cleaning prior to release to program administrators or the general public. There are generally three types of missing usage data. First, billing period billing data will be populated with “estimated” reads, when the utility has imputed a likely consumption amount for the month for the purposes of billing, but has not actually recorded a meter reading. Second, there are gaps in AMI meter data, where there may have been a hardware failure or another similar type of infrastructure breakdown where the data was not recorded. Finally, there is the issue of data that goes missing in the process of transferring to program evaluators (in the CalTrack Beta test, two of the zip files holding billing period billing data were corrupted and unreadable). Each of these issues represents a unique challenge and must be dealt with independently.
+Usage data generally undergoes significant cleaning prior to release to program administrators or the general public. There are generally three types of missing usage data. First, monthly billing data will be populated with “estimated” reads, when the utility has imputed a likely consumption amount for the month for the purposes of billing, but has not actually recorded a meter reading. Second, there are gaps in AMI meter data, where there may have been a hardware failure or another similar type of infrastructure breakdown where the data was not recorded. Finally, there is the issue of data that goes missing in the process of transferring to program evaluators (in the CalTrack Beta test, two of the zip files holding monthly billing data were corrupted and unreadable). Each of these issues represents a unique challenge and must be dealt with independently.
 
 * For the case of missing values where the cumulative value is in the following period (as in an estimated read), the cumulative number of days between the two periods will be used to generate the use per day for that period.
 * Missing usage values with no cumulative amount in the following period (such as missing AMI data) will be counted against data sufficiency requirements.
@@ -94,7 +87,7 @@ Usage data generally undergoes significant cleaning prior to release to program 
 
 Occasionally, the project or consumption data may contain extreme values that are likely the result of a data error, but may also be an indicator of another factor (such as the presence of solar panels) and should be handled based on the following guidance:
 
-* Negative values for billing period use should be treated as missing and count against sufficiency criterion. Negative values in billing period data may also be a valid sign of possible solar/net metering and should be flagged for verification.
+* Negative values for monthly use should be treated as missing and count against sufficiency criterion. Negative values in monthly data may also be a valid sign of possible solar/net metering and should be flagged for verification.
 
 ### Deduplicate records based on combined attributes
 
@@ -102,24 +95,16 @@ Occasionally, the project or consumption data may contain extreme values that ar
 * If two duplicate records have identical consumption traces but different date ranges select the more complete record having more dates. If the dates are contiguous, or there are overlapping dates with the same usage values, combine the two traces into a single trace.
 * If the records have the same date ranges, but different usage values, the project should be flagged and the record excluded from the sample.
 
-### Drop records not meeting general data sufficiency requirements
+### Drop records not meeting data sufficiency requirements
 
-Calculating energy efficiency savings requires a sufficient observation period of energy usage prior to and after an intervention. Generally, annualized models require at least 365 days of usage data on each side of an intervention in order to accurately calculate energy savings. 
+Calculating energy efficiency savings requires a sufficient observation period of energy usage prior to and after an intervention. Generally, annualized models require at least 12 months of usage data on each side of an intervention in order to accurately calculate energy savings. Some models may be able to calculate energy savings with fewer than 12 months of data in the reporting period.
 
-* 365 days pre-intervention for billing period billing data to qualify for estimation or 730 days with up to 2 missing values from different, non-contiguous billing periods. 
-* A data period immediately prior to and not extended into the intervention period is recommended.
-* Total annual savings estimates will require 365 days post-intervention.
-* Meter data used to fit either a baseline or reporting model cannot come from meters with net metering or negative usage values.
-* Sufficient meter and temperature roll-ups for 90% of days of the coverage period is considered sufficient total coverage.
-* A metered data billing period roll up is considered sufficient under the following conditions:
-    * Estimated periods should be combined with previous period.
-    * When averaging from higher frequency temperature data, temperature data must cover 90% of each period.
-    * Off-cycle reads should be combined with previous period reads. 
-* Data is considered missing if it is clearly marked by the data provider as NULL, NaN, or similar.
+* 12 complete months pre-retrofit for monthly billing data to qualify for estimation or 24 months with up to 2 missing values from different, non-contiguous months.
+* Total annual savings estimates will require 12 months post-retrofit.
 
 ### Drop project records with unsupported characteristics
 
-* Drop homes with known PV or EV added 365 days prior to or up to 365 days after the intervention. During the CalTRACK beta test, these homes were identified from the presence of reverse flow in the AMI data and/or indications of net metering in the cross reference tables. However, if you only have access to billing data, CalTRACK recommends working with the utility to get flags for accounts that have net metering present so they can be excluded from the analysis.
+* Drop homes with known PV or EV added 12 months prior to or up to 12 months after the intervention. During the CalTRACK beta test, these homes were identified from the presence of reverse flow in the AMI data and/or indications of net metering in the cross reference tables. However, if you only have access to billing data, CalTRACK recommends working with the utility to get flags for accounts that have net metering present so they can be excluded from the analysis.
 * Future efforts may provide the ability to access sub-meter data that may allow for backing out onsite generation and storage to arrive at savings.
 
 Guidelines for Linking Project and Usage Files
@@ -133,7 +118,7 @@ Guidelines for Final Combined Data Sufficiency Checks
 It is recommended that you run a final audit of your data to evaluate the outputs of the data cleaning process. You should be able to match the number of projects eliminated from your analysis at each step listed above. Your final audit will also serve as a useful reference for further data analysis and aggregation.
 
 * Billing periods (the period between bill start date and bill end date in the monthly usage data) with more than 10% missing days of weather data will be thrown out and count against the required number of billing period observations.
-* Any projects with fewer than 365 days pre and 365 days post are not included in the analysis.
+* Any projects with fewer than 12 months pre and 12 months post are not included in the analysis.
 
 Detailed Data Preparation Instructions
 ===
@@ -179,9 +164,9 @@ The CalTRACK data preparations guidelines for daily analysis consist of the foll
 2. Project Data Preparation
 3. 15 Minute Electric Use Preparation
 4. Hourly Electric Use Preparation
-5. Billing Period Electric Use Preparation
+5. Monthly Electric Use Preparation
 6. Daily Gas Use Preparation
-7. Billing Period Gas Use Preparation
+7. Monthly Gas Use Preparation
 8. Linking Projects to Usage/Trace Data
 
 File List
@@ -377,7 +362,7 @@ Optionally, between step 3 and 4 you could split the file into multiple CSVs to 
 
 This step should yield 161,755,296 trace records and 8,778 traces.
 
-Billing Period Electric Use Preparation
+Monthly Electric Use Preparation
 ---
 The following files are cleaned and formatted in this section:
 
@@ -475,7 +460,7 @@ For each file in the list above, perform the following:
 4. Convert the SAS dates.
 
     1. SAS dates are represented as a number of days since 1960-Jan-01.
-    2. The file has columns named `CDT__1, CDT__2...  CDT__12` for the billing periods? of the year (as well as `THM__1, THM__2... THM__12` for the consumption values that correspond to those billing periods). Each of the *CDT__x* dates needs to be converted.
+    2. The file has columns named `CDT__1, CDT__2...  CDT__12` for the months of the year (as well as `THM__1, THM__2... THM__12` for the consumption values that correspond to those months). Each of the *CDT__x* dates needs to be converted.
 
 5. Format trace records.
 
