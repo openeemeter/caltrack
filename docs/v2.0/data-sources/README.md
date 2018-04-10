@@ -131,6 +131,7 @@ Both actual observed weather data and normal year weather data are used in the C
   </tr>
 </table>
 
+The preferred method for assigning a site's weather station is to choose the closest proximity weather station that belongs to the site's climate zone. If data sufficiency requirements are not met by the first choice weather station, a secondary weather station that fulfills data sufficiency requirements can be assigned strictly by closest proximity without accounting for climate zone. 
 
 Once the appropriate WthrStationNum is identified, the observed temperatures can be downloaded from the ISD data set at ftp.ncdc.noaa.gov/pub/data/noaa/, in the format described [here](https://www1.ncdc.noaa.gov/pub/data/ish/ish-format-document.pdf). Two fields on each line of the relevant weather station’s file are used: the date/time (YYYYmmddHHMM, from characters 16-27) and the hourly dry bulb temperature in degrees Celsius (characters 88-92). 
 

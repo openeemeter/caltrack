@@ -46,13 +46,13 @@ CalTRACK savings estimation begins with gas and electric usage data, project dat
 
 CalTRACK daily methods will use variable degree day base temperatures. Balance point temperatures will be selected by doing a search over the one or two parameter HDD and CDD models separately using the following grid search criteria:
 
-1) Search range for HDD base temp: `55 degrees F to 65 degrees F`
+1) Search range for HDD base temp: `40 degrees F to 80 degrees F`
 
-2) Search range for CDD base temp: `65 degrees F to 75 degrees F`
+2) Search range for CDD base temp: `50 degrees F to 90 degrees F`
 
 3) With the constraint `HDD Base Temp`<=`CDD Base Temp`
 
-4) Grid search step size: `1 degree`
+4) Grid search step size: `3 degrees F`
 
 **Grid Search Data Sufficiency**
 
@@ -114,17 +114,17 @@ These site-level second stage quantities are calculated as follows:
 3. Compute `daily_normal_year_gross_savings` = `predicted_baseline_use - predicted_reporting_use` for normal year days
 4. Sum  `daily_normal_year_gross_savings` over entire normal year.
 
-**Year one weather normalized metered energy savings from 1 to 12 months after work-end-date.  (site-level)**
+**Year one weather normalized metered energy savings from 1 to 12 billing periods after work-end-date.  (site-level)**
    
-1. Compute `predicted_baseline_use` for each day after `work_end_date` until 12 calendar months after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point temperatures from the baseline model when calculating reporting period HDD and CDD values.
-2. Compute `daily_gross_savings` = `predicted_baseline_use - actual_daily_use` for 12 complete calendar months after `work_end_date` for project. For days missing consumption data after the date of the intervention, a baseline mask should exclude those days from consideration as part of a savings calculation.
-3. Sum  `daily_gross_savings` over the 12 calendar months since `work_end_date`.
+1. Compute `predicted_baseline_use` for each day after `work_end_date` until 365 days after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point temperatures from the baseline model when calculating reporting period HDD and CDD values.
+2. Compute `daily_gross_savings` = `predicted_baseline_use - actual_daily_use` for 365 days after `work_end_date` for project. For days missing consumption data after the date of the intervention, a baseline mask should exclude those days from consideration as part of a savings calculation.
+3. Sum  `daily_gross_savings` over the 365 days since `work_end_date`.
 
-**Year two weather normalized metered energy savings from 13 to 24 months after work-end-date.  (site-level)**
+**Year two weather normalized metered energy savings from 13 to 24 billing periods after work-end-date.  (site-level)**
 
-1. Compute `predicted_baseline_use` for each day starting 13 months after `work_end_date` until 24 calendar months after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point temperatures from the baseline model when calculating reporting period HDD and CDD values.
-2. Compute `daily_gross_savings` = `predicted_baseline_use - actual_daily_use` for month 13 to month 24 after `work_end_date` for project. For days missing consumption data after the date of the intervention, a baseline mask should exclude those days from consideration as part of a savings calculation.
-3. Sum  `daily_gross_savings` over the 12 calendar months from 13 months after `work_end_date` to 24 months.
+1. Compute `predicted_baseline_use` for each day starting 13 billing periods after `work_end_date` until 730 days after `work_end_date` using the Stage One model from the baseline period and reporting period weather data. Be sure to use balance point temperatures from the baseline model when calculating reporting period HDD and CDD values.
+2. Compute `daily_gross_savings` = `predicted_baseline_use - actual_daily_use` for billing period 13 to billing period 24 after `work_end_date` for project. For days missing consumption data after the date of the intervention, a baseline mask should exclude those days from consideration as part of a savings calculation.
+3. Sum  `daily_gross_savings` over the 365 days from 13 billing periods after `work_end_date` to 24 billing periods after `work_end_date`.
 
 ### **Post-estimation steps and portfolio aggregation**
 
