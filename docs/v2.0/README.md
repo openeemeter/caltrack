@@ -497,13 +497,13 @@ In many cases, data quality issues can be resolved by going back to the source t
 
 >>> **4.3.1.4.1.** FSU<sub>*i*</sub> is the fractional savings uncertainty in the baseline model predictions for the reporting period (this is also the fractional savings uncertainty of the avoided energy use, assuming that the metered consumption is accurate).
 
->>> **4.3.1.4.2.** *t* is the t-statistic, which is a function of the required confidence level (usually 90%) and the degrees of freedom of the baseline model ($$P-c$$)
+>>> **4.3.1.4.2.** *t* is the t-statistic, which is a function of the required confidence level (usually 90%) and the degrees of freedom of the baseline model (*P-c*)
 
 >>> **4.3.1.4.3.** *M* is the number of months in the reporting period
 
 >>> **4.3.1.4.4.** *Q* is the number of periods (e.g. days or billing periods) in the reporting period
 
->>> **4.3.1.4.5.** *F* is the savings fraction, defined as the energy savings during $$q$$ periods in the reporting period divided by the predicted baseline usage during that same period $$\frac{U_{save, Qi}}{U_{baseline, Qi}}$$
+>>> **4.3.1.4.5.** *F* is the savings fraction, defined as the energy savings during *q* periods in the reporting period divided by the predicted baseline usage during that same period: ![Alt Text $$\frac{U_{save, Qi}}{U_{baseline, Qi}}$$](equation_images/usavebaseline.gif)
 
 >>> **4.3.1.4.6.** *a*, *b* and *d* are empirical coefficients proposed by Sun and Baltazar [2013] to handle problems with autocorrelated residuals in time series energy use data.
 
