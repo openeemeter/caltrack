@@ -493,7 +493,7 @@ In many cases, data quality issues can be resolved by going back to the source t
 
 >> **4.3.2.3.** The portfolio-level fractional savings uncertainty (FSU) should be reported when using portfolio aggregation. Fractional savings uncertainty thresholds may be set by the procurer depending on the use case. For example, an NWA procurement may require less than 15% uncertainty, while a pay-for-performance program may require 25%. An alternative approach could use a discount rate based on the uncertainty of a portfolio.
 
->> **4.3.1.4.** Site-level FSU is calculated as follows using a modified version of the ASHRAE Guideline 14 formulation. ![Alt Text](equation_images/fsu.gif), where
+>> **4.3.1.4.** Site-level FSU is calculated as follows using a modified version of the ASHRAE Guideline 14 formulation. ![Alt Text $$FSU_i = \frac{\Delta U_{save, Qi}}{U_{save, Qi}} = \frac{t(aM^2 + bM + d)CV(RMSE)*\sqrt{\frac{P}{P'}(1+\frac{2}{P'})\frac{1}{Q}})}{F}$$](equation_images/fsu.gif), where
 
 >>> **4.3.1.4.1.** FSU<sub>*i*</sub> is the fractional savings uncertainty in the baseline model predictions for the reporting period (this is also the fractional savings uncertainty of the avoided energy use, assuming that the metered consumption is accurate).
 
@@ -511,12 +511,12 @@ In many cases, data quality issues can be resolved by going back to the source t
 
 >>>> For daily data, *a* = -0.00024, *b* = 0.03535, *d* = 1.00286.
 
->>> **4.3.1.5.** Site-level FSU from multiple projects can be aggregated to portfolio-level FSU as follows: ![Alt Text](equation_images/fsuport.gif).
+>>> **4.3.1.5.** Site-level FSU from multiple projects can be aggregated to portfolio-level FSU as follows: ![Alt Text $$FSU_{portfolio} = \frac{\sqrt{\sum_{i=1}^{N} (\Delta U_{save, Qi})^2}}{\sum_{i=1}^{N} U_{save, Qi}}$$](equation_images/fsuport.gif).
 
 >>> **4.3.1.6.** Bias. While aggregation can dramatically reduce portfolio-level savings uncertainty, it does not eliminate inherent systemic biases due to the use of non-linear models, implementation variance, imbalanced application of non-routine adjustments, unaccounted for independent variables, or population trends.
 
 >>>> **4.3.1.6.1.** Portfolio-level bias from modeling should be reported using the fractional bias error defined as follows:
 
->>>>> Mean bias for a single site. ![Alt Text](equation_images/meanbias.gif).
+>>>>> Mean bias for a single site. ![Alt Text $$MB_{i} = \frac{1}{P}\sum_{p=1}^{P}(y_p-\widehat{y_p})$$](equation_images/meanbias.gif).
 
->>>>> Portfolio-level bias error expressed as a percent of portfolio savings. ![Alt Text](equation_images/fbeport.gif).
+>>>>> Portfolio-level bias error expressed as a percent of portfolio savings. ![Alt Text $$FBE_{portfolio} = \frac{\sum_{i=1}^{N} (MB_i)^2}{\sum_{i=1}^{N} U_{save, Qi}}$$](equation_images/fbeport.gif).
