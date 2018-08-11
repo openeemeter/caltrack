@@ -1,5 +1,5 @@
-Methodological Appendix
-=======================
+Technical Appendix
+==================
 
 -----------------------------
  
