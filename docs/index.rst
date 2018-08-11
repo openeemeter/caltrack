@@ -7,6 +7,6 @@ CalTRACK Technical Documentation
    :caption: Contents:
 
    methods
-   methodological-appendix
+   technical-appendix
 
 
