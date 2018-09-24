@@ -276,7 +276,7 @@ Section 3(a): Modeling - Billing and Daily Methods
 
   **3.2.2.2.** Have enough numbers of non-zero degree days. This is in order to avoid overfitting in the case where only a few days exist with usage and nonzero degree-days, and the usage happens by chance to be unusually high on those days.
 
-   **3.2.2.2.1.** At least 10 days with non-zero degree days per year.
+   **3.2.2.2.1.** At least 10 days with non-zero degree days per year. This requirement does not apply when using billing data.
 
    **3.2.2.2.2.** At least 20 degree days per year.
 
