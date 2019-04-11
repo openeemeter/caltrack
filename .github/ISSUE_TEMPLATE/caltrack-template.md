@@ -9,8 +9,8 @@ assignees: ''
 
 ### Prerequisites
 
-* [] Are you opening this issue in the correct repository (caltrack/grid/seat)?
-* [] Did you perform a search of previous Github issues to check if this issue has been previously considered?
+* [ ] Are you opening this issue in the correct repository (caltrack/grid/seat)?
+* [ ] Did you perform a search of previous Github issues to check if this issue has been previously considered?
 
 **Article reference number in CalTRACK documentation (optional):** [e.g. 2.1.2.3]
 
