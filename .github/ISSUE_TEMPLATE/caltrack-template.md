@@ -1,5 +1,5 @@
 ---
-name: CalTRACK issue template
+name: CalTRACK template
 about: Submit new issue for consideration by the CalTRACK working group.
 title: 'CalTRACK Issue: [Issue name]'
 labels: 'Phase 1: Pre-Draft'
