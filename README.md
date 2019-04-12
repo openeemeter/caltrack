@@ -9,7 +9,7 @@ Future improvements are catalogued as "Issues" and are found in the Projects tab
 
 Formal changes in methods will follow processes established under the JDF charter:
 
-Deliverable Development Process. 
+Deliverable Development Process
 
 Working Groups.  The Project may have multiple Working Groups, and each Working Group will operate as set forth in this Section and its Working Group Charter.
 
@@ -19,9 +19,9 @@ Working Group Requirements.  Each Working Group must be comprised of at least 2 
 
 Conditions for Contributions.  A Steering Member, Associate, or Contributor may not make any Contribution unless that Steering Member, Associate or Contributor is the exclusive copyright owner of the Contribution or has sufficient copyright rights from the copyright owners to make the Contribution under the terms of this Project Charter and applicable Working Group Charter.  The Steering Member, Associate, or Contributor must disclose the identities of all known copyright owners in the Contribution.
 
-Deliverable Development Process.
+**Deliverable Development Process**
 
-Pre-Draft.  Any Working Group Participant or Contributor may submit a proposed initial draft document as a candidate Draft Deliverable of that Working Group.  The Working Group chair will designate each submission as a “Pre-Draft” document.
+Pre-Draft.  Any Working Group Participant or Contributor may submit a proposed initial draft document as a candidate Draft Deliverable of that Working Group.  The Working Group chair will designate each submission as a “Pre-Draft” document. This [quick-start video](https://www.dropbox.com/s/n5r3ihq6eanyl7l/em2_github_issues.mp4?dl=0) shows how to submit an issue for consideration.
 
 Draft.  Each Pre-Draft document of a Working Group must first be Approved by the Working Group Participants of that Working Group to become a Draft Deliverable.  Once the Working Group approves a document as a Draft Deliverable, the Draft Deliverable becomes the basis for all going forward work on that deliverable.
 
