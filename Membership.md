@@ -5,3 +5,4 @@
 |Carmen Best|Open Energy Efficiency|CBestbadger|
 |Hassan Shaban|Open Energy Efficiency|hshaban|
 |McGee Young|Open Energy Efficiency|mcgeeyoung|
+|Ethan Goldman|Open Energy Efficiency|EthanGoldman|
