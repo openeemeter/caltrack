@@ -64,7 +64,7 @@ Section 1: Overview
 
  **1.4.2.** Baseline period. A period of time during which data is gathered to calculate the relationship between metered consumption and weather conditions prior to a project.
 
- **1.4.3.** Reporting period. A period of time during which data is gathered to calculate the metered consumption and weather conditions following a project.
+ **1.4.3.** Reporting period. A period of time during which meter and weather data is gathered following a project to calculate the avoided energy use.
 
  **1.4.4.** Intervention period. A period of time between the end of the baseline period and the beginning of the reporting period in which a project is being installed. The intervention period is typically removed from the analysis because of erratic energy use during project installation. If a behavior intervention, the intervention period is typically one day. If multiple project dates are given, e.g., for multiple measure installations, use the earliest intervention date as project start date and the latest date as the project completion date. Recommend flagging for review if dates are more than one year apart.
 
