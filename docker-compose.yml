@@ -1,0 +1,20 @@
+version: '3'
+services:
+  shell:
+    build: .
+    image: caltrack_docs_shell
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/sh
+    volumes:
+      - .:/docs
+
+  docs:
+    image: caltrack_docs_shell
+    ports:
+      - "${HOST_PORT_DOCS:-8000}:${HOST_PORT_DOCS:-8000}"
+    entrypoint: make -C docs livehtml HOST_PORT_DOCS=${HOST_PORT_DOCS:-8000}
+    volumes:
+      - .:/docs
+    depends_on:
+      - shell
