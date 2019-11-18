@@ -145,12 +145,12 @@ The data requirements to apply CalTRACK methods to a single metered site are lis
   prior to the project start date, the following algorithm should be used to determine
   a baseline period which most closely reflects the 365 day period prior to the project:
 
-    **2.2.1.1.1** The final baseline billing period is the last full billing period
+    **2.2.1.1.1.1** The final baseline billing period is the last full billing period
     prior to the project start date, provided the end of that period is within 37
     (10% of 365) days of the project start date. If this criterion is not met, the
     baseline data is considered insufficient.
 
-    **2.2.1.1.2** The first baseline billing period is the period with a start date
+    **2.2.1.1.1.2** The first baseline billing period is the period with a start date
     which is nearest to 365 days prior to the end of the final baseline billing period.
     The start of this period may fall more than or less than 365 days before the end of
     the last billing period. The start of this period should be no later than 435
