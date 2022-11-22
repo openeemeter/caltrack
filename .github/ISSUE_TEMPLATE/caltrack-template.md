@@ -9,7 +9,7 @@ assignees: ''
 
 ### Prerequisites
 
-* [ ] Are you opening this issue in the correct repository (caltrack/grid/seat)?
+* [ ] Are you opening this issue in the correct repository (caltrack or eemeter)?
 * [ ] Did you perform a search of previous Github issues to check if this issue has been previously considered?
 
 **Article reference number in CalTRACK documentation (optional):** [e.g. 2.1.2.3]
@@ -18,11 +18,9 @@ assignees: ''
 
 [Description of the proposed update]
 
-### Proposed test methodology
+### PR Link
 
-1. [First Step]
-2. [Second Step]
-3. [and so on...]
+[Please create and link to a pull request which proposes specific changes to the language in the methods documentation]
 
 ### Acceptance Criteria
 
